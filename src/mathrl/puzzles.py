@@ -1,10 +1,11 @@
 """Puzzle generation for the +/- countdown task.
 
 A puzzle is a multiset of numbers plus a target. It is solvable by construction
-(design doc "Puzzles"): sample numbers, a permutation, and signs (first term
-positive), reject if any left-to-right prefix goes negative, then set the target
-to the final value. The generating expression is stored on the puzzle as
-`solution` (token ids) for the SFT trace builder.
+(design doc "Puzzles"): sample a set size, numbers, a permutation, and signs
+(first term positive), reject if any left-to-right prefix goes negative or the
+target exceeds the digit cap, then set the target to the final value. The
+generating expression is stored on the puzzle as `solution` (token ids) for the
+SFT trace builder.
 """
 
 from __future__ import annotations
@@ -25,46 +26,82 @@ class Puzzle:
     solution: list[int] | None = None
 
 
+def _arrangement_tokens(order: list[int], signs: list[int]) -> list[int]:
+    """Token ids for `n0 (op ni)*` given an ordering and its signs."""
+    out: list[int] = []
+    for i, (s, v) in enumerate(zip(signs, order)):
+        if i > 0:
+            out.append(MathTokenizer.PLUS if s == 1 else MathTokenizer.MINUS)
+        out.extend(MathTokenizer.encode_number(v))
+    return out
+
+
+def _prefixes_ok_and_value(order: list[int], signs: list[int]) -> tuple[bool, int]:
+    """Evaluate left to right; ok is False if any prefix goes negative."""
+    acc = 0
+    for s, v in zip(signs, order):
+        acc += s * v
+        if acc < 0:
+            return False, acc
+    return True, acc
+
+
 def generate_puzzle(rng: random.Random, cfg: PuzzleConfig) -> Puzzle:
     """Sample a solvable puzzle. Retries until the prefix and target-digit
     constraints hold.
 
-    The retry loop is statistically bounded: for any multiset, sorting the
-    inputs descending with alternating +/- signs yields non-negative prefixes
-    and a target <= the largest input (hence <= max_input_digits digits, which
-    is normally <= max_target_digits), so acceptance probability is bounded away
+    The set size is sampled uniformly from [min_numbers, max_numbers] once per
+    puzzle. The retry loop is statistically bounded: for any multiset, sorting
+    the inputs descending with alternating +/- signs yields non-negative
+    prefixes and a value <= the largest input (hence <= max_input_digits digits,
+    normally <= max_target_digits), so acceptance probability is bounded away
     from zero. No iteration cap is imposed.
     """
+    n = rng.randint(cfg.min_numbers, cfg.max_numbers)
     max_value = 10**cfg.max_input_digits - 1  # inclusive upper bound on inputs
     while True:
-        numbers = [rng.randint(cfg.min_value, max_value) for _ in range(cfg.n_numbers)]
+        numbers = [rng.randint(cfg.min_value, max_value) for _ in range(n)]
 
         order = numbers[:]
         rng.shuffle(order)
         # First term is always positive; the rest get random +/- signs.
-        signs = [1] + [rng.choice((1, -1)) for _ in range(cfg.n_numbers - 1)]
+        signs = [1] + [rng.choice((1, -1)) for _ in range(n - 1)]
 
-        acc = 0
-        ok = True
-        for s, v in zip(signs, order):
-            acc += s * v
-            if acc < 0:  # reject any negative left-to-right prefix
-                ok = False
-                break
-        if not ok:
+        ok, acc = _prefixes_ok_and_value(order, signs)
+        if not ok:  # negative left-to-right prefix
             continue
-
         # Reject if the target has too many digits (target 0 counts as 1 digit).
         if len(str(acc)) > cfg.max_target_digits:
             continue
 
-        solution: list[int] = []
-        for i, (s, v) in enumerate(zip(signs, order)):
-            if i > 0:
-                solution.append(MathTokenizer.PLUS if s == 1 else MathTokenizer.MINUS)
-            solution.extend(MathTokenizer.encode_number(v))
+        return Puzzle(numbers=numbers, target=acc, solution=_arrangement_tokens(order, signs))
 
-        return Puzzle(numbers=numbers, target=acc, solution=solution)
+
+def sample_wrong_arrangement(
+    puzzle: Puzzle, rng: random.Random, max_tries: int = 64
+) -> list[int] | None:
+    """Token ids of a WRONG arrangement of the puzzle's full multiset, for retry
+    demos: first term positive, all prefixes non-negative, final value != target.
+
+    The final value may exceed the target digit cap (it is reasoning content, not
+    an answer). Reject-samples up to `max_tries`; returns None if no wrong
+    arrangement is found (possible in principle — e.g. every valid arrangement
+    hits the target) so the trace builder can fall back to a no-retry trace. It
+    never loops unboundedly.
+    """
+    numbers = puzzle.numbers
+    n = len(numbers)
+    for _ in range(max_tries):
+        order = numbers[:]
+        rng.shuffle(order)
+        signs = [1] + [rng.choice((1, -1)) for _ in range(n - 1)]
+        ok, acc = _prefixes_ok_and_value(order, signs)
+        if not ok:
+            continue
+        if acc == puzzle.target:  # must be a WRONG attempt
+            continue
+        return _arrangement_tokens(order, signs)
+    return None
 
 
 def prompt_tokens(puzzle: Puzzle, tok: MathTokenizer) -> list[int]:

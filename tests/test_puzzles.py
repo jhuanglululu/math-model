@@ -2,7 +2,13 @@ import random
 
 from mathrl.checker import _parse_expr
 from mathrl.config import PuzzleConfig
-from mathrl.puzzles import Puzzle, canonical_key, generate_puzzle, prompt_tokens
+from mathrl.puzzles import (
+    Puzzle,
+    canonical_key,
+    generate_puzzle,
+    prompt_tokens,
+    sample_wrong_arrangement,
+)
 from mathrl.tokenizer import MathTokenizer
 
 
@@ -11,7 +17,7 @@ def _assert_valid_puzzles(cfg, seeds=range(400)):
     for seed in seeds:
         rng = random.Random(seed)
         p = generate_puzzle(rng, cfg)
-        assert len(p.numbers) == cfg.n_numbers
+        assert cfg.min_numbers <= len(p.numbers) <= cfg.max_numbers
         # inputs within the derived digit-bounded range
         assert all(cfg.min_value <= v <= max_value for v in p.numbers)
         assert all(len(str(v)) <= cfg.max_input_digits for v in p.numbers)
@@ -46,6 +52,46 @@ def test_generator_two_digit_config_wider_ranges():
         v >= 10 for s in range(200) for v in generate_puzzle(random.Random(s), cfg).numbers
     )
     assert seen_two_digit_input
+
+
+def test_set_size_spans_full_default_range():
+    cfg = PuzzleConfig()
+    sizes = {len(generate_puzzle(random.Random(s), cfg).numbers) for s in range(400)}
+    assert sizes == {3, 4, 5, 6}  # default min_numbers=3, max_numbers=6, inclusive
+
+
+def test_min_equals_max_pins_size():
+    cfg = PuzzleConfig(min_numbers=5, max_numbers=5)
+    for s in range(100):
+        assert len(generate_puzzle(random.Random(s), cfg).numbers) == 5
+
+
+def test_sample_wrong_arrangement_is_wrong_but_valid():
+    cfg = PuzzleConfig()
+    for seed in range(300):
+        p = generate_puzzle(random.Random(seed), cfg)
+        wrong = sample_wrong_arrangement(p, random.Random(seed))
+        if wrong is None:
+            continue  # no wrong arrangement exists for this multiset (rare)
+        parsed = _parse_expr(wrong)
+        assert parsed is not None
+        numbers, ops = parsed
+        assert sorted(numbers) == sorted(p.numbers)  # full multiset
+        acc = numbers[0]
+        assert acc >= 0  # first term positive
+        for op, num in zip(ops, numbers[1:]):
+            acc = acc + num if op == "+" else acc - num
+            assert acc >= 0  # non-negative prefixes
+        assert acc != p.target  # final value must miss the target
+
+
+def test_sample_wrong_arrangement_can_return_none_when_no_wrong_exists():
+    # {1, 1}: arrangements are 1+1=2 and 1-1=0. If target is 2, the only other
+    # non-negative arrangement (1-1=0) is available -> wrong exists. But for a
+    # multiset where every non-negative arrangement equals the target, None.
+    # {5}: single number, sole arrangement is "5" == target -> no wrong.
+    p = Puzzle(numbers=[5], target=5, solution=[8])
+    assert sample_wrong_arrangement(p, random.Random(0)) is None
 
 
 def test_prompt_tokens_exact():

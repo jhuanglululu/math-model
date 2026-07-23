@@ -21,6 +21,7 @@ from pathlib import Path
 import torch
 from safetensors.torch import load_model
 
+from mathrl.checker import reward
 from mathrl.checkpoint import run_dir
 from mathrl.device import get_device, seed_everything
 from mathrl.env import DONE, TOO_LONG, env_step
@@ -154,6 +155,7 @@ def main() -> None:
 
     total_tokens = 0
     total_time = 0.0
+    n_correct = 0
     for i in range(args.n_puzzles):
         puzzle = generate_puzzle(rng, tv.puzzle)
         prompt = prompt_tokens(puzzle, tok)
@@ -165,11 +167,21 @@ def main() -> None:
         total_tokens += model_tokens
         total_time += dt
 
+        rb = reward(puzzle, completion, tok, tv.reward, terminated=reason)
+        n_correct += rb.reason == "correct"
+
         print(f"=== puzzle {i + 1}: numbers={puzzle.numbers} target={puzzle.target} ===")
         print(f"prompt:     {tok.decode(prompt)}")
         print(f"completion: {tok.decode(completion)}")
-        print(f"end reason: {reason}\n")
+        print(f"end reason: {reason}")
+        verdict = "CORRECT" if rb.reason == "correct" else f"WRONG ({rb.reason})"
+        print(
+            f"check:      {verdict} | reward {rb.total:+.2f} "
+            f"(base {rb.base:+.2f}, tool_shaping {rb.tool_shaping:+.2f}, "
+            f"tool_calls {rb.tool_calls})\n"
+        )
 
+    print(f"solved {n_correct}/{args.n_puzzles}")
     tok_per_sec = total_tokens / total_time if total_time > 0 else 0.0
     print(
         f"decode speed: {tok_per_sec:.1f} model-tokens/sec "

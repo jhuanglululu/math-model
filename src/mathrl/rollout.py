@@ -6,6 +6,7 @@ and docs/examples/rl-basics.html. The scaffolded pieces you build on:
 `puzzles.prompt_tokens()`.
 """
 
+from mathrl.puzzles import prompt_tokens
 from dataclasses import dataclass
 
 import torch
@@ -73,4 +74,8 @@ def rollout(
     Sequences that hit max_completion_len without <eos> are terminated by
     env_step ('too_long'); do not silently truncate.
     """
+
+    tokens = torch.Tensor([prompt_tokens(p, tok) for p in puzzles])
+    tokens = tokens.repeat_interleave(tokens, group_size)
+
     raise NotImplementedError("RL core — user implements (see docstring sketch)")

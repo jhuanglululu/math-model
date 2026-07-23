@@ -15,7 +15,8 @@ class PuzzleConfig(BaseModel):
     rejected (target 0 counts as one digit). Intermediate prefix values are
     intentionally NOT capped — only non-negativity is enforced."""
 
-    n_numbers: int = 4
+    min_numbers: int = 3
+    max_numbers: int = 6  # set size sampled uniformly per puzzle (inclusive)
     min_value: int = 1
     max_input_digits: int = 1
     max_target_digits: int = 1
@@ -41,6 +42,12 @@ class TraceConfig(BaseModel):
     tools appear in SFT data only as an answer check)."""
 
     p_tool: float = 0.3
+    # Fraction of traces demonstrating a failed attempt followed by a retry:
+    # manual steps of a wrong-but-correctly-computed arrangement (final value
+    # != target), then a fresh attempt that succeeds. Breaks the "last step's
+    # RHS always equals the target" shortcut SFT otherwise teaches, and gives
+    # RL nonzero support on try-again behavior.
+    p_retry: float = 0.25
 
 
 class EnvConfig(BaseModel):
