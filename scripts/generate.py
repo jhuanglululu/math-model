@@ -24,7 +24,7 @@ from safetensors.torch import load_model
 from mathrl.checkpoint import run_dir
 from mathrl.device import get_device, seed_everything
 from mathrl.env import DONE, TOO_LONG, env_step
-from mathrl.model import GPT
+from mathrl.model import GPT, model_dtype
 from mathrl.puzzles import generate_puzzle, prompt_tokens
 from mathrl.tokenizer import MathTokenizer
 from mathrl.variations import get_model_variation, get_training_variation
@@ -143,7 +143,7 @@ def main() -> None:
     if not weights.exists():
         raise FileNotFoundError(f"no checkpoint at {weights}")
 
-    model = GPT(model_cfg).to(device)
+    model = GPT(model_cfg).to(device=device, dtype=model_dtype(device))
     load_model(model, str(weights))
     model.eval()
     model.compile()

@@ -1,6 +1,6 @@
 import torch
 
-from mathrl.model import GPT, GPTConfig
+from mathrl.model import GPT, GPTConfig, RMSNorm, model_dtype
 from mathrl.variations import get_model_variation
 
 
@@ -42,3 +42,30 @@ def test_param_count_tiny():
     model = GPT(cfg)
     n = model.num_params()
     assert 0.5e6 <= n <= 2e6, f"tiny has {n} params, expected 0.5M-2M"
+
+
+def test_rmsnorm_matches_formula():
+    norm = RMSNorm(16)
+    x = torch.randn(2, 5, 16)
+    expected = x * torch.rsqrt(x.pow(2).mean(-1, keepdim=True) + norm.eps)
+    assert torch.allclose(norm(x), expected, atol=1e-6)  # weight is ones at init
+
+
+def test_rmsnorm_stays_in_native_dtype():
+    norm = RMSNorm(16).to(torch.bfloat16)
+    x = torch.randn(2, 5, 16, dtype=torch.bfloat16)
+    assert norm(x).dtype == torch.bfloat16
+
+
+def test_forward_pure_bf16():
+    cfg = _tiny_config()
+    model = GPT(cfg).to(torch.bfloat16)
+    idx = torch.randint(0, cfg.vocab_size, (2, 16))
+    logits = model(idx)
+    assert logits.dtype == torch.bfloat16
+    assert torch.isfinite(logits.float()).all()
+
+
+def test_model_dtype_policy():
+    assert model_dtype(torch.device("cpu")) == torch.float32
+    assert model_dtype(torch.device("cuda")) == torch.bfloat16

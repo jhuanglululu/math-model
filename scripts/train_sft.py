@@ -25,7 +25,7 @@ import torch.nn.functional as F
 
 from mathrl.checkpoint import Checkpointer, resume
 from mathrl.device import get_device, seed_everything
-from mathrl.model import GPT
+from mathrl.model import GPT, model_dtype
 from mathrl.puzzles import canonical_key, generate_puzzle
 from mathrl.records import RunRecord, TrainingProgress
 from mathrl.sft_data import build_batch
@@ -106,14 +106,15 @@ def main() -> None:
 
     seed_everything(args.seed)
     device = get_device()
-    print(f"device: {device}")
+    dtype = model_dtype(device)
+    print(f"device: {device}, dtype: {dtype}")
 
     model_cfg = get_model_variation(args.model)
     tv = get_training_variation(args.training)
     tok = MathTokenizer()
     max_len = model_cfg.block_size
 
-    model = GPT(model_cfg).to(device)
+    model = GPT(model_cfg).to(device=device, dtype=dtype)
     model.compile()
     optimizer = torch.optim.AdamW(
         model.parameters(), lr=tv.lr, weight_decay=tv.weight_decay, betas=(0.9, 0.95)

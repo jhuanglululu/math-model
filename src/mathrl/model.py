@@ -1,10 +1,14 @@
 """From-scratch GPT decoder for the 28-token math vocabulary.
 
 Standard pre-norm transformer: token + learned positional embeddings, causal
-self-attention (via ``F.scaled_dot_product_attention``), GELU MLP, and a
-weight-tied LM head. Architecture is fully described by :class:`GPTConfig`, so
-a model variation (see ``variations.py``) plus a seed reproduces the network
-exactly.
+self-attention (via ``F.scaled_dot_product_attention``), GELU MLP, RMSNorm,
+and a weight-tied LM head. Architecture is fully described by
+:class:`GPTConfig`, so a model variation (see ``variations.py``) plus a seed
+reproduces the network exactly.
+
+The model trains in pure bf16 on CUDA (see ``model_dtype()``): RMSNorm is
+hand-written and deliberately does NOT upcast to float32 — everything runs in
+the model's native dtype.
 
 Shapes use the convention B = batch, T = sequence length, V = vocab size,
 C = embedding dim (``n_embd``). Shape asserts guard the boundaries where a
@@ -30,6 +34,28 @@ class GPTConfig(BaseModel):
     n_head: int = 4
     n_embd: int = 128
     dropout: float = 0.0
+
+
+def model_dtype(device: torch.device) -> torch.dtype:
+    """Project precision policy: pure bf16 on CUDA (L40S), fp32 elsewhere
+    (CPU/MPS smoke runs). Scripts call ``model.to(device, model_dtype(device))``."""
+    return torch.bfloat16 if device.type == "cuda" else torch.float32
+
+
+class RMSNorm(nn.Module):
+    """Hand-written RMSNorm, computed in the input's native dtype.
+
+    y = x / sqrt(mean(x^2) + eps) * weight — no bias, and intentionally no
+    float32 upcast (the usual ``x.float()`` dance) since we train in pure bf16.
+    """
+
+    def __init__(self, dim: int, eps: float = 1e-6) -> None:
+        super().__init__()
+        self.eps = eps
+        self.weight = nn.Parameter(torch.ones(dim))
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        return x * torch.rsqrt(x.pow(2).mean(dim=-1, keepdim=True) + self.eps) * self.weight
 
 
 class CausalSelfAttention(nn.Module):
@@ -91,9 +117,9 @@ class Block(nn.Module):
 
     def __init__(self, config: GPTConfig) -> None:
         super().__init__()
-        self.ln_1 = nn.LayerNorm(config.n_embd)
+        self.ln_1 = RMSNorm(config.n_embd)
         self.attn = CausalSelfAttention(config)
-        self.ln_2 = nn.LayerNorm(config.n_embd)
+        self.ln_2 = RMSNorm(config.n_embd)
         self.mlp = MLP(config)
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
@@ -114,7 +140,7 @@ class GPT(nn.Module):
                 wpe=nn.Embedding(config.block_size, config.n_embd),
                 drop=nn.Dropout(config.dropout),
                 h=nn.ModuleList(Block(config) for _ in range(config.n_layer)),
-                ln_f=nn.LayerNorm(config.n_embd),
+                ln_f=RMSNorm(config.n_embd),
             )
         )
         self.lm_head = nn.Linear(config.n_embd, config.vocab_size, bias=False)

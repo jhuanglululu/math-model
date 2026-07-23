@@ -34,7 +34,7 @@ from mathrl.env import (
     TOOL_OUT_OF_REASONING,
     env_step,
 )
-from mathrl.model import GPT
+from mathrl.model import GPT, model_dtype
 from mathrl.puzzles import Puzzle, prompt_tokens
 from mathrl.records import record_dir
 from mathrl.tokenizer import MathTokenizer
@@ -160,7 +160,7 @@ def main() -> None:
     if not weights.exists():
         raise FileNotFoundError(f"no checkpoint at {weights}")
 
-    model = GPT(model_cfg).to(device)
+    model = GPT(model_cfg).to(device=device, dtype=model_dtype(device))
     load_model(model, str(weights))
     model.eval()
 
