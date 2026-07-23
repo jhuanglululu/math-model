@@ -10,9 +10,15 @@ from pydantic import BaseModel
 
 
 class PuzzleConfig(BaseModel):
+    """Inputs are sampled from [min_value, 10**max_input_digits - 1];
+    constructions whose target has more than max_target_digits digits are
+    rejected (target 0 counts as one digit). Intermediate prefix values are
+    intentionally NOT capped — only non-negativity is enforced."""
+
     n_numbers: int = 4
     min_value: int = 1
-    max_value: int = 20
+    max_input_digits: int = 1
+    max_target_digits: int = 1
 
 
 class RewardConfig(BaseModel):

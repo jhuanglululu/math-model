@@ -26,9 +26,18 @@ class Puzzle:
 
 
 def generate_puzzle(rng: random.Random, cfg: PuzzleConfig) -> Puzzle:
-    """Sample a solvable puzzle. Retries until the prefix constraint holds."""
+    """Sample a solvable puzzle. Retries until the prefix and target-digit
+    constraints hold.
+
+    The retry loop is statistically bounded: for any multiset, sorting the
+    inputs descending with alternating +/- signs yields non-negative prefixes
+    and a target <= the largest input (hence <= max_input_digits digits, which
+    is normally <= max_target_digits), so acceptance probability is bounded away
+    from zero. No iteration cap is imposed.
+    """
+    max_value = 10**cfg.max_input_digits - 1  # inclusive upper bound on inputs
     while True:
-        numbers = [rng.randint(cfg.min_value, cfg.max_value) for _ in range(cfg.n_numbers)]
+        numbers = [rng.randint(cfg.min_value, max_value) for _ in range(cfg.n_numbers)]
 
         order = numbers[:]
         rng.shuffle(order)
@@ -43,6 +52,10 @@ def generate_puzzle(rng: random.Random, cfg: PuzzleConfig) -> Puzzle:
                 ok = False
                 break
         if not ok:
+            continue
+
+        # Reject if the target has too many digits (target 0 counts as 1 digit).
+        if len(str(acc)) > cfg.max_target_digits:
             continue
 
         solution: list[int] = []

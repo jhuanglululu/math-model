@@ -6,13 +6,18 @@ from mathrl.puzzles import Puzzle, canonical_key, generate_puzzle, prompt_tokens
 from mathrl.tokenizer import MathTokenizer
 
 
-def test_generator_only_produces_solvable_nonneg_puzzles():
-    cfg = PuzzleConfig()
-    for seed in range(400):
+def _assert_valid_puzzles(cfg, seeds=range(400)):
+    max_value = 10**cfg.max_input_digits - 1
+    for seed in seeds:
         rng = random.Random(seed)
         p = generate_puzzle(rng, cfg)
         assert len(p.numbers) == cfg.n_numbers
-        assert all(cfg.min_value <= v <= cfg.max_value for v in p.numbers)
+        # inputs within the derived digit-bounded range
+        assert all(cfg.min_value <= v <= max_value for v in p.numbers)
+        assert all(len(str(v)) <= cfg.max_input_digits for v in p.numbers)
+        # target respects the digit cap (0 counts as one digit)
+        assert p.target >= 0
+        assert len(str(p.target)) <= cfg.max_target_digits
         # solution parses, uses exactly the puzzle multiset, and its left-to-right
         # prefixes never go negative, and it hits the target.
         parsed = _parse_expr(p.solution)
@@ -25,6 +30,22 @@ def test_generator_only_produces_solvable_nonneg_puzzles():
             acc = acc + num if op == "+" else acc - num
             assert acc >= 0
         assert acc == p.target
+
+
+def test_generator_default_single_digit_inputs_and_targets():
+    cfg = PuzzleConfig()
+    assert cfg.max_input_digits == 1 and cfg.max_target_digits == 1
+    _assert_valid_puzzles(cfg)
+
+
+def test_generator_two_digit_config_wider_ranges():
+    cfg = PuzzleConfig(max_input_digits=2, max_target_digits=2)
+    _assert_valid_puzzles(cfg)
+    # sanity: this config actually reaches multi-digit inputs somewhere
+    seen_two_digit_input = any(
+        v >= 10 for s in range(200) for v in generate_puzzle(random.Random(s), cfg).numbers
+    )
+    assert seen_two_digit_input
 
 
 def test_prompt_tokens_exact():
