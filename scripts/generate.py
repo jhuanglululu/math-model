@@ -146,6 +146,7 @@ def main() -> None:
     model = GPT(model_cfg).to(device)
     load_model(model, str(weights))
     model.eval()
+    model.compile()
     print(f"loaded {weights} (arm={tv.env.tools})\n")
 
     sampling = {"top_k": args.top_k, "top_p": args.top_p, "rep_pen": args.rep_pen}

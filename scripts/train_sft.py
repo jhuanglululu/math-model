@@ -114,6 +114,7 @@ def main() -> None:
     max_len = model_cfg.block_size
 
     model = GPT(model_cfg).to(device)
+    model.compile()
     optimizer = torch.optim.AdamW(
         model.parameters(), lr=tv.lr, weight_decay=tv.weight_decay, betas=(0.9, 0.95)
     )
