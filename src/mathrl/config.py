@@ -1,0 +1,43 @@
+"""Shared pydantic configs — the contract between library modules.
+
+Composed into TrainingVariation (variations.py). Defaults here are the
+project defaults; experiments override via named variations, never CLI flags.
+"""
+
+from typing import Literal
+
+from pydantic import BaseModel
+
+
+class PuzzleConfig(BaseModel):
+    n_numbers: int = 4
+    min_value: int = 1
+    max_value: int = 20
+
+
+class RewardConfig(BaseModel):
+    correct: float = 1.0
+    wrong_value: float = 0.0
+    wrong_multiset: float = -0.5
+    neg_prefix: float = -0.5
+    format_violation: float = -1.0
+    # Tool-call shaping, added to the outcome reward except on
+    # format_violation episodes. Pure lookup: n completed tool calls ->
+    # 0 if n == 0 else tool_reward[n - 1]. Keep length == EnvConfig
+    # .max_tool_calls (env terminates past that); n beyond the list clamps
+    # to the last entry as a safety net.
+    tool_reward: list[float] = [0.2, 0.1, 0.05, 0.0, -0.05, -0.1, -0.15, -0.2]
+
+
+class TraceConfig(BaseModel):
+    """SFT trace generation. p_tool: fraction of traces that demonstrate a
+    single tool block checking the final expression (per the design doc,
+    tools appear in SFT data only as an answer check)."""
+
+    p_tool: float = 0.3
+
+
+class EnvConfig(BaseModel):
+    tools: Literal["none", "calculate", "verify"] = "none"
+    max_tool_calls: int = 8
+    max_completion_len: int = 192

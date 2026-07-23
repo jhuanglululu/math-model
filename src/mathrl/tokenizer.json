@@ -1,0 +1,46 @@
+{
+  "version": "1.0",
+  "truncation": null,
+  "padding": null,
+  "added_tokens": [],
+  "normalizer": null,
+  "pre_tokenizer": {
+    "type": "WhitespaceSplit"
+  },
+  "post_processor": null,
+  "decoder": null,
+  "model": {
+    "type": "WordLevel",
+    "vocab": {
+      "<pad>": 0,
+      "<bos>": 1,
+      "<eos>": 2,
+      "0": 3,
+      "1": 4,
+      "2": 5,
+      "3": 6,
+      "4": 7,
+      "5": 8,
+      "6": 9,
+      "7": 10,
+      "8": 11,
+      "9": 12,
+      "+": 13,
+      "-": 14,
+      ",": 15,
+      "=": 16,
+      "<target>": 17,
+      "<reasoning>": 18,
+      "</reasoning>": 19,
+      "<sep>": 20,
+      "<calculate>": 21,
+      "<result>": 22,
+      "</calculate>": 23,
+      "<verify>": 24,
+      "</verify>": 25,
+      "<good>": 26,
+      "<bad>": 27
+    },
+    "unk_token": "<pad>"
+  }
+}
