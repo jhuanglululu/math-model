@@ -18,8 +18,8 @@ class PuzzleConfig(BaseModel):
     min_numbers: int = 3
     max_numbers: int = 6  # set size sampled uniformly per puzzle (inclusive)
     min_value: int = 1
-    max_input_digits: int = 1
-    max_target_digits: int = 1
+    max_input_digits: int = 2
+    max_target_digits: int = 3
 
 
 class RewardConfig(BaseModel):
