@@ -1,7 +1,7 @@
 """From-scratch GPT decoder for the 28-token math vocabulary.
 
 Standard pre-norm transformer: token + learned positional embeddings, causal
-self-attention (via ``F.scaled_dot_product_attention``), GELU MLP, RMSNorm,
+self-attention (via ``F.scaled_dot_product_attention``), SwiGLU MLP, RMSNorm,
 and a weight-tied LM head. Architecture is fully described by
 :class:`GPTConfig`, so a model variation (see ``variations.py``) plus a seed
 reproduces the network exactly.
@@ -95,18 +95,22 @@ class CausalSelfAttention(nn.Module):
 
 
 class MLP(nn.Module):
-    """Position-wise feed-forward network with GELU activation."""
+    """Position-wise SwiGLU feed-forward (Llama-style, no biases).
+
+    down(silu(gate(x)) * up(x)), hidden = 2/3 * 4 * n_embd rounded up to a
+    multiple of 8 — parameter count comparable to the classic 4x GELU MLP.
+    """
 
     def __init__(self, config: GPTConfig) -> None:
         super().__init__()
-        self.c_fc = nn.Linear(config.n_embd, 4 * config.n_embd)
-        self.gelu = nn.GELU()
-        self.c_proj = nn.Linear(4 * config.n_embd, config.n_embd)
+        hidden = ((int(8 * config.n_embd / 3) + 7) // 8) * 8
+        self.w_gate = nn.Linear(config.n_embd, hidden, bias=False)
+        self.w_up = nn.Linear(config.n_embd, hidden, bias=False)
+        self.c_proj = nn.Linear(hidden, config.n_embd, bias=False)
         self.dropout = nn.Dropout(config.dropout)
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
-        x = self.c_fc(x)
-        x = self.gelu(x)
+        x = F.silu(self.w_gate(x)) * self.w_up(x)
         x = self.c_proj(x)
         x = self.dropout(x)
         return x
