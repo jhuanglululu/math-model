@@ -1,1000 +1,1000 @@
-{"numbers": [9, 2, 7, 5, 4, 5], "target": 8}
-{"numbers": [6, 4, 3, 9, 8], "target": 0}
-{"numbers": [4, 9, 5], "target": 0}
-{"numbers": [7, 1, 2, 6, 4], "target": 8}
-{"numbers": [4, 9, 3], "target": 8}
-{"numbers": [8, 9, 2, 9, 8, 2], "target": 2}
-{"numbers": [3, 6, 2], "target": 1}
-{"numbers": [5, 3, 3, 7, 3], "target": 9}
-{"numbers": [8, 7, 6, 9, 4, 8], "target": 4}
-{"numbers": [4, 2, 9, 7], "target": 8}
-{"numbers": [2, 9, 7, 6, 1], "target": 9}
-{"numbers": [3, 7, 9, 8, 7, 5], "target": 9}
-{"numbers": [7, 2, 4, 3], "target": 4}
-{"numbers": [2, 3, 3], "target": 2}
-{"numbers": [5, 3, 3], "target": 5}
-{"numbers": [4, 3, 2, 6, 2], "target": 9}
-{"numbers": [4, 1, 7, 5, 4, 7], "target": 6}
-{"numbers": [1, 5, 7, 6], "target": 7}
-{"numbers": [1, 2, 8, 5, 4, 5], "target": 3}
-{"numbers": [6, 3, 1, 4, 1, 3], "target": 2}
-{"numbers": [8, 9, 4, 2, 9], "target": 2}
-{"numbers": [4, 9, 1, 7, 6], "target": 7}
-{"numbers": [9, 6, 9], "target": 6}
-{"numbers": [2, 3, 1, 2], "target": 0}
-{"numbers": [9, 4, 3, 4, 6], "target": 6}
-{"numbers": [1, 6, 4], "target": 9}
-{"numbers": [2, 2, 6, 9, 1, 7], "target": 9}
-{"numbers": [7, 4, 5], "target": 8}
-{"numbers": [8, 2, 7, 2], "target": 5}
-{"numbers": [7, 1, 6, 5, 5, 3], "target": 5}
-{"numbers": [4, 1, 3, 3], "target": 5}
-{"numbers": [5, 3, 6, 9, 1, 6], "target": 8}
-{"numbers": [3, 6, 3, 1], "target": 7}
-{"numbers": [3, 5, 1, 1, 8], "target": 0}
-{"numbers": [9, 6, 2, 9, 9, 3], "target": 2}
-{"numbers": [5, 5, 5, 4, 1], "target": 2}
-{"numbers": [6, 2, 3], "target": 5}
-{"numbers": [4, 6, 4, 1], "target": 7}
-{"numbers": [9, 2, 7], "target": 0}
-{"numbers": [9, 8, 7, 4, 2], "target": 4}
-{"numbers": [3, 3, 8], "target": 8}
-{"numbers": [6, 7, 6, 3, 5, 9], "target": 6}
-{"numbers": [4, 5, 8, 3, 7], "target": 5}
-{"numbers": [4, 2, 3, 4, 8, 3], "target": 4}
-{"numbers": [8, 5, 6], "target": 3}
-{"numbers": [6, 7, 2, 6], "target": 9}
-{"numbers": [6, 7, 7, 5], "target": 1}
-{"numbers": [3, 8, 2, 6, 2, 4], "target": 3}
-{"numbers": [7, 6, 6], "target": 7}
-{"numbers": [3, 4, 7, 5, 1], "target": 2}
-{"numbers": [3, 8, 3, 2, 2, 6], "target": 4}
-{"numbers": [5, 3, 3, 2, 1], "target": 8}
-{"numbers": [1, 2, 6, 4, 6], "target": 7}
-{"numbers": [9, 5, 8, 8], "target": 2}
-{"numbers": [7, 9, 9], "target": 7}
-{"numbers": [4, 6, 1, 4, 1, 2], "target": 6}
-{"numbers": [8, 1, 7, 4, 6, 7], "target": 7}
-{"numbers": [2, 8, 4, 7, 1, 2], "target": 8}
-{"numbers": [7, 8, 7], "target": 8}
-{"numbers": [8, 5, 7, 4, 9, 7], "target": 0}
-{"numbers": [6, 4, 4, 3, 1], "target": 8}
-{"numbers": [8, 1, 4, 3], "target": 8}
-{"numbers": [1, 9, 5, 7], "target": 4}
-{"numbers": [4, 2, 3, 6, 6], "target": 3}
-{"numbers": [6, 1, 2], "target": 9}
-{"numbers": [7, 8, 7, 3, 4, 4], "target": 3}
-{"numbers": [7, 4, 2, 1, 4, 2], "target": 4}
-{"numbers": [6, 3, 2, 3], "target": 8}
-{"numbers": [1, 4, 4, 7, 7, 3], "target": 2}
-{"numbers": [2, 7, 7, 6, 6, 5], "target": 5}
-{"numbers": [6, 9, 9, 5, 2], "target": 3}
-{"numbers": [1, 6, 2, 2], "target": 7}
-{"numbers": [7, 6, 2, 7, 3], "target": 5}
-{"numbers": [8, 4, 3], "target": 7}
-{"numbers": [2, 6, 2, 1, 2, 3], "target": 6}
-{"numbers": [8, 3, 9, 9], "target": 5}
-{"numbers": [7, 1, 8, 5], "target": 5}
-{"numbers": [1, 7, 4, 1, 6], "target": 9}
-{"numbers": [5, 2, 2], "target": 9}
-{"numbers": [7, 7, 1], "target": 1}
-{"numbers": [3, 4, 1, 1, 3], "target": 4}
-{"numbers": [8, 1, 7, 5, 2, 2], "target": 9}
-{"numbers": [6, 6, 4, 2, 2], "target": 4}
-{"numbers": [9, 8, 6, 7, 1], "target": 1}
-{"numbers": [4, 3, 5, 3, 2, 4], "target": 7}
-{"numbers": [7, 9, 6], "target": 8}
-{"numbers": [2, 7, 8], "target": 3}
-{"numbers": [5, 3, 4, 9, 8, 8], "target": 5}
-{"numbers": [2, 4, 5], "target": 1}
-{"numbers": [9, 5, 1, 3, 6, 7], "target": 5}
-{"numbers": [5, 9, 3, 7, 7], "target": 7}
-{"numbers": [3, 3, 7, 7], "target": 6}
-{"numbers": [8, 9, 9], "target": 8}
-{"numbers": [6, 9, 8, 5], "target": 0}
-{"numbers": [8, 4, 7, 6], "target": 9}
-{"numbers": [1, 8, 8, 9, 3], "target": 5}
-{"numbers": [7, 4, 8, 3], "target": 8}
-{"numbers": [3, 5, 4, 4, 9], "target": 9}
-{"numbers": [2, 9, 5, 1, 6, 7], "target": 4}
-{"numbers": [1, 3, 2], "target": 6}
-{"numbers": [1, 4, 7, 5, 6], "target": 9}
-{"numbers": [5, 6, 6, 2], "target": 9}
-{"numbers": [8, 8, 2, 3], "target": 1}
-{"numbers": [7, 3, 3], "target": 7}
-{"numbers": [5, 6, 3, 2], "target": 6}
-{"numbers": [8, 6, 4], "target": 6}
-{"numbers": [9, 7, 8, 7, 1, 7], "target": 7}
-{"numbers": [2, 6, 5, 4], "target": 1}
-{"numbers": [5, 4, 2], "target": 7}
-{"numbers": [2, 6, 4, 6, 6], "target": 4}
-{"numbers": [2, 2, 2, 4, 7, 4], "target": 9}
-{"numbers": [2, 4, 4, 2, 9, 6], "target": 1}
-{"numbers": [2, 7, 5, 6, 9], "target": 7}
-{"numbers": [4, 7, 5], "target": 6}
-{"numbers": [1, 7, 5], "target": 3}
-{"numbers": [2, 3, 7], "target": 2}
-{"numbers": [7, 1, 1, 2, 2], "target": 5}
-{"numbers": [1, 1, 5, 9, 4], "target": 6}
-{"numbers": [6, 4, 5, 3, 7], "target": 5}
-{"numbers": [9, 1, 6, 2, 9, 3], "target": 6}
-{"numbers": [5, 6, 9, 2, 7, 3], "target": 4}
-{"numbers": [1, 1, 9], "target": 9}
-{"numbers": [4, 4, 3], "target": 3}
-{"numbers": [1, 2, 3, 3, 4], "target": 1}
-{"numbers": [2, 5, 5, 3, 7, 5], "target": 3}
-{"numbers": [8, 6, 3, 3, 8, 2], "target": 8}
-{"numbers": [5, 3, 4], "target": 2}
-{"numbers": [5, 6, 9, 1], "target": 1}
-{"numbers": [6, 9, 1, 5, 3], "target": 4}
-{"numbers": [3, 8, 5, 1, 9], "target": 8}
-{"numbers": [4, 7, 8, 6, 9, 3], "target": 9}
-{"numbers": [5, 6, 6, 9, 4], "target": 2}
-{"numbers": [6, 8, 9, 3, 1], "target": 9}
-{"numbers": [3, 1, 4, 2], "target": 6}
-{"numbers": [4, 1, 9, 3, 4, 2], "target": 5}
-{"numbers": [3, 6, 1], "target": 8}
-{"numbers": [4, 2, 4, 3, 3, 2], "target": 4}
-{"numbers": [4, 2, 8], "target": 2}
-{"numbers": [6, 6, 5, 5, 1, 5], "target": 4}
-{"numbers": [2, 1, 3, 1], "target": 3}
-{"numbers": [2, 3, 8, 9, 3, 5], "target": 8}
-{"numbers": [3, 2, 4], "target": 5}
-{"numbers": [5, 9, 1, 8], "target": 5}
-{"numbers": [6, 6, 6, 4, 9, 3], "target": 4}
-{"numbers": [5, 5, 3, 2, 3], "target": 8}
-{"numbers": [6, 2, 5], "target": 9}
-{"numbers": [4, 2, 3, 3], "target": 6}
-{"numbers": [6, 6, 6, 3], "target": 9}
-{"numbers": [2, 5, 8, 3, 7], "target": 5}
-{"numbers": [4, 8, 1], "target": 5}
-{"numbers": [8, 2, 3, 4, 6], "target": 9}
-{"numbers": [6, 8, 3, 3, 4], "target": 6}
-{"numbers": [1, 7, 6, 1], "target": 1}
-{"numbers": [3, 1, 6, 2, 1, 7], "target": 2}
-{"numbers": [7, 8, 2, 3, 3, 7], "target": 4}
-{"numbers": [1, 1, 7, 1, 9], "target": 5}
-{"numbers": [3, 2, 4, 7, 8], "target": 8}
-{"numbers": [3, 7, 5, 4, 5, 4], "target": 8}
-{"numbers": [2, 4, 9, 5, 6, 6], "target": 6}
-{"numbers": [9, 4, 6, 8, 3], "target": 6}
-{"numbers": [3, 4, 9, 8], "target": 2}
-{"numbers": [9, 1, 7, 2, 6, 4], "target": 7}
-{"numbers": [1, 1, 5, 7, 6], "target": 8}
-{"numbers": [1, 2, 1, 2], "target": 2}
-{"numbers": [8, 1, 3, 1, 2], "target": 7}
-{"numbers": [8, 9, 6, 6, 2, 7], "target": 4}
-{"numbers": [7, 5, 1, 4], "target": 7}
-{"numbers": [6, 6, 2], "target": 2}
-{"numbers": [9, 2, 9, 2, 9], "target": 9}
-{"numbers": [2, 1, 2, 7, 4, 1], "target": 3}
-{"numbers": [3, 2, 4, 5], "target": 4}
-{"numbers": [5, 1, 3, 5, 5], "target": 7}
-{"numbers": [1, 3, 4], "target": 2}
-{"numbers": [8, 1, 3, 8, 5], "target": 3}
-{"numbers": [7, 9, 7, 5, 5], "target": 5}
-{"numbers": [6, 2, 4, 1, 6], "target": 5}
-{"numbers": [9, 9, 2, 3, 6, 4], "target": 9}
-{"numbers": [6, 2, 9, 8], "target": 9}
-{"numbers": [7, 3, 1, 1, 1], "target": 5}
-{"numbers": [1, 6, 3, 2, 3, 7], "target": 8}
-{"numbers": [6, 3, 7, 8, 8, 9], "target": 9}
-{"numbers": [6, 4, 7, 1], "target": 6}
-{"numbers": [4, 7, 5, 8], "target": 0}
-{"numbers": [5, 7, 1, 5, 4, 4], "target": 8}
-{"numbers": [6, 1, 5, 2, 2, 5], "target": 7}
-{"numbers": [3, 4, 4], "target": 5}
-{"numbers": [4, 7, 9, 8, 6], "target": 6}
-{"numbers": [3, 5, 2], "target": 0}
-{"numbers": [7, 2, 4, 4, 2, 6], "target": 7}
-{"numbers": [9, 4, 7], "target": 6}
-{"numbers": [2, 4, 2, 4], "target": 8}
-{"numbers": [6, 3, 1, 6, 9], "target": 7}
-{"numbers": [4, 6, 3, 3], "target": 8}
-{"numbers": [7, 1, 1, 6, 6, 1], "target": 6}
-{"numbers": [1, 6, 4, 7, 3], "target": 7}
-{"numbers": [8, 1, 8, 2, 8], "target": 9}
-{"numbers": [5, 4, 6, 1, 4, 4], "target": 4}
-{"numbers": [2, 8, 9, 1], "target": 4}
-{"numbers": [2, 2, 2, 3, 7], "target": 8}
-{"numbers": [8, 7, 4, 9, 3], "target": 9}
-{"numbers": [5, 1, 1], "target": 5}
-{"numbers": [3, 9, 7], "target": 1}
-{"numbers": [3, 6, 9, 8, 2, 3], "target": 3}
-{"numbers": [8, 9, 3, 4, 8, 1], "target": 9}
-{"numbers": [8, 4, 2, 5], "target": 7}
-{"numbers": [7, 1, 2, 6, 4, 3], "target": 7}
-{"numbers": [2, 3, 5, 8], "target": 8}
-{"numbers": [5, 2, 9, 3, 6], "target": 9}
-{"numbers": [4, 8, 2, 8, 7], "target": 5}
-{"numbers": [5, 6, 8], "target": 9}
-{"numbers": [7, 1, 3, 7, 9], "target": 5}
-{"numbers": [3, 6, 5], "target": 4}
-{"numbers": [7, 8, 1, 3, 2, 4], "target": 7}
-{"numbers": [7, 6, 1, 8, 9, 2], "target": 5}
-{"numbers": [4, 4, 4, 6, 5, 6], "target": 1}
-{"numbers": [1, 1, 2], "target": 2}
-{"numbers": [7, 5, 9, 4, 9, 5], "target": 1}
-{"numbers": [1, 8, 5], "target": 4}
-{"numbers": [1, 6, 2, 6], "target": 9}
-{"numbers": [4, 4, 8, 9, 4, 1], "target": 4}
-{"numbers": [3, 4, 3, 3, 4, 7], "target": 4}
-{"numbers": [5, 1, 1], "target": 7}
-{"numbers": [1, 5, 6, 8, 1, 3], "target": 6}
-{"numbers": [9, 2, 6, 3, 7], "target": 9}
-{"numbers": [1, 4, 4, 6, 1], "target": 4}
-{"numbers": [3, 4, 3], "target": 2}
-{"numbers": [2, 1, 9, 3], "target": 9}
-{"numbers": [3, 2, 2], "target": 3}
-{"numbers": [9, 8, 5, 7, 9, 3], "target": 1}
-{"numbers": [1, 4, 2, 6, 3, 2], "target": 2}
-{"numbers": [2, 2, 3, 5, 5, 6], "target": 5}
-{"numbers": [3, 7, 5], "target": 5}
-{"numbers": [1, 2, 7, 5], "target": 9}
-{"numbers": [7, 3, 3, 2, 5, 2], "target": 6}
-{"numbers": [5, 6, 2, 1], "target": 8}
-{"numbers": [2, 1, 5, 8, 4, 1], "target": 9}
-{"numbers": [7, 5, 6], "target": 4}
-{"numbers": [1, 5, 7], "target": 1}
-{"numbers": [9, 9, 8, 8, 6, 2], "target": 8}
-{"numbers": [8, 2, 4, 3, 9], "target": 2}
-{"numbers": [1, 2, 1, 4, 8, 2], "target": 8}
-{"numbers": [2, 4, 5, 8, 1], "target": 4}
-{"numbers": [2, 7, 5, 9, 6, 3], "target": 8}
-{"numbers": [1, 9, 3, 4, 2, 8], "target": 7}
-{"numbers": [6, 4, 6, 4], "target": 8}
-{"numbers": [5, 7, 2, 7, 1, 2], "target": 6}
-{"numbers": [1, 4, 4, 6, 1], "target": 8}
-{"numbers": [7, 7, 9], "target": 9}
-{"numbers": [8, 3, 8, 3], "target": 6}
-{"numbers": [3, 2, 5, 1, 7], "target": 8}
-{"numbers": [9, 3, 5, 4, 9, 7], "target": 5}
-{"numbers": [3, 7, 3, 3, 8], "target": 2}
-{"numbers": [2, 3, 4, 8, 2, 1], "target": 2}
-{"numbers": [1, 3, 1, 8], "target": 7}
-{"numbers": [3, 3, 3, 4, 6, 2], "target": 3}
-{"numbers": [3, 1, 3, 3], "target": 4}
-{"numbers": [3, 4, 2, 7, 9], "target": 5}
-{"numbers": [4, 1, 4, 7], "target": 2}
-{"numbers": [6, 3, 1], "target": 2}
-{"numbers": [8, 1, 7, 9], "target": 5}
-{"numbers": [3, 8, 4, 4], "target": 3}
-{"numbers": [4, 3, 1, 3], "target": 1}
-{"numbers": [9, 4, 7, 3, 1, 2], "target": 6}
-{"numbers": [4, 9, 7, 4, 4], "target": 2}
-{"numbers": [7, 9, 2, 2, 2], "target": 8}
-{"numbers": [3, 7, 1], "target": 5}
-{"numbers": [2, 6, 2, 5, 2, 2], "target": 7}
-{"numbers": [5, 3, 6, 8, 8], "target": 4}
-{"numbers": [9, 4, 6, 7], "target": 6}
-{"numbers": [4, 7, 4, 1, 5], "target": 5}
-{"numbers": [3, 6, 8, 5, 9, 4], "target": 9}
-{"numbers": [7, 2, 3, 1], "target": 9}
-{"numbers": [6, 9, 8, 7, 2, 2], "target": 2}
-{"numbers": [5, 4, 2, 6, 3], "target": 0}
-{"numbers": [7, 6, 7, 3, 1], "target": 8}
-{"numbers": [4, 7, 4, 3, 7, 5], "target": 8}
-{"numbers": [6, 1, 5, 8, 6], "target": 4}
-{"numbers": [3, 5, 6, 2, 1, 2], "target": 3}
-{"numbers": [5, 6, 8, 7, 6, 4], "target": 2}
-{"numbers": [9, 8, 5, 3], "target": 7}
-{"numbers": [6, 4, 4, 8, 5, 2], "target": 3}
-{"numbers": [5, 4, 6], "target": 5}
-{"numbers": [2, 1, 2], "target": 3}
-{"numbers": [1, 1, 4, 2, 3], "target": 3}
-{"numbers": [9, 5, 5, 6], "target": 5}
-{"numbers": [3, 8, 3, 7, 6, 1], "target": 2}
-{"numbers": [7, 7, 5, 2], "target": 7}
-{"numbers": [5, 1, 3, 6], "target": 1}
-{"numbers": [5, 7, 4, 3, 2, 6], "target": 1}
-{"numbers": [8, 3, 6, 2, 8], "target": 5}
-{"numbers": [7, 3, 1, 5, 6, 6], "target": 0}
-{"numbers": [3, 9, 1, 2], "target": 3}
-{"numbers": [4, 9, 4, 1, 7], "target": 7}
-{"numbers": [8, 1, 1, 7, 1], "target": 0}
-{"numbers": [1, 5, 3], "target": 3}
-{"numbers": [7, 3, 2, 7], "target": 1}
-{"numbers": [4, 9, 7, 8, 7, 5], "target": 4}
-{"numbers": [6, 1, 3, 4, 7, 8], "target": 1}
-{"numbers": [6, 1, 1], "target": 6}
-{"numbers": [2, 7, 6, 6, 8, 4], "target": 9}
-{"numbers": [3, 4, 2, 1], "target": 4}
-{"numbers": [7, 5, 4, 5, 4, 8], "target": 9}
-{"numbers": [9, 1, 4, 8, 7], "target": 1}
-{"numbers": [8, 2, 1, 5, 6], "target": 0}
-{"numbers": [8, 2, 6], "target": 0}
-{"numbers": [3, 7, 3, 6, 6], "target": 7}
-{"numbers": [2, 7, 5, 1, 3], "target": 2}
-{"numbers": [2, 3, 8], "target": 3}
-{"numbers": [4, 9, 2, 6, 3], "target": 6}
-{"numbers": [8, 1, 9], "target": 2}
-{"numbers": [6, 2, 7, 7, 8], "target": 4}
-{"numbers": [5, 1, 5, 9, 2, 7], "target": 9}
-{"numbers": [6, 1, 6, 7, 3], "target": 9}
-{"numbers": [3, 2, 7, 3], "target": 9}
-{"numbers": [1, 1, 1], "target": 1}
-{"numbers": [2, 2, 1], "target": 1}
-{"numbers": [4, 3, 4, 2], "target": 7}
-{"numbers": [3, 1, 4, 9, 1], "target": 8}
-{"numbers": [9, 1, 4, 3, 6, 1], "target": 2}
-{"numbers": [4, 5, 3, 7], "target": 9}
-{"numbers": [2, 3, 5], "target": 6}
-{"numbers": [1, 9, 2, 9], "target": 1}
-{"numbers": [1, 2, 8, 1], "target": 4}
-{"numbers": [9, 5, 8, 3, 9], "target": 8}
-{"numbers": [6, 5, 4, 1, 4], "target": 4}
-{"numbers": [6, 7, 8, 6, 6], "target": 7}
-{"numbers": [5, 2, 3, 3, 9], "target": 0}
-{"numbers": [7, 2, 7], "target": 2}
-{"numbers": [3, 9, 1, 4], "target": 9}
-{"numbers": [6, 5, 1, 9], "target": 9}
-{"numbers": [5, 2, 7, 2], "target": 2}
-{"numbers": [9, 5, 5, 6, 8, 6], "target": 1}
-{"numbers": [1, 5, 2, 1], "target": 9}
-{"numbers": [3, 6, 1, 5], "target": 3}
-{"numbers": [7, 4, 1, 7, 6, 4], "target": 5}
-{"numbers": [1, 5, 2], "target": 8}
-{"numbers": [7, 9, 2, 7, 4], "target": 7}
-{"numbers": [1, 7, 4, 4], "target": 0}
-{"numbers": [9, 3, 5], "target": 7}
-{"numbers": [4, 8, 6, 8, 1, 6], "target": 3}
-{"numbers": [6, 1, 5], "target": 2}
-{"numbers": [3, 1, 3, 1, 7], "target": 9}
-{"numbers": [3, 2, 2, 4], "target": 5}
-{"numbers": [3, 6, 4], "target": 7}
-{"numbers": [7, 9, 7, 9, 2], "target": 6}
-{"numbers": [1, 9, 9, 1, 9, 8], "target": 1}
-{"numbers": [8, 6, 8, 3, 4, 3], "target": 2}
-{"numbers": [9, 1, 6], "target": 2}
-{"numbers": [7, 9, 4, 2, 9], "target": 9}
-{"numbers": [1, 5, 1, 4, 4, 5], "target": 0}
-{"numbers": [8, 6, 2], "target": 4}
-{"numbers": [1, 6, 5], "target": 0}
-{"numbers": [8, 4, 2], "target": 6}
-{"numbers": [5, 2, 6, 1], "target": 4}
-{"numbers": [6, 6, 8, 8], "target": 0}
-{"numbers": [4, 6, 6], "target": 8}
-{"numbers": [1, 1, 3, 5], "target": 4}
-{"numbers": [7, 7, 9, 6, 6, 2], "target": 1}
-{"numbers": [7, 8, 7, 1], "target": 5}
-{"numbers": [7, 3, 7, 7, 9], "target": 9}
-{"numbers": [4, 2, 7], "target": 1}
-{"numbers": [5, 2, 2, 1], "target": 6}
-{"numbers": [8, 5, 7, 2, 2], "target": 4}
-{"numbers": [7, 7, 1, 9, 9], "target": 1}
-{"numbers": [4, 6, 7], "target": 9}
-{"numbers": [3, 8, 4, 4, 4], "target": 7}
-{"numbers": [3, 1, 4, 4, 9], "target": 5}
-{"numbers": [2, 1, 1, 6], "target": 4}
-{"numbers": [7, 7, 9, 6, 5, 7], "target": 9}
-{"numbers": [7, 5, 5, 6, 5], "target": 8}
-{"numbers": [4, 1, 9, 3], "target": 3}
-{"numbers": [9, 6, 4, 2], "target": 5}
-{"numbers": [3, 1, 5], "target": 9}
-{"numbers": [8, 2, 3, 9, 3, 4], "target": 9}
-{"numbers": [2, 1, 2, 5, 3], "target": 7}
-{"numbers": [1, 4, 6, 5, 9, 4], "target": 9}
-{"numbers": [1, 3, 3, 8], "target": 7}
-{"numbers": [7, 5, 5, 3, 1], "target": 7}
-{"numbers": [9, 7, 1, 2], "target": 5}
-{"numbers": [3, 1, 6, 4, 5], "target": 9}
-{"numbers": [9, 3, 3, 2, 6, 1], "target": 2}
-{"numbers": [4, 7, 2, 9, 2], "target": 6}
-{"numbers": [6, 5, 6, 6], "target": 1}
-{"numbers": [8, 8, 2, 4], "target": 6}
-{"numbers": [9, 5, 5], "target": 1}
-{"numbers": [9, 1, 6, 6, 6], "target": 4}
-{"numbers": [7, 8, 3], "target": 2}
-{"numbers": [6, 1, 6, 7, 2, 8], "target": 4}
-{"numbers": [6, 5, 2, 4, 1], "target": 4}
-{"numbers": [9, 7, 8, 7, 5], "target": 2}
-{"numbers": [3, 2, 2, 1, 4, 3], "target": 7}
-{"numbers": [3, 7, 1], "target": 3}
-{"numbers": [2, 6, 8, 8, 3, 6], "target": 5}
-{"numbers": [3, 7, 2, 4], "target": 2}
-{"numbers": [2, 2, 2], "target": 6}
-{"numbers": [3, 6, 5, 2, 9, 5], "target": 2}
-{"numbers": [8, 9, 4, 9, 8], "target": 4}
-{"numbers": [4, 4, 2, 4], "target": 2}
-{"numbers": [5, 2, 2, 1, 8, 1], "target": 3}
-{"numbers": [7, 4, 8, 4], "target": 7}
-{"numbers": [5, 4, 5, 5, 5, 6], "target": 8}
-{"numbers": [4, 6, 7, 3], "target": 6}
-{"numbers": [5, 3, 9, 2, 2], "target": 7}
-{"numbers": [2, 2, 9, 4, 3, 5], "target": 1}
-{"numbers": [6, 4, 5, 2, 3], "target": 8}
-{"numbers": [4, 8, 9, 6, 5], "target": 6}
-{"numbers": [5, 2, 2, 1, 8], "target": 2}
-{"numbers": [8, 4, 1, 6, 6, 3], "target": 2}
-{"numbers": [5, 1, 5, 8, 3], "target": 6}
-{"numbers": [4, 6, 6], "target": 4}
-{"numbers": [8, 9, 2, 2], "target": 5}
-{"numbers": [1, 9, 6, 6, 3, 2], "target": 5}
-{"numbers": [9, 5, 5], "target": 9}
-{"numbers": [3, 1, 1, 2, 6, 8], "target": 5}
-{"numbers": [8, 3, 1, 6, 8], "target": 8}
-{"numbers": [2, 4, 4, 1], "target": 9}
-{"numbers": [5, 8, 9, 3, 1], "target": 6}
-{"numbers": [4, 7, 2, 2, 4, 4], "target": 5}
-{"numbers": [9, 1, 8, 6, 3], "target": 7}
-{"numbers": [5, 4, 6, 4, 2, 9], "target": 0}
-{"numbers": [1, 7, 4, 5, 7], "target": 2}
-{"numbers": [3, 7, 7, 5, 9], "target": 1}
-{"numbers": [2, 6, 3, 4], "target": 3}
-{"numbers": [8, 6, 7], "target": 9}
-{"numbers": [7, 1, 9, 6, 5, 6], "target": 2}
-{"numbers": [2, 8, 7, 1], "target": 2}
-{"numbers": [6, 1, 4], "target": 3}
-{"numbers": [3, 5, 7, 4, 8, 3], "target": 0}
-{"numbers": [7, 1, 1, 4], "target": 1}
-{"numbers": [6, 9, 1], "target": 4}
-{"numbers": [6, 6, 4, 1], "target": 9}
-{"numbers": [1, 2, 4], "target": 7}
-{"numbers": [4, 6, 4, 1], "target": 5}
-{"numbers": [6, 4, 8, 4, 6, 4], "target": 8}
-{"numbers": [6, 7, 1, 2], "target": 2}
-{"numbers": [4, 4, 9, 7, 2], "target": 6}
-{"numbers": [3, 1, 7], "target": 9}
-{"numbers": [3, 2, 5, 9, 8], "target": 9}
-{"numbers": [1, 8, 4, 2, 1, 8], "target": 2}
-{"numbers": [6, 1, 7, 5, 1, 3], "target": 7}
-{"numbers": [1, 6, 1, 5, 5, 2], "target": 4}
-{"numbers": [3, 3, 4, 4, 1, 4], "target": 3}
-{"numbers": [3, 1, 8], "target": 4}
-{"numbers": [9, 6, 5, 8], "target": 2}
-{"numbers": [8, 1, 5, 4, 2, 8], "target": 0}
-{"numbers": [9, 2, 2, 8, 6, 1], "target": 6}
-{"numbers": [1, 7, 7, 1, 3], "target": 5}
-{"numbers": [4, 2, 9, 8, 7, 7], "target": 5}
-{"numbers": [1, 2, 4, 1, 3, 2], "target": 1}
-{"numbers": [1, 8, 3, 5], "target": 9}
-{"numbers": [9, 8, 7, 4, 1, 8], "target": 5}
-{"numbers": [7, 6, 1, 8, 8, 4], "target": 6}
-{"numbers": [8, 4, 9, 4], "target": 7}
-{"numbers": [9, 7, 5, 7, 5], "target": 9}
-{"numbers": [8, 3, 3, 7, 8], "target": 9}
-{"numbers": [6, 3, 1, 6, 3], "target": 7}
-{"numbers": [9, 5, 8, 2], "target": 2}
-{"numbers": [2, 1, 3], "target": 4}
-{"numbers": [7, 1, 4, 8, 5], "target": 1}
-{"numbers": [6, 2, 6, 3, 2, 3], "target": 2}
-{"numbers": [2, 2, 6, 6, 9, 5], "target": 8}
-{"numbers": [6, 6, 3, 1, 6], "target": 8}
-{"numbers": [4, 4, 7, 8, 3, 2], "target": 8}
-{"numbers": [8, 5, 9, 7, 4, 4], "target": 3}
-{"numbers": [5, 7, 7, 7], "target": 2}
-{"numbers": [1, 1, 7, 2], "target": 3}
-{"numbers": [8, 9, 7, 2, 1], "target": 9}
-{"numbers": [4, 1, 1, 4], "target": 0}
-{"numbers": [1, 4, 1], "target": 6}
-{"numbers": [9, 5, 9, 5, 6, 1], "target": 5}
-{"numbers": [5, 5, 4], "target": 4}
-{"numbers": [5, 2, 8, 5], "target": 0}
-{"numbers": [5, 8, 5, 1, 8, 3], "target": 4}
-{"numbers": [6, 1, 4, 1, 3, 4], "target": 3}
-{"numbers": [5, 2, 2, 5, 4], "target": 8}
-{"numbers": [2, 2, 4], "target": 4}
-{"numbers": [3, 6, 7, 3, 7], "target": 0}
-{"numbers": [1, 2, 7], "target": 4}
-{"numbers": [2, 8, 1, 3, 8], "target": 0}
-{"numbers": [2, 7, 7, 3, 4], "target": 5}
-{"numbers": [9, 4, 7, 8], "target": 2}
-{"numbers": [4, 1, 4], "target": 7}
-{"numbers": [5, 9, 7, 1], "target": 8}
-{"numbers": [8, 8, 2, 1, 7], "target": 4}
-{"numbers": [1, 1, 7, 6, 5, 2], "target": 4}
-{"numbers": [3, 6, 4], "target": 1}
-{"numbers": [4, 2, 3, 8, 6, 6], "target": 5}
-{"numbers": [8, 9, 3], "target": 4}
-{"numbers": [6, 3, 3, 8, 8], "target": 4}
-{"numbers": [2, 7, 8, 1, 9], "target": 7}
-{"numbers": [9, 3, 3, 4, 4], "target": 9}
-{"numbers": [7, 8, 6, 2, 9], "target": 0}
-{"numbers": [1, 5, 8], "target": 2}
-{"numbers": [2, 9, 4, 2, 8, 1], "target": 8}
-{"numbers": [7, 5, 2, 3, 7], "target": 0}
-{"numbers": [4, 2, 7], "target": 5}
-{"numbers": [9, 1, 7], "target": 1}
-{"numbers": [1, 5, 7, 2, 5], "target": 4}
-{"numbers": [5, 1, 9], "target": 5}
-{"numbers": [7, 1, 3, 7], "target": 2}
-{"numbers": [6, 6, 3, 8], "target": 5}
-{"numbers": [9, 1, 4], "target": 4}
-{"numbers": [5, 2, 4], "target": 3}
-{"numbers": [1, 1, 6, 6, 9], "target": 9}
-{"numbers": [9, 2, 2], "target": 9}
-{"numbers": [7, 2, 6, 2, 3], "target": 2}
-{"numbers": [5, 4, 2, 3, 1, 1], "target": 2}
-{"numbers": [2, 1, 2, 5], "target": 8}
-{"numbers": [3, 6, 5, 1, 8, 8], "target": 5}
-{"numbers": [1, 8, 7, 5, 1], "target": 6}
-{"numbers": [3, 8, 8, 5], "target": 2}
-{"numbers": [5, 8, 6, 4, 7], "target": 0}
-{"numbers": [3, 8, 6, 9], "target": 8}
-{"numbers": [4, 1, 5, 6, 2], "target": 8}
-{"numbers": [2, 4, 5, 1, 9], "target": 9}
-{"numbers": [9, 5, 1, 1, 5], "target": 1}
-{"numbers": [5, 2, 4, 6], "target": 9}
-{"numbers": [4, 6, 5], "target": 7}
-{"numbers": [2, 8, 9, 4, 5, 7], "target": 7}
-{"numbers": [7, 5, 4, 4], "target": 6}
-{"numbers": [2, 3, 3], "target": 4}
-{"numbers": [9, 9, 4], "target": 4}
-{"numbers": [3, 9, 6, 1, 4], "target": 5}
-{"numbers": [2, 4, 1, 6, 1], "target": 0}
-{"numbers": [8, 9, 4], "target": 3}
-{"numbers": [4, 1, 5, 1], "target": 7}
-{"numbers": [6, 4, 8, 1, 4, 7], "target": 6}
-{"numbers": [5, 4, 4], "target": 5}
-{"numbers": [6, 7, 2, 7, 4, 7], "target": 5}
-{"numbers": [6, 7, 8, 9, 1, 5], "target": 2}
-{"numbers": [1, 3, 4, 2, 4, 6], "target": 6}
-{"numbers": [6, 4, 3, 3, 2, 9], "target": 9}
-{"numbers": [2, 3, 2, 2], "target": 5}
-{"numbers": [2, 5, 9, 3, 7], "target": 2}
-{"numbers": [3, 4, 2, 3, 1, 4], "target": 9}
-{"numbers": [8, 7, 9, 1], "target": 9}
-{"numbers": [9, 2, 4, 5, 2], "target": 0}
-{"numbers": [2, 7, 1], "target": 8}
-{"numbers": [6, 3, 6, 2, 8, 8], "target": 1}
-{"numbers": [6, 4, 8, 5, 4], "target": 9}
-{"numbers": [6, 5, 4, 1, 4], "target": 2}
-{"numbers": [5, 5, 6, 3, 3], "target": 0}
-{"numbers": [7, 1, 9, 6], "target": 9}
-{"numbers": [3, 2, 4, 3, 5, 4], "target": 9}
-{"numbers": [3, 1, 2, 8, 6, 6], "target": 4}
-{"numbers": [9, 5, 4, 4, 7], "target": 5}
-{"numbers": [8, 2, 8, 9, 2], "target": 5}
-{"numbers": [8, 7, 8], "target": 9}
-{"numbers": [6, 3, 1, 8, 1], "target": 1}
-{"numbers": [6, 6, 5], "target": 5}
-{"numbers": [5, 7, 2, 3], "target": 3}
-{"numbers": [2, 2, 6, 6], "target": 8}
-{"numbers": [6, 5, 5, 1, 9], "target": 6}
-{"numbers": [7, 3, 1, 3, 6, 6], "target": 2}
-{"numbers": [5, 7, 5, 2, 9], "target": 0}
-{"numbers": [9, 4, 6, 5, 8, 8], "target": 2}
-{"numbers": [1, 1, 5, 9, 6], "target": 4}
-{"numbers": [4, 7, 1, 3], "target": 1}
-{"numbers": [1, 6, 2, 7, 9], "target": 5}
-{"numbers": [3, 2, 7, 2, 8], "target": 6}
-{"numbers": [5, 9, 7, 3, 3, 1], "target": 4}
-{"numbers": [3, 4, 4, 2, 3], "target": 0}
-{"numbers": [5, 3, 6, 4, 4, 1], "target": 9}
-{"numbers": [6, 1, 2, 4, 4, 4], "target": 9}
-{"numbers": [6, 1, 2, 2, 7], "target": 4}
-{"numbers": [4, 6, 5], "target": 3}
-{"numbers": [2, 4, 5, 8], "target": 9}
-{"numbers": [2, 7, 2, 2, 1, 6], "target": 6}
-{"numbers": [3, 3, 5, 2], "target": 9}
-{"numbers": [3, 9, 7], "target": 5}
-{"numbers": [3, 1, 1, 7, 6, 2], "target": 6}
-{"numbers": [3, 5, 8, 3, 6], "target": 7}
-{"numbers": [9, 7, 2, 8, 3, 9], "target": 0}
-{"numbers": [9, 3, 7, 7, 3, 9], "target": 6}
-{"numbers": [8, 3, 3, 7], "target": 9}
-{"numbers": [9, 2, 4, 8], "target": 7}
-{"numbers": [5, 4, 1], "target": 0}
-{"numbers": [8, 1, 6], "target": 1}
-{"numbers": [6, 1, 5, 1], "target": 1}
-{"numbers": [6, 6, 3, 9, 5, 9], "target": 2}
-{"numbers": [2, 4, 9, 3, 9], "target": 5}
-{"numbers": [1, 2, 4, 2, 2], "target": 3}
-{"numbers": [8, 7, 2, 8, 8], "target": 3}
-{"numbers": [5, 5, 5, 4, 6], "target": 3}
-{"numbers": [2, 2, 3, 4], "target": 3}
-{"numbers": [9, 8, 1, 4], "target": 6}
-{"numbers": [6, 9, 6], "target": 9}
-{"numbers": [1, 3, 4, 3, 9], "target": 6}
-{"numbers": [8, 5, 9], "target": 6}
-{"numbers": [4, 3, 2, 1], "target": 2}
-{"numbers": [5, 9, 6, 4], "target": 4}
-{"numbers": [2, 9, 7, 4, 1], "target": 5}
-{"numbers": [8, 1, 8, 6, 8], "target": 1}
-{"numbers": [3, 2, 7], "target": 6}
-{"numbers": [6, 6, 5, 2, 2], "target": 1}
-{"numbers": [7, 1, 1, 5, 1], "target": 3}
-{"numbers": [1, 5, 8, 4, 1], "target": 5}
-{"numbers": [2, 7, 4, 7, 2], "target": 8}
-{"numbers": [3, 4, 6], "target": 5}
-{"numbers": [2, 2, 3, 4, 2, 5], "target": 4}
-{"numbers": [3, 4, 2, 1, 4], "target": 0}
-{"numbers": [2, 2, 8], "target": 8}
-{"numbers": [9, 3, 8, 4, 4], "target": 4}
-{"numbers": [4, 9, 2, 2, 4, 1], "target": 8}
-{"numbers": [3, 4, 1, 1], "target": 9}
-{"numbers": [3, 2, 7, 9, 9], "target": 2}
-{"numbers": [6, 9, 4, 7, 8, 7], "target": 9}
-{"numbers": [1, 9, 6, 1, 5, 6], "target": 0}
-{"numbers": [6, 5, 6, 2, 2], "target": 7}
-{"numbers": [7, 6, 9, 3], "target": 1}
-{"numbers": [1, 7, 7, 5, 3], "target": 7}
-{"numbers": [6, 8, 4, 5], "target": 7}
-{"numbers": [1, 6, 2, 3, 9, 7], "target": 8}
-{"numbers": [3, 5, 2, 3, 7, 2], "target": 0}
-{"numbers": [6, 4, 3, 1], "target": 6}
-{"numbers": [3, 2, 8, 2], "target": 5}
-{"numbers": [6, 7, 2, 8, 9], "target": 2}
-{"numbers": [8, 9, 6, 9, 3, 5], "target": 0}
-{"numbers": [8, 5, 4, 6, 7], "target": 8}
-{"numbers": [9, 3, 6, 1], "target": 5}
-{"numbers": [5, 3, 1, 1], "target": 8}
-{"numbers": [8, 8, 8, 3], "target": 5}
-{"numbers": [8, 1, 7], "target": 0}
-{"numbers": [6, 8, 1, 4, 2, 1], "target": 6}
-{"numbers": [4, 6, 2], "target": 8}
-{"numbers": [1, 5, 8, 6, 1], "target": 9}
-{"numbers": [2, 3, 3, 6], "target": 4}
-{"numbers": [2, 5, 8, 2], "target": 1}
-{"numbers": [1, 2, 7, 3, 8, 7], "target": 6}
-{"numbers": [4, 4, 3, 8, 9, 1], "target": 5}
-{"numbers": [6, 9, 2, 5, 3], "target": 1}
-{"numbers": [7, 1, 6, 8, 9], "target": 3}
-{"numbers": [9, 8, 1], "target": 0}
-{"numbers": [8, 7, 9], "target": 6}
-{"numbers": [6, 6, 6, 6, 8, 1], "target": 9}
-{"numbers": [7, 9, 4, 3, 3], "target": 6}
-{"numbers": [2, 2, 3, 5, 3, 4], "target": 7}
-{"numbers": [3, 7, 4, 1], "target": 7}
-{"numbers": [9, 5, 7, 7], "target": 4}
-{"numbers": [3, 1, 8, 3], "target": 3}
-{"numbers": [2, 8, 1, 6, 9, 5], "target": 1}
-{"numbers": [5, 5, 2, 4, 8], "target": 2}
-{"numbers": [5, 5, 5], "target": 5}
-{"numbers": [4, 5, 1, 6], "target": 6}
-{"numbers": [1, 4, 3], "target": 6}
-{"numbers": [9, 2, 7], "target": 4}
-{"numbers": [1, 8, 8, 2], "target": 3}
-{"numbers": [3, 5, 3, 1, 1], "target": 9}
-{"numbers": [2, 2, 7, 8, 2, 7], "target": 4}
-{"numbers": [8, 1, 6], "target": 3}
-{"numbers": [4, 3, 7, 9, 7], "target": 2}
-{"numbers": [1, 9, 3, 4, 2], "target": 5}
-{"numbers": [5, 3, 5, 6, 1], "target": 6}
-{"numbers": [4, 2, 1], "target": 5}
-{"numbers": [4, 7, 3, 6, 6, 3], "target": 9}
-{"numbers": [5, 4, 3, 7], "target": 1}
-{"numbers": [2, 6, 2], "target": 6}
-{"numbers": [8, 1, 1, 6], "target": 2}
-{"numbers": [1, 1, 1, 5, 8, 6], "target": 4}
-{"numbers": [6, 8, 5, 4], "target": 3}
-{"numbers": [2, 2, 4, 2, 7], "target": 5}
-{"numbers": [8, 2, 5, 3], "target": 2}
-{"numbers": [7, 3, 8, 5], "target": 9}
-{"numbers": [2, 2, 6, 4, 5, 8], "target": 1}
-{"numbers": [4, 1, 5, 3], "target": 7}
-{"numbers": [9, 5, 8, 7, 9], "target": 4}
-{"numbers": [4, 9, 6, 1, 2, 1], "target": 9}
-{"numbers": [3, 8, 5], "target": 6}
-{"numbers": [9, 3, 5, 5, 1], "target": 3}
-{"numbers": [7, 4, 5, 7], "target": 5}
-{"numbers": [3, 6, 2, 1, 1], "target": 7}
-{"numbers": [8, 4, 5, 2, 7, 1], "target": 9}
-{"numbers": [3, 9, 2, 9, 8], "target": 9}
-{"numbers": [7, 5, 6, 2], "target": 8}
-{"numbers": [6, 8, 2, 2], "target": 2}
-{"numbers": [6, 7, 7, 9, 5], "target": 2}
-{"numbers": [3, 5, 3, 2, 6, 9], "target": 6}
-{"numbers": [8, 1, 2, 5, 9], "target": 5}
-{"numbers": [5, 4, 1], "target": 8}
-{"numbers": [1, 3, 3], "target": 7}
-{"numbers": [4, 1, 8, 5, 5, 4], "target": 7}
-{"numbers": [1, 9, 2], "target": 6}
-{"numbers": [3, 8, 1, 2], "target": 8}
-{"numbers": [4, 9, 1, 9], "target": 5}
-{"numbers": [8, 2, 7, 7, 5, 8], "target": 9}
-{"numbers": [2, 1, 5], "target": 4}
-{"numbers": [7, 1, 7, 9], "target": 4}
-{"numbers": [1, 2, 6], "target": 5}
-{"numbers": [8, 7, 2], "target": 1}
-{"numbers": [8, 2, 9, 8], "target": 7}
-{"numbers": [5, 8, 6, 1, 1, 7], "target": 4}
-{"numbers": [6, 8, 8, 4, 4], "target": 6}
-{"numbers": [6, 5, 4, 3], "target": 0}
-{"numbers": [1, 5, 2, 2, 4], "target": 8}
-{"numbers": [5, 4, 2, 5, 1, 4], "target": 5}
-{"numbers": [2, 3, 1, 4], "target": 0}
-{"numbers": [4, 4, 1], "target": 9}
-{"numbers": [9, 2, 4, 7, 6, 4], "target": 6}
-{"numbers": [2, 7, 3, 7, 7, 5], "target": 3}
-{"numbers": [8, 5, 9, 6, 1, 5], "target": 6}
-{"numbers": [5, 7, 4, 9, 7], "target": 6}
-{"numbers": [6, 3, 2, 1, 7], "target": 1}
-{"numbers": [9, 1, 9, 3], "target": 2}
-{"numbers": [8, 7, 8, 4, 6], "target": 5}
-{"numbers": [1, 9, 7, 3, 6], "target": 6}
-{"numbers": [2, 4, 6], "target": 4}
-{"numbers": [6, 4, 6, 4], "target": 0}
-{"numbers": [4, 9, 7, 6, 5, 8], "target": 9}
-{"numbers": [5, 5, 7, 9, 2, 2], "target": 2}
-{"numbers": [8, 7, 5, 5], "target": 1}
-{"numbers": [9, 4, 3, 9, 4, 8], "target": 5}
-{"numbers": [9, 4, 2, 6], "target": 9}
-{"numbers": [6, 2, 9, 1], "target": 2}
-{"numbers": [2, 8, 1], "target": 7}
-{"numbers": [3, 9, 9, 8, 8], "target": 3}
-{"numbers": [6, 8, 7], "target": 7}
-{"numbers": [3, 9, 4, 7], "target": 9}
-{"numbers": [5, 8, 6, 1], "target": 2}
-{"numbers": [8, 7, 3, 9, 5, 1], "target": 1}
-{"numbers": [1, 7, 6, 7, 4, 1], "target": 0}
-{"numbers": [4, 5, 5, 9, 9, 5], "target": 9}
-{"numbers": [3, 3, 3], "target": 3}
-{"numbers": [8, 8, 7], "target": 7}
-{"numbers": [5, 9, 2], "target": 6}
-{"numbers": [1, 8, 2], "target": 5}
-{"numbers": [8, 1, 1, 8, 9], "target": 7}
-{"numbers": [3, 4, 5, 2], "target": 6}
-{"numbers": [8, 1, 2, 7, 3], "target": 7}
-{"numbers": [4, 2, 2, 2], "target": 6}
-{"numbers": [5, 8, 7, 3, 1, 1], "target": 3}
-{"numbers": [7, 8, 6, 5], "target": 4}
-{"numbers": [7, 4, 8, 9, 6, 7], "target": 7}
-{"numbers": [4, 1, 5, 7], "target": 9}
-{"numbers": [1, 4, 5, 3], "target": 3}
-{"numbers": [2, 8, 3, 6], "target": 3}
-{"numbers": [6, 3, 3], "target": 6}
-{"numbers": [3, 1, 6, 9, 7, 9], "target": 5}
-{"numbers": [5, 2, 4, 5, 6, 1], "target": 1}
-{"numbers": [1, 4, 1, 7, 2], "target": 9}
-{"numbers": [7, 4, 7, 4, 8], "target": 8}
-{"numbers": [8, 4, 2, 2, 4], "target": 4}
-{"numbers": [2, 1, 3, 7, 5, 5], "target": 1}
-{"numbers": [7, 4, 5, 2, 4, 3], "target": 7}
-{"numbers": [2, 4, 9], "target": 3}
-{"numbers": [7, 6, 7], "target": 8}
-{"numbers": [7, 5, 7, 9, 5, 8], "target": 7}
-{"numbers": [5, 2, 3, 7], "target": 7}
-{"numbers": [3, 5, 1, 6, 9], "target": 8}
-{"numbers": [3, 4, 2, 3, 4, 7], "target": 9}
-{"numbers": [9, 1, 9, 8], "target": 9}
-{"numbers": [7, 4, 4, 1], "target": 6}
-{"numbers": [1, 1, 4, 6], "target": 2}
-{"numbers": [8, 4, 3, 2], "target": 9}
-{"numbers": [7, 6, 7, 7, 8, 6], "target": 3}
-{"numbers": [1, 2, 1], "target": 4}
-{"numbers": [1, 7, 9, 9], "target": 6}
-{"numbers": [3, 6, 9, 3, 9, 6], "target": 0}
-{"numbers": [6, 1, 7, 3, 6, 4], "target": 1}
-{"numbers": [4, 1, 7, 1, 7, 4], "target": 0}
-{"numbers": [3, 9, 8, 5], "target": 9}
-{"numbers": [2, 9, 2, 8, 3, 2], "target": 6}
-{"numbers": [3, 5, 3, 3, 2], "target": 6}
-{"numbers": [6, 4, 8, 1, 2], "target": 3}
-{"numbers": [4, 7, 6, 6, 4], "target": 7}
-{"numbers": [5, 1, 7, 3, 3, 6], "target": 3}
-{"numbers": [1, 5, 9, 6, 3, 2], "target": 8}
-{"numbers": [7, 7, 2, 4], "target": 2}
-{"numbers": [2, 1, 3, 5, 8], "target": 7}
-{"numbers": [5, 3, 5, 9, 2], "target": 8}
-{"numbers": [3, 5, 6, 4, 2], "target": 6}
-{"numbers": [7, 4, 1, 6, 4], "target": 6}
-{"numbers": [3, 9, 7, 4], "target": 5}
-{"numbers": [2, 2, 3, 6], "target": 9}
-{"numbers": [4, 7, 3, 5, 2], "target": 1}
-{"numbers": [2, 2, 7], "target": 7}
-{"numbers": [8, 6, 3, 9, 9, 8], "target": 9}
-{"numbers": [3, 2, 7, 4, 3], "target": 7}
-{"numbers": [5, 9, 3, 7, 5, 6], "target": 1}
-{"numbers": [6, 5, 9, 9], "target": 1}
-{"numbers": [3, 3, 6, 4, 6], "target": 4}
-{"numbers": [1, 8, 1, 4, 1], "target": 3}
-{"numbers": [3, 8, 9, 1, 9, 8], "target": 2}
-{"numbers": [8, 2, 7, 8, 9], "target": 4}
-{"numbers": [4, 2, 1, 1], "target": 6}
-{"numbers": [3, 9, 4, 5, 4], "target": 1}
-{"numbers": [5, 8, 7, 3, 8, 7], "target": 6}
-{"numbers": [1, 2, 5, 6, 2], "target": 0}
-{"numbers": [5, 6, 2, 6, 9, 4], "target": 2}
-{"numbers": [4, 7, 5, 6], "target": 8}
-{"numbers": [5, 9, 3], "target": 1}
-{"numbers": [5, 6, 9, 8, 8, 3], "target": 7}
-{"numbers": [7, 7, 6, 1, 2, 7], "target": 2}
-{"numbers": [5, 7, 1, 4, 8], "target": 9}
-{"numbers": [5, 8, 3, 3, 6], "target": 9}
-{"numbers": [2, 7, 3, 3, 4, 4], "target": 5}
-{"numbers": [1, 5, 2], "target": 6}
-{"numbers": [2, 8, 5, 1, 7], "target": 7}
-{"numbers": [1, 8, 8, 7, 9, 6], "target": 9}
-{"numbers": [3, 2, 1, 8, 9], "target": 7}
-{"numbers": [7, 5, 4, 6], "target": 4}
-{"numbers": [7, 5, 3], "target": 9}
-{"numbers": [9, 2, 3], "target": 8}
-{"numbers": [3, 2, 5, 3, 3], "target": 4}
-{"numbers": [1, 4, 8, 4], "target": 7}
-{"numbers": [8, 5, 7, 2, 8, 5], "target": 9}
-{"numbers": [6, 1, 6], "target": 1}
-{"numbers": [7, 8, 5, 6, 8], "target": 6}
-{"numbers": [4, 1, 5, 6], "target": 4}
-{"numbers": [1, 3, 1], "target": 3}
-{"numbers": [6, 2, 1, 8, 9, 7], "target": 1}
-{"numbers": [6, 5, 5, 8, 5, 9], "target": 8}
-{"numbers": [3, 2, 5, 8, 4], "target": 0}
-{"numbers": [8, 7, 9], "target": 8}
-{"numbers": [4, 3, 3, 8, 5], "target": 7}
-{"numbers": [5, 6, 2], "target": 1}
-{"numbers": [1, 4, 1], "target": 4}
-{"numbers": [8, 2, 4, 9], "target": 5}
-{"numbers": [8, 3, 9, 9, 3, 4], "target": 0}
-{"numbers": [9, 3, 2, 1, 1, 5], "target": 1}
-{"numbers": [9, 7, 3, 1, 9], "target": 7}
-{"numbers": [2, 1, 8, 9, 3], "target": 5}
-{"numbers": [6, 6, 3, 5, 4], "target": 6}
-{"numbers": [2, 8, 2, 1], "target": 9}
-{"numbers": [6, 2, 5, 5, 6, 6], "target": 6}
-{"numbers": [5, 1, 1, 1, 1, 8], "target": 5}
-{"numbers": [1, 6, 4, 5], "target": 8}
-{"numbers": [5, 3, 6], "target": 8}
-{"numbers": [8, 4, 1, 1], "target": 6}
-{"numbers": [7, 9, 1, 3], "target": 0}
-{"numbers": [6, 7, 4], "target": 5}
-{"numbers": [1, 6, 4, 6, 2, 1], "target": 6}
-{"numbers": [4, 3, 8], "target": 1}
-{"numbers": [1, 1, 8], "target": 8}
-{"numbers": [3, 5, 5, 2], "target": 5}
-{"numbers": [3, 4, 8, 1], "target": 0}
-{"numbers": [1, 5, 1, 3, 4], "target": 4}
-{"numbers": [3, 3, 1, 5], "target": 2}
-{"numbers": [3, 6, 1, 1], "target": 5}
-{"numbers": [6, 7, 4, 6, 5], "target": 2}
-{"numbers": [8, 9, 3, 4, 9, 9], "target": 6}
-{"numbers": [2, 9, 4, 4, 3, 9], "target": 9}
-{"numbers": [9, 2, 9, 7], "target": 9}
-{"numbers": [8, 4, 1, 5, 1, 7], "target": 8}
-{"numbers": [5, 3, 8, 6], "target": 0}
-{"numbers": [6, 5, 1, 2], "target": 2}
-{"numbers": [6, 8, 7, 2], "target": 7}
-{"numbers": [2, 1, 2, 2, 1, 7], "target": 9}
-{"numbers": [6, 6, 6, 2], "target": 4}
-{"numbers": [1, 8, 9, 3, 5, 7], "target": 7}
-{"numbers": [2, 6, 8, 4, 6], "target": 2}
-{"numbers": [3, 3, 5, 3, 7], "target": 5}
-{"numbers": [6, 8, 3, 9, 5], "target": 5}
-{"numbers": [5, 1, 1, 7], "target": 0}
-{"numbers": [8, 6, 8], "target": 6}
-{"numbers": [1, 2, 4, 5, 2, 5], "target": 3}
-{"numbers": [4, 4, 9, 9], "target": 8}
-{"numbers": [8, 7, 5, 6, 9], "target": 7}
-{"numbers": [6, 3, 3, 6, 7, 8], "target": 5}
-{"numbers": [1, 9, 3, 2, 8, 2], "target": 5}
-{"numbers": [4, 9, 7, 3, 9, 8], "target": 8}
-{"numbers": [2, 1, 4, 5, 7, 9], "target": 6}
-{"numbers": [7, 1, 9], "target": 3}
-{"numbers": [6, 4, 2, 5], "target": 5}
-{"numbers": [5, 2, 6, 1, 8], "target": 4}
-{"numbers": [7, 5, 2], "target": 0}
-{"numbers": [9, 5, 3, 3, 3, 6], "target": 7}
-{"numbers": [3, 5, 2, 5, 4], "target": 5}
-{"numbers": [2, 1, 3, 4, 6, 1], "target": 7}
-{"numbers": [8, 1, 3, 5, 8, 6], "target": 3}
-{"numbers": [6, 2, 2, 7, 2], "target": 3}
-{"numbers": [7, 7, 6, 6, 1, 2], "target": 9}
-{"numbers": [6, 8, 3, 8], "target": 9}
-{"numbers": [9, 9, 5], "target": 5}
-{"numbers": [7, 4, 3, 3, 7], "target": 4}
-{"numbers": [4, 2, 6, 8], "target": 8}
-{"numbers": [8, 8, 8, 8], "target": 0}
-{"numbers": [4, 6, 7, 7, 2], "target": 0}
-{"numbers": [1, 8, 8, 8], "target": 9}
-{"numbers": [5, 4, 5], "target": 6}
-{"numbers": [1, 9, 6, 5], "target": 7}
-{"numbers": [1, 8, 8, 1, 8, 9], "target": 3}
-{"numbers": [2, 3, 4, 6, 7, 1], "target": 9}
-{"numbers": [1, 2, 6, 9, 4], "target": 8}
-{"numbers": [5, 5, 6, 4], "target": 2}
-{"numbers": [4, 5, 8, 2, 2, 4], "target": 7}
-{"numbers": [3, 1, 9, 1], "target": 8}
-{"numbers": [4, 1, 3, 9], "target": 7}
-{"numbers": [9, 2, 5, 6], "target": 8}
-{"numbers": [1, 2, 1, 7], "target": 5}
-{"numbers": [3, 4, 7], "target": 0}
-{"numbers": [8, 2, 1, 4, 5, 2], "target": 4}
-{"numbers": [7, 3, 2, 1, 6], "target": 7}
-{"numbers": [4, 3, 4, 6, 2, 7], "target": 8}
-{"numbers": [9, 3, 5, 1], "target": 0}
-{"numbers": [7, 6, 7, 5, 6, 6], "target": 1}
-{"numbers": [1, 1, 8, 8], "target": 2}
-{"numbers": [1, 1, 5, 2], "target": 7}
-{"numbers": [2, 5, 9, 1, 3], "target": 8}
-{"numbers": [7, 5, 1, 5, 2, 2], "target": 6}
-{"numbers": [6, 7, 3], "target": 4}
-{"numbers": [9, 6, 8, 6], "target": 1}
-{"numbers": [3, 3, 9, 7, 6], "target": 4}
-{"numbers": [3, 2, 9, 4, 7], "target": 1}
-{"numbers": [7, 3, 6, 8, 2], "target": 6}
-{"numbers": [4, 1, 9, 6], "target": 8}
-{"numbers": [1, 1, 8, 6, 3, 8], "target": 5}
-{"numbers": [7, 4, 9, 3, 4], "target": 9}
-{"numbers": [2, 6, 9, 2, 6], "target": 9}
-{"numbers": [9, 8, 1, 9], "target": 7}
-{"numbers": [8, 6, 6, 5, 5, 8], "target": 0}
-{"numbers": [1, 9, 9, 5, 7, 1], "target": 8}
-{"numbers": [1, 6, 5, 3, 6], "target": 9}
-{"numbers": [3, 4, 4, 6, 8], "target": 9}
-{"numbers": [1, 8, 3, 4], "target": 6}
-{"numbers": [9, 4, 4], "target": 9}
-{"numbers": [3, 3, 3, 4, 2], "target": 3}
-{"numbers": [8, 5, 6, 5, 5, 7], "target": 0}
-{"numbers": [3, 8, 3, 8, 2, 5], "target": 9}
-{"numbers": [1, 5, 5, 2, 2, 2], "target": 3}
-{"numbers": [7, 3, 6, 3], "target": 7}
-{"numbers": [6, 7, 9, 8, 6], "target": 2}
-{"numbers": [4, 5, 1, 4, 5, 2], "target": 7}
-{"numbers": [6, 9, 6], "target": 3}
-{"numbers": [7, 7, 4, 7], "target": 3}
-{"numbers": [1, 8, 8, 4, 7], "target": 6}
-{"numbers": [8, 9, 4, 4, 7, 9], "target": 1}
-{"numbers": [7, 3, 1, 3], "target": 0}
-{"numbers": [5, 3, 1, 9], "target": 6}
-{"numbers": [4, 1, 8, 7, 6, 6], "target": 0}
-{"numbers": [8, 8, 5, 2], "target": 7}
-{"numbers": [4, 4, 2], "target": 2}
-{"numbers": [1, 7, 4, 6, 5, 4], "target": 9}
-{"numbers": [1, 1, 2, 4, 9], "target": 7}
-{"numbers": [7, 5, 3, 3, 7, 1], "target": 6}
-{"numbers": [7, 3, 5, 5], "target": 0}
-{"numbers": [7, 3, 9, 8, 2], "target": 3}
-{"numbers": [5, 9, 6, 4], "target": 6}
-{"numbers": [3, 7, 1, 7], "target": 4}
-{"numbers": [1, 5, 6, 4, 1], "target": 5}
-{"numbers": [9, 5, 5, 6, 4], "target": 9}
-{"numbers": [7, 2, 6, 3, 3, 5], "target": 8}
-{"numbers": [2, 4, 1, 5], "target": 0}
-{"numbers": [5, 4, 4, 6, 7], "target": 0}
-{"numbers": [4, 3, 3, 3], "target": 7}
-{"numbers": [4, 7, 3, 2, 4], "target": 6}
-{"numbers": [6, 1, 5, 1, 6], "target": 7}
-{"numbers": [8, 5, 5, 7, 8], "target": 7}
-{"numbers": [6, 6, 9, 6], "target": 9}
-{"numbers": [1, 3, 2, 5, 2, 6], "target": 5}
-{"numbers": [6, 3, 6, 8, 8, 3], "target": 6}
-{"numbers": [6, 1, 2], "target": 7}
-{"numbers": [7, 3, 2, 2, 4, 3], "target": 7}
-{"numbers": [5, 6, 6], "target": 7}
-{"numbers": [1, 3, 8, 8, 4], "target": 8}
-{"numbers": [1, 4, 2], "target": 3}
-{"numbers": [7, 2, 4], "target": 9}
-{"numbers": [8, 6, 5], "target": 7}
-{"numbers": [8, 9, 5, 9, 5], "target": 0}
-{"numbers": [2, 8, 7, 6, 2], "target": 5}
-{"numbers": [7, 6, 2, 2, 3, 5], "target": 7}
-{"numbers": [8, 3, 8], "target": 3}
-{"numbers": [1, 2, 6, 3, 8, 1], "target": 7}
-{"numbers": [5, 6, 2, 8], "target": 1}
-{"numbers": [1, 6, 6, 6], "target": 7}
-{"numbers": [3, 4, 2], "target": 1}
-{"numbers": [1, 5, 8, 2], "target": 0}
-{"numbers": [2, 3, 2, 5, 8, 3], "target": 1}
-{"numbers": [3, 3, 2, 3, 5, 9], "target": 9}
-{"numbers": [1, 1, 4, 4], "target": 8}
-{"numbers": [9, 9, 4, 5], "target": 9}
-{"numbers": [8, 2, 4, 8], "target": 2}
-{"numbers": [5, 1, 9], "target": 3}
-{"numbers": [2, 4, 2], "target": 8}
-{"numbers": [3, 7, 2, 7], "target": 5}
-{"numbers": [8, 5, 3, 5, 2], "target": 9}
-{"numbers": [9, 8, 5, 5, 1, 1], "target": 1}
-{"numbers": [2, 8, 1, 8, 3], "target": 4}
-{"numbers": [1, 7, 3, 2, 7, 3], "target": 3}
-{"numbers": [2, 3, 3, 4], "target": 2}
-{"numbers": [5, 2, 4, 9, 6, 7], "target": 7}
-{"numbers": [4, 4, 7, 1], "target": 8}
-{"numbers": [5, 3, 2, 7, 1, 3], "target": 7}
-{"numbers": [3, 5, 5, 5], "target": 8}
-{"numbers": [5, 5, 6], "target": 6}
-{"numbers": [3, 1, 3, 3, 7], "target": 5}
-{"numbers": [8, 7, 8, 3, 4, 2], "target": 8}
-{"numbers": [4, 7, 1, 8, 8], "target": 4}
-{"numbers": [8, 2, 3, 6, 2, 1], "target": 2}
-{"numbers": [5, 6, 9, 5], "target": 3}
-{"numbers": [2, 6, 8, 2, 1, 8], "target": 9}
-{"numbers": [3, 8, 8, 4], "target": 7}
-{"numbers": [5, 7, 5, 1, 3, 5], "target": 0}
-{"numbers": [1, 1, 8, 7], "target": 1}
-{"numbers": [1, 8, 3, 4, 5, 1], "target": 8}
-{"numbers": [5, 1, 6, 3], "target": 7}
-{"numbers": [1, 2, 5, 5], "target": 7}
-{"numbers": [4, 8, 8, 6, 7, 1], "target": 8}
-{"numbers": [3, 4, 8, 2, 6], "target": 7}
-{"numbers": [9, 5, 4, 9, 2, 9], "target": 8}
-{"numbers": [5, 2, 9, 5, 6], "target": 1}
+{"numbers": [79, 60, 20, 12, 24, 92], "target": 89}
+{"numbers": [83, 39, 62], "target": 184}
+{"numbers": [68, 86, 3, 66, 10, 1], "target": 62}
+{"numbers": [72, 28, 19], "target": 119}
+{"numbers": [45, 14, 90, 90, 21], "target": 190}
+{"numbers": [75, 33, 10, 89], "target": 9}
+{"numbers": [69, 20, 64, 99], "target": 252}
+{"numbers": [70, 9, 92, 42], "target": 213}
+{"numbers": [69, 81, 39], "target": 189}
+{"numbers": [36, 53, 52, 73, 36], "target": 0}
+{"numbers": [24, 52, 81], "target": 5}
+{"numbers": [27, 22, 67, 73, 59], "target": 48}
+{"numbers": [73, 38, 73], "target": 184}
+{"numbers": [90, 63, 75, 29, 45], "target": 154}
+{"numbers": [47, 35, 92, 89, 83, 23], "target": 205}
+{"numbers": [95, 76, 53, 68, 63], "target": 113}
+{"numbers": [61, 63, 13], "target": 15}
+{"numbers": [68, 14, 70], "target": 152}
+{"numbers": [67, 35, 56, 51], "target": 27}
+{"numbers": [4, 71, 52, 9], "target": 6}
+{"numbers": [19, 19, 49, 55], "target": 66}
+{"numbers": [77, 18, 35, 56, 96], "target": 134}
+{"numbers": [97, 9, 35, 20], "target": 161}
+{"numbers": [44, 93, 87, 80], "target": 216}
+{"numbers": [61, 76, 3], "target": 18}
+{"numbers": [79, 10, 93, 48], "target": 44}
+{"numbers": [35, 87, 65, 4], "target": 121}
+{"numbers": [34, 21, 54, 83, 95, 40], "target": 69}
+{"numbers": [55, 21, 56], "target": 90}
+{"numbers": [74, 94, 54], "target": 114}
+{"numbers": [83, 83, 43, 93, 79, 62], "target": 319}
+{"numbers": [13, 39, 3, 9, 11, 4], "target": 53}
+{"numbers": [45, 83, 43], "target": 85}
+{"numbers": [17, 18, 58], "target": 93}
+{"numbers": [58, 34, 98, 36, 58], "target": 96}
+{"numbers": [21, 78, 7, 15], "target": 49}
+{"numbers": [88, 22, 24], "target": 90}
+{"numbers": [51, 35, 62, 6, 49], "target": 89}
+{"numbers": [83, 19, 94, 13, 44, 14], "target": 73}
+{"numbers": [38, 64, 99, 9, 65], "target": 181}
+{"numbers": [57, 15, 62, 22, 58, 95], "target": 193}
+{"numbers": [36, 88, 81, 46, 50], "target": 301}
+{"numbers": [5, 51, 10, 89, 57, 19], "target": 15}
+{"numbers": [26, 43, 68, 38], "target": 39}
+{"numbers": [73, 42, 13], "target": 128}
+{"numbers": [43, 84, 45], "target": 86}
+{"numbers": [45, 69, 46, 64, 91], "target": 133}
+{"numbers": [27, 68, 73, 50, 70], "target": 52}
+{"numbers": [64, 97, 18], "target": 143}
+{"numbers": [19, 79, 14, 58, 80], "target": 212}
+{"numbers": [65, 99, 68, 33], "target": 129}
+{"numbers": [54, 35, 75], "target": 94}
+{"numbers": [55, 7, 44, 38, 95], "target": 239}
+{"numbers": [14, 84, 43, 56, 83], "target": 280}
+{"numbers": [91, 72, 34, 79, 36], "target": 86}
+{"numbers": [6, 16, 98], "target": 120}
+{"numbers": [3, 59, 90, 10, 17], "target": 1}
+{"numbers": [74, 94, 83, 22], "target": 85}
+{"numbers": [54, 75, 28, 35, 68], "target": 54}
+{"numbers": [37, 74, 9, 99], "target": 145}
+{"numbers": [45, 18, 54, 96, 69], "target": 174}
+{"numbers": [42, 17, 28, 89, 32], "target": 88}
+{"numbers": [16, 90, 57], "target": 49}
+{"numbers": [32, 57, 65, 1, 2], "target": 157}
+{"numbers": [72, 7, 25, 68, 60], "target": 96}
+{"numbers": [20, 16, 71, 35, 20], "target": 162}
+{"numbers": [73, 22, 72, 95, 59, 76], "target": 57}
+{"numbers": [83, 70, 18, 50, 68], "target": 149}
+{"numbers": [63, 90, 27, 88, 40, 70], "target": 238}
+{"numbers": [7, 60, 68, 77], "target": 78}
+{"numbers": [75, 39, 71, 17, 76], "target": 94}
+{"numbers": [77, 43, 16, 51, 81], "target": 106}
+{"numbers": [7, 31, 65, 48], "target": 75}
+{"numbers": [91, 2, 58, 70, 7, 15], "target": 229}
+{"numbers": [41, 32, 13, 66, 69], "target": 63}
+{"numbers": [74, 80, 28, 14, 28, 5], "target": 41}
+{"numbers": [30, 91, 76, 94], "target": 79}
+{"numbers": [90, 78, 25, 77, 76], "target": 192}
+{"numbers": [66, 71, 75, 72, 67], "target": 209}
+{"numbers": [6, 37, 65], "target": 96}
+{"numbers": [37, 12, 75, 37, 69], "target": 206}
+{"numbers": [51, 38, 68], "target": 21}
+{"numbers": [75, 71, 61, 79, 98], "target": 234}
+{"numbers": [55, 32, 71, 10, 32], "target": 136}
+{"numbers": [73, 6, 76, 97], "target": 94}
+{"numbers": [21, 13, 54, 42, 43, 67], "target": 48}
+{"numbers": [36, 32, 39, 56, 3], "target": 160}
+{"numbers": [46, 59, 90, 82], "target": 97}
+{"numbers": [87, 17, 91, 41], "target": 28}
+{"numbers": [66, 71, 53], "target": 190}
+{"numbers": [69, 7, 62, 20], "target": 118}
+{"numbers": [47, 26, 49, 73, 98], "target": 293}
+{"numbers": [50, 74, 87, 96, 12], "target": 127}
+{"numbers": [79, 79, 66, 64, 97, 95], "target": 290}
+{"numbers": [77, 64, 29, 20], "target": 62}
+{"numbers": [86, 4, 73, 92], "target": 255}
+{"numbers": [69, 19, 99, 99, 59], "target": 207}
+{"numbers": [51, 18, 40, 17, 76], "target": 132}
+{"numbers": [22, 93, 82, 75, 70, 5], "target": 197}
+{"numbers": [70, 82, 78], "target": 230}
+{"numbers": [69, 86, 11, 93], "target": 99}
+{"numbers": [57, 40, 50, 79, 77, 43], "target": 266}
+{"numbers": [7, 18, 74], "target": 85}
+{"numbers": [76, 85, 97, 99], "target": 11}
+{"numbers": [96, 59, 23], "target": 60}
+{"numbers": [84, 11, 16, 60, 88, 11], "target": 128}
+{"numbers": [15, 47, 95], "target": 157}
+{"numbers": [27, 55, 33, 87], "target": 92}
+{"numbers": [45, 19, 71, 59, 21, 61], "target": 238}
+{"numbers": [50, 42, 18, 46], "target": 28}
+{"numbers": [59, 94, 81, 62], "target": 172}
+{"numbers": [18, 4, 12], "target": 34}
+{"numbers": [6, 20, 10], "target": 16}
+{"numbers": [68, 21, 75, 41], "target": 123}
+{"numbers": [18, 12, 26, 10, 43], "target": 65}
+{"numbers": [62, 33, 41], "target": 136}
+{"numbers": [96, 72, 92, 98, 79, 69], "target": 170}
+{"numbers": [59, 24, 68, 89, 26], "target": 96}
+{"numbers": [11, 52, 9, 30, 75], "target": 177}
+{"numbers": [76, 26, 14, 74, 72, 87], "target": 201}
+{"numbers": [18, 18, 70, 97], "target": 27}
+{"numbers": [84, 88, 41], "target": 213}
+{"numbers": [45, 85, 21, 58], "target": 77}
+{"numbers": [5, 18, 92], "target": 105}
+{"numbers": [13, 1, 60], "target": 74}
+{"numbers": [8, 92, 72, 87], "target": 59}
+{"numbers": [91, 45, 24, 46, 46, 26], "target": 226}
+{"numbers": [29, 35, 8], "target": 2}
+{"numbers": [92, 26, 48, 54], "target": 220}
+{"numbers": [3, 33, 39, 65, 51, 5], "target": 108}
+{"numbers": [82, 31, 89, 68, 57], "target": 77}
+{"numbers": [63, 37, 87, 31, 33], "target": 123}
+{"numbers": [87, 90, 29], "target": 32}
+{"numbers": [96, 34, 27, 44, 22], "target": 111}
+{"numbers": [22, 14, 68], "target": 104}
+{"numbers": [95, 86, 94, 6, 95], "target": 204}
+{"numbers": [65, 95, 14, 25, 74], "target": 245}
+{"numbers": [23, 11, 37, 18], "target": 43}
+{"numbers": [47, 27, 81, 64, 93], "target": 150}
+{"numbers": [30, 72, 73], "target": 31}
+{"numbers": [38, 26, 57, 10, 65, 67], "target": 263}
+{"numbers": [57, 39, 9], "target": 27}
+{"numbers": [87, 90, 35, 74], "target": 216}
+{"numbers": [81, 71, 36, 70, 59], "target": 103}
+{"numbers": [20, 42, 95, 84, 94], "target": 107}
+{"numbers": [67, 7, 42, 54], "target": 156}
+{"numbers": [1, 28, 94, 18, 73, 86], "target": 152}
+{"numbers": [9, 5, 61, 10, 44], "target": 7}
+{"numbers": [90, 48, 64, 38], "target": 240}
+{"numbers": [87, 60, 61], "target": 208}
+{"numbers": [65, 29, 3], "target": 91}
+{"numbers": [96, 76, 61, 11, 3, 51], "target": 176}
+{"numbers": [95, 32, 34, 29, 41], "target": 231}
+{"numbers": [31, 17, 61, 11, 14], "target": 72}
+{"numbers": [87, 22, 83], "target": 26}
+{"numbers": [18, 14, 83, 63, 94, 13], "target": 231}
+{"numbers": [82, 35, 82, 44, 40, 96], "target": 145}
+{"numbers": [60, 72, 98, 28, 44, 93], "target": 55}
+{"numbers": [78, 20, 88, 77, 19, 86], "target": 2}
+{"numbers": [78, 47, 14], "target": 139}
+{"numbers": [47, 41, 17, 29, 49], "target": 55}
+{"numbers": [74, 34, 38], "target": 2}
+{"numbers": [15, 14, 55, 27, 37], "target": 90}
+{"numbers": [23, 61, 79, 5, 61], "target": 229}
+{"numbers": [46, 73, 18, 53, 80], "target": 32}
+{"numbers": [54, 32, 95, 88, 97, 78], "target": 112}
+{"numbers": [80, 27, 69], "target": 176}
+{"numbers": [74, 62, 67, 78, 48, 35], "target": 106}
+{"numbers": [18, 43, 81, 81, 5, 10], "target": 106}
+{"numbers": [72, 28, 8, 43, 63, 60], "target": 188}
+{"numbers": [73, 60, 1], "target": 132}
+{"numbers": [26, 90, 40], "target": 156}
+{"numbers": [35, 18, 18, 36, 95, 36], "target": 60}
+{"numbers": [50, 43, 77, 15], "target": 99}
+{"numbers": [4, 86, 1, 47, 9, 21], "target": 124}
+{"numbers": [96, 63, 29, 54, 69, 93], "target": 296}
+{"numbers": [33, 21, 23], "target": 11}
+{"numbers": [74, 83, 20, 88, 32], "target": 109}
+{"numbers": [50, 59, 26], "target": 17}
+{"numbers": [29, 72, 43, 87, 3, 89], "target": 1}
+{"numbers": [8, 18, 86], "target": 112}
+{"numbers": [80, 1, 14], "target": 93}
+{"numbers": [29, 73, 35], "target": 137}
+{"numbers": [22, 15, 95], "target": 58}
+{"numbers": [51, 32, 60, 94], "target": 117}
+{"numbers": [54, 71, 48], "target": 31}
+{"numbers": [14, 54, 49, 68, 16, 19], "target": 84}
+{"numbers": [24, 1, 81, 4], "target": 100}
+{"numbers": [92, 82, 51, 46, 6], "target": 175}
+{"numbers": [85, 82, 41, 27, 66], "target": 49}
+{"numbers": [20, 59, 35, 9], "target": 35}
+{"numbers": [38, 61, 61, 38, 94, 19], "target": 9}
+{"numbers": [35, 94, 85, 60, 93], "target": 9}
+{"numbers": [62, 44, 35], "target": 141}
+{"numbers": [73, 52, 16, 56, 56], "target": 3}
+{"numbers": [16, 35, 26], "target": 25}
+{"numbers": [8, 99, 2], "target": 93}
+{"numbers": [49, 63, 4], "target": 116}
+{"numbers": [14, 95, 53, 80, 31, 27], "target": 272}
+{"numbers": [74, 7, 1, 51], "target": 17}
+{"numbers": [78, 91, 59, 66], "target": 162}
+{"numbers": [54, 96, 38], "target": 112}
+{"numbers": [62, 70, 90], "target": 98}
+{"numbers": [25, 30, 82, 92, 17, 9], "target": 145}
+{"numbers": [47, 43, 10], "target": 100}
+{"numbers": [65, 88, 17, 43], "target": 213}
+{"numbers": [43, 62, 46, 82, 37], "target": 72}
+{"numbers": [61, 54, 63, 67, 56], "target": 193}
+{"numbers": [51, 68, 95], "target": 24}
+{"numbers": [37, 86, 74], "target": 123}
+{"numbers": [43, 35, 42], "target": 36}
+{"numbers": [97, 17, 97], "target": 17}
+{"numbers": [59, 70, 18], "target": 29}
+{"numbers": [57, 9, 89, 70, 8, 32], "target": 27}
+{"numbers": [63, 40, 24], "target": 47}
+{"numbers": [23, 28, 53, 14], "target": 90}
+{"numbers": [10, 49, 75, 18, 62], "target": 44}
+{"numbers": [76, 93, 46, 55, 12], "target": 172}
+{"numbers": [41, 9, 60, 22], "target": 114}
+{"numbers": [17, 72, 5, 53, 79, 44], "target": 270}
+{"numbers": [12, 61, 78, 58, 65], "target": 134}
+{"numbers": [13, 75, 79, 72], "target": 89}
+{"numbers": [25, 36, 15, 61], "target": 137}
+{"numbers": [79, 93, 15], "target": 29}
+{"numbers": [98, 34, 52, 73, 77], "target": 138}
+{"numbers": [49, 97, 73], "target": 73}
+{"numbers": [74, 15, 60, 94, 67], "target": 92}
+{"numbers": [22, 79, 67], "target": 168}
+{"numbers": [8, 34, 92, 79, 13, 10], "target": 52}
+{"numbers": [54, 58, 10, 16, 71, 41], "target": 8}
+{"numbers": [41, 28, 79, 3], "target": 151}
+{"numbers": [8, 17, 95], "target": 120}
+{"numbers": [66, 23, 93, 34, 61, 93], "target": 134}
+{"numbers": [92, 69, 66, 52, 94], "target": 241}
+{"numbers": [24, 87, 31], "target": 94}
+{"numbers": [89, 6, 74, 87, 23], "target": 101}
+{"numbers": [10, 21, 61], "target": 92}
+{"numbers": [77, 37, 97, 52, 84], "target": 75}
+{"numbers": [12, 56, 19], "target": 87}
+{"numbers": [64, 40, 83, 2, 43], "target": 66}
+{"numbers": [68, 35, 68, 30], "target": 71}
+{"numbers": [81, 2, 83, 57, 72, 69], "target": 360}
+{"numbers": [45, 92, 75], "target": 212}
+{"numbers": [14, 1, 70, 51], "target": 108}
+{"numbers": [63, 51, 99, 32], "target": 143}
+{"numbers": [72, 13, 74, 51, 66], "target": 144}
+{"numbers": [77, 82, 57], "target": 102}
+{"numbers": [32, 70, 41], "target": 143}
+{"numbers": [69, 90, 48, 61, 64, 13], "target": 181}
+{"numbers": [47, 27, 94], "target": 114}
+{"numbers": [73, 68, 84], "target": 89}
+{"numbers": [7, 65, 7, 47, 56], "target": 168}
+{"numbers": [37, 3, 22], "target": 62}
+{"numbers": [24, 64, 25], "target": 65}
+{"numbers": [99, 41, 3, 59, 16, 24], "target": 210}
+{"numbers": [61, 12, 81, 23], "target": 107}
+{"numbers": [66, 1, 55, 2], "target": 14}
+{"numbers": [71, 54, 49], "target": 174}
+{"numbers": [49, 81, 16, 79, 70], "target": 35}
+{"numbers": [58, 71, 43, 44, 88], "target": 162}
+{"numbers": [17, 49, 52, 19, 52, 74], "target": 55}
+{"numbers": [60, 92, 81, 57, 88], "target": 258}
+{"numbers": [68, 56, 77], "target": 89}
+{"numbers": [6, 42, 61, 5], "target": 114}
+{"numbers": [94, 27, 8, 33], "target": 26}
+{"numbers": [44, 28, 73, 55], "target": 200}
+{"numbers": [67, 59, 69, 98, 66, 5], "target": 226}
+{"numbers": [40, 62, 65], "target": 43}
+{"numbers": [65, 61, 63, 41], "target": 104}
+{"numbers": [44, 20, 90, 35, 28, 28], "target": 31}
+{"numbers": [28, 75, 2], "target": 105}
+{"numbers": [75, 79, 18, 43, 23, 78], "target": 114}
+{"numbers": [84, 79, 87, 95, 20], "target": 175}
+{"numbers": [55, 36, 78, 46, 84, 60], "target": 75}
+{"numbers": [47, 58, 45, 54], "target": 204}
+{"numbers": [87, 53, 98, 99, 33], "target": 198}
+{"numbers": [94, 31, 8, 59, 56], "target": 130}
+{"numbers": [54, 13, 53, 6, 81], "target": 195}
+{"numbers": [76, 94, 5, 9, 98], "target": 68}
+{"numbers": [89, 64, 42], "target": 195}
+{"numbers": [96, 92, 28, 44, 80], "target": 196}
+{"numbers": [48, 61, 89, 58, 26], "target": 282}
+{"numbers": [30, 94, 55, 96], "target": 275}
+{"numbers": [95, 44, 80, 27, 71, 37], "target": 354}
+{"numbers": [48, 33, 14, 36, 31, 81], "target": 147}
+{"numbers": [94, 59, 83], "target": 118}
+{"numbers": [59, 95, 17], "target": 171}
+{"numbers": [60, 53, 7], "target": 106}
+{"numbers": [24, 51, 52, 86, 88], "target": 77}
+{"numbers": [70, 69, 68, 62, 14], "target": 159}
+{"numbers": [39, 96, 93, 19, 3, 97], "target": 341}
+{"numbers": [58, 79, 71, 78, 95], "target": 191}
+{"numbers": [32, 35, 53], "target": 120}
+{"numbers": [72, 67, 95, 28, 18, 42], "target": 12}
+{"numbers": [7, 13, 15], "target": 35}
+{"numbers": [89, 41, 5, 52], "target": 177}
+{"numbers": [28, 2, 34], "target": 60}
+{"numbers": [22, 13, 58, 29, 32, 10], "target": 106}
+{"numbers": [5, 55, 39], "target": 89}
+{"numbers": [28, 34, 23, 50, 50], "target": 83}
+{"numbers": [69, 8, 97, 45, 9, 71], "target": 283}
+{"numbers": [74, 99, 44, 52], "target": 269}
+{"numbers": [74, 56, 55, 64, 17, 32], "target": 154}
+{"numbers": [61, 77, 12, 53, 38], "target": 241}
+{"numbers": [55, 19, 72, 31], "target": 5}
+{"numbers": [38, 92, 45, 63], "target": 112}
+{"numbers": [3, 70, 34, 34, 10], "target": 77}
+{"numbers": [36, 94, 20, 9, 45], "target": 186}
+{"numbers": [16, 19, 22, 27], "target": 8}
+{"numbers": [52, 76, 57], "target": 71}
+{"numbers": [49, 71, 91], "target": 113}
+{"numbers": [77, 26, 63, 4, 93], "target": 101}
+{"numbers": [41, 43, 83, 1], "target": 168}
+{"numbers": [72, 11, 70, 62, 12, 68], "target": 5}
+{"numbers": [83, 30, 38], "target": 91}
+{"numbers": [33, 35, 24], "target": 92}
+{"numbers": [98, 63, 16, 54, 92], "target": 1}
+{"numbers": [43, 98, 26, 34, 27, 27], "target": 169}
+{"numbers": [19, 39, 79, 14, 50, 1], "target": 202}
+{"numbers": [75, 44, 44, 98, 71], "target": 102}
+{"numbers": [2, 14, 28], "target": 44}
+{"numbers": [12, 75, 45, 89, 99, 89], "target": 207}
+{"numbers": [25, 61, 52, 4, 70, 98], "target": 48}
+{"numbers": [78, 39, 27, 39], "target": 183}
+{"numbers": [90, 59, 81, 38, 39], "target": 153}
+{"numbers": [14, 67, 84], "target": 165}
+{"numbers": [79, 68, 9, 79, 18, 92], "target": 133}
+{"numbers": [68, 1, 44, 76, 9], "target": 178}
+{"numbers": [41, 73, 24, 8], "target": 130}
+{"numbers": [14, 78, 14, 11, 89], "target": 128}
+{"numbers": [61, 78, 24], "target": 115}
+{"numbers": [26, 54, 34], "target": 114}
+{"numbers": [68, 27, 10], "target": 105}
+{"numbers": [99, 15, 62], "target": 146}
+{"numbers": [58, 39, 73], "target": 92}
+{"numbers": [7, 89, 12, 98, 10], "target": 192}
+{"numbers": [53, 42, 96, 46], "target": 153}
+{"numbers": [1, 87, 40, 81], "target": 33}
+{"numbers": [9, 23, 39, 95], "target": 70}
+{"numbers": [40, 31, 21, 16, 7, 45], "target": 48}
+{"numbers": [59, 41, 96, 64], "target": 260}
+{"numbers": [50, 26, 85], "target": 161}
+{"numbers": [46, 36, 99, 81, 22, 34], "target": 110}
+{"numbers": [16, 1, 63, 21], "target": 101}
+{"numbers": [14, 84, 83, 74, 89, 33], "target": 311}
+{"numbers": [32, 51, 33, 46, 88], "target": 8}
+{"numbers": [44, 35, 80], "target": 71}
+{"numbers": [56, 72, 36, 10, 97], "target": 87}
+{"numbers": [62, 89, 5, 95, 5], "target": 68}
+{"numbers": [59, 87, 42, 71, 19, 57], "target": 133}
+{"numbers": [62, 39, 14, 78, 84], "target": 93}
+{"numbers": [43, 76, 37, 82, 43], "target": 207}
+{"numbers": [7, 24, 66, 79, 82], "target": 112}
+{"numbers": [51, 53, 20, 26, 49, 7], "target": 154}
+{"numbers": [12, 71, 11, 90, 1, 52], "target": 49}
+{"numbers": [37, 28, 27, 87], "target": 105}
+{"numbers": [69, 9, 43, 16, 99], "target": 80}
+{"numbers": [9, 16, 53, 80, 71, 94], "target": 163}
+{"numbers": [53, 39, 32, 13], "target": 31}
+{"numbers": [46, 77, 18, 38, 38, 65], "target": 24}
+{"numbers": [21, 96, 52, 62, 84, 70], "target": 261}
+{"numbers": [59, 72, 77], "target": 90}
+{"numbers": [6, 64, 28, 71], "target": 27}
+{"numbers": [91, 60, 17, 90, 46], "target": 150}
+{"numbers": [94, 10, 30, 89, 84], "target": 247}
+{"numbers": [59, 29, 29, 4, 50], "target": 105}
+{"numbers": [19, 91, 32, 51], "target": 155}
+{"numbers": [23, 95, 21], "target": 97}
+{"numbers": [40, 8, 93, 18, 57], "target": 136}
+{"numbers": [28, 90, 91, 26], "target": 235}
+{"numbers": [32, 13, 70, 58], "target": 83}
+{"numbers": [91, 35, 36, 88, 80, 82], "target": 340}
+{"numbers": [43, 87, 73, 54, 89, 39], "target": 45}
+{"numbers": [17, 32, 98, 98], "target": 49}
+{"numbers": [5, 28, 70, 90, 33, 37], "target": 179}
+{"numbers": [21, 46, 68, 29, 48], "target": 34}
+{"numbers": [72, 94, 20, 32], "target": 218}
+{"numbers": [88, 2, 94, 50, 83], "target": 151}
+{"numbers": [51, 75, 19, 62], "target": 19}
+{"numbers": [71, 75, 7, 76, 62], "target": 153}
+{"numbers": [97, 92, 10, 82, 38], "target": 135}
+{"numbers": [5, 91, 44, 16], "target": 146}
+{"numbers": [51, 35, 12], "target": 74}
+{"numbers": [90, 41, 27, 11, 22], "target": 137}
+{"numbers": [47, 44, 24, 67, 86], "target": 8}
+{"numbers": [61, 28, 81, 45, 33, 17], "target": 43}
+{"numbers": [29, 4, 99], "target": 74}
+{"numbers": [54, 48, 31, 89, 13], "target": 173}
+{"numbers": [73, 87, 44], "target": 30}
+{"numbers": [75, 27, 18], "target": 120}
+{"numbers": [11, 97, 68, 28], "target": 148}
+{"numbers": [9, 36, 96, 61, 24, 51], "target": 19}
+{"numbers": [63, 43, 79], "target": 27}
+{"numbers": [95, 85, 48, 55, 99], "target": 286}
+{"numbers": [6, 16, 42, 85], "target": 33}
+{"numbers": [74, 38, 10, 22, 52], "target": 196}
+{"numbers": [80, 16, 94, 20], "target": 210}
+{"numbers": [60, 87, 53], "target": 94}
+{"numbers": [29, 45, 35, 94, 26, 20], "target": 67}
+{"numbers": [73, 50, 83, 90], "target": 30}
+{"numbers": [80, 70, 2, 99, 11, 23], "target": 121}
+{"numbers": [59, 19, 19, 19, 80, 49], "target": 71}
+{"numbers": [60, 85, 75, 90, 29], "target": 161}
+{"numbers": [51, 23, 63, 66, 47, 63], "target": 187}
+{"numbers": [63, 74, 24, 20, 70], "target": 203}
+{"numbers": [41, 67, 2, 41], "target": 151}
+{"numbers": [18, 37, 97, 55, 53, 99], "target": 143}
+{"numbers": [65, 61, 58, 52, 75], "target": 181}
+{"numbers": [45, 23, 92], "target": 160}
+{"numbers": [24, 29, 18, 78], "target": 113}
+{"numbers": [92, 4, 29, 65], "target": 132}
+{"numbers": [19, 84, 46, 43], "target": 154}
+{"numbers": [4, 1, 72, 69], "target": 0}
+{"numbers": [66, 24, 2, 40], "target": 4}
+{"numbers": [36, 40, 58, 33, 75], "target": 96}
+{"numbers": [89, 43, 62, 98], "target": 168}
+{"numbers": [67, 17, 41, 10, 63, 63], "target": 115}
+{"numbers": [98, 83, 75], "target": 256}
+{"numbers": [62, 98, 47, 1], "target": 12}
+{"numbers": [45, 32, 15], "target": 92}
+{"numbers": [50, 73, 55], "target": 78}
+{"numbers": [83, 67, 97, 28], "target": 85}
+{"numbers": [19, 12, 59, 24, 18, 68], "target": 58}
+{"numbers": [3, 93, 93], "target": 3}
+{"numbers": [53, 9, 91, 59], "target": 212}
+{"numbers": [74, 47, 32, 2], "target": 7}
+{"numbers": [44, 3, 56, 52, 64, 84], "target": 111}
+{"numbers": [18, 87, 58, 37, 8, 50], "target": 16}
+{"numbers": [66, 3, 26, 85, 89], "target": 217}
+{"numbers": [93, 9, 56, 81], "target": 239}
+{"numbers": [77, 50, 21], "target": 106}
+{"numbers": [10, 31, 85, 56, 64, 7], "target": 105}
+{"numbers": [68, 19, 70, 87], "target": 244}
+{"numbers": [68, 85, 50], "target": 67}
+{"numbers": [48, 34, 65], "target": 17}
+{"numbers": [78, 33, 6, 12, 22, 38], "target": 3}
+{"numbers": [22, 74, 25, 9, 17, 15], "target": 128}
+{"numbers": [53, 75, 90, 77], "target": 189}
+{"numbers": [31, 39, 27, 75, 95], "target": 213}
+{"numbers": [47, 11, 74, 52, 63], "target": 5}
+{"numbers": [50, 90, 90, 7], "target": 237}
+{"numbers": [42, 80, 79], "target": 117}
+{"numbers": [67, 53, 67, 53, 79], "target": 79}
+{"numbers": [82, 72, 99], "target": 109}
+{"numbers": [41, 36, 5, 28], "target": 38}
+{"numbers": [44, 32, 2, 94], "target": 172}
+{"numbers": [17, 37, 95, 52, 56, 68], "target": 105}
+{"numbers": [18, 13, 24, 35, 39, 46], "target": 105}
+{"numbers": [85, 32, 39, 47, 65, 88], "target": 84}
+{"numbers": [23, 99, 15, 51, 85, 17], "target": 256}
+{"numbers": [88, 84, 83, 9, 14], "target": 278}
+{"numbers": [42, 77, 57, 20], "target": 42}
+{"numbers": [61, 28, 18, 25], "target": 96}
+{"numbers": [4, 26, 10, 32, 28, 8], "target": 108}
+{"numbers": [24, 97, 32], "target": 153}
+{"numbers": [67, 15, 25], "target": 77}
+{"numbers": [57, 13, 34, 1], "target": 103}
+{"numbers": [96, 98, 93, 91], "target": 186}
+{"numbers": [60, 80, 6, 92], "target": 66}
+{"numbers": [60, 1, 60], "target": 121}
+{"numbers": [77, 48, 61, 44], "target": 230}
+{"numbers": [32, 36, 61, 55], "target": 184}
+{"numbers": [96, 55, 88, 56], "target": 185}
+{"numbers": [11, 70, 81], "target": 162}
+{"numbers": [10, 17, 27], "target": 20}
+{"numbers": [96, 65, 40, 80, 82], "target": 283}
+{"numbers": [87, 56, 63, 28, 99], "target": 103}
+{"numbers": [10, 19, 29, 14, 62], "target": 134}
+{"numbers": [36, 18, 95, 77], "target": 0}
+{"numbers": [9, 52, 68, 74, 39, 7], "target": 81}
+{"numbers": [78, 31, 36], "target": 83}
+{"numbers": [41, 66, 59, 10], "target": 74}
+{"numbers": [30, 3, 15], "target": 42}
+{"numbers": [71, 15, 72, 56, 41, 43], "target": 186}
+{"numbers": [10, 67, 20], "target": 97}
+{"numbers": [80, 5, 16, 46], "target": 115}
+{"numbers": [14, 96, 35, 39, 66], "target": 172}
+{"numbers": [43, 88, 66, 67], "target": 264}
+{"numbers": [21, 5, 15], "target": 11}
+{"numbers": [15, 50, 8, 62, 47], "target": 52}
+{"numbers": [84, 95, 16, 4, 83, 29], "target": 135}
+{"numbers": [41, 21, 8, 49, 74, 19], "target": 34}
+{"numbers": [46, 86, 57, 79], "target": 18}
+{"numbers": [24, 55, 94, 31, 8, 97], "target": 199}
+{"numbers": [12, 99, 19, 37], "target": 167}
+{"numbers": [6, 53, 70], "target": 129}
+{"numbers": [34, 69, 93, 49], "target": 9}
+{"numbers": [74, 8, 20, 35, 39], "target": 90}
+{"numbers": [7, 17, 27], "target": 17}
+{"numbers": [27, 11, 58, 81, 47], "target": 224}
+{"numbers": [39, 2, 14], "target": 51}
+{"numbers": [3, 32, 21], "target": 50}
+{"numbers": [78, 18, 9], "target": 105}
+{"numbers": [28, 99, 97, 79], "target": 53}
+{"numbers": [84, 43, 57], "target": 184}
+{"numbers": [17, 70, 13, 71, 93, 43], "target": 25}
+{"numbers": [66, 87, 18, 41, 62], "target": 64}
+{"numbers": [15, 26, 43, 9], "target": 45}
+{"numbers": [59, 32, 44, 77], "target": 148}
+{"numbers": [99, 57, 49], "target": 91}
+{"numbers": [91, 20, 38, 63], "target": 172}
+{"numbers": [17, 54, 2, 77], "target": 116}
+{"numbers": [46, 16, 97, 65, 81], "target": 51}
+{"numbers": [30, 36, 9, 69, 37, 31], "target": 60}
+{"numbers": [7, 8, 53, 74, 60], "target": 82}
+{"numbers": [79, 41, 66, 52, 49], "target": 189}
+{"numbers": [12, 99, 1], "target": 86}
+{"numbers": [10, 96, 34], "target": 140}
+{"numbers": [46, 44, 29], "target": 61}
+{"numbers": [15, 46, 13, 12, 15, 80], "target": 125}
+{"numbers": [8, 24, 65, 18], "target": 67}
+{"numbers": [5, 16, 24, 6, 91, 7], "target": 89}
+{"numbers": [72, 6, 85], "target": 163}
+{"numbers": [52, 92, 44, 22, 22], "target": 144}
+{"numbers": [47, 86, 9, 75, 41, 3], "target": 105}
+{"numbers": [61, 54, 88, 44, 22], "target": 181}
+{"numbers": [22, 48, 8, 65, 73], "target": 216}
+{"numbers": [77, 88, 70], "target": 235}
+{"numbers": [97, 4, 62, 41], "target": 122}
+{"numbers": [11, 32, 70, 82, 85], "target": 94}
+{"numbers": [31, 23, 41, 75], "target": 124}
+{"numbers": [93, 27, 42, 79, 6], "target": 163}
+{"numbers": [79, 26, 97, 30, 52, 83], "target": 367}
+{"numbers": [64, 47, 30, 90], "target": 51}
+{"numbers": [67, 43, 97, 49, 88, 55], "target": 265}
+{"numbers": [52, 20, 25], "target": 97}
+{"numbers": [75, 87, 33, 54, 27, 54], "target": 72}
+{"numbers": [99, 91, 49, 65, 20], "target": 96}
+{"numbers": [38, 4, 39], "target": 5}
+{"numbers": [11, 16, 71], "target": 66}
+{"numbers": [3, 41, 45, 39], "target": 50}
+{"numbers": [18, 27, 29], "target": 38}
+{"numbers": [66, 68, 96, 94, 84], "target": 104}
+{"numbers": [21, 29, 52, 71, 57, 46], "target": 120}
+{"numbers": [82, 81, 72], "target": 91}
+{"numbers": [32, 38, 13, 86], "target": 93}
+{"numbers": [56, 41, 32, 73, 13, 87], "target": 212}
+{"numbers": [42, 46, 55, 26], "target": 59}
+{"numbers": [24, 43, 40, 66], "target": 173}
+{"numbers": [72, 66, 81], "target": 87}
+{"numbers": [37, 31, 34, 25, 26, 24], "target": 67}
+{"numbers": [59, 58, 18, 10, 4, 36], "target": 13}
+{"numbers": [48, 91, 67, 21, 66], "target": 65}
+{"numbers": [7, 88, 59, 49, 93], "target": 96}
+{"numbers": [97, 31, 51], "target": 117}
+{"numbers": [4, 34, 98, 37, 78, 1], "target": 110}
+{"numbers": [2, 30, 73, 34], "target": 11}
+{"numbers": [99, 4, 97, 55, 8, 21], "target": 48}
+{"numbers": [70, 88, 79, 65, 22], "target": 166}
+{"numbers": [20, 17, 20], "target": 17}
+{"numbers": [2, 91, 71, 93, 32, 7], "target": 154}
+{"numbers": [43, 68, 47, 37, 88], "target": 53}
+{"numbers": [36, 42, 84, 71, 54], "target": 287}
+{"numbers": [88, 73, 76, 65, 14, 46], "target": 232}
+{"numbers": [26, 31, 20, 12, 12], "target": 49}
+{"numbers": [34, 25, 61, 3, 64], "target": 181}
+{"numbers": [87, 75, 3], "target": 159}
+{"numbers": [26, 2, 55, 76, 41, 7], "target": 151}
+{"numbers": [4, 10, 24, 32], "target": 62}
+{"numbers": [52, 65, 25], "target": 92}
+{"numbers": [4, 29, 29, 55, 43], "target": 16}
+{"numbers": [98, 31, 10], "target": 77}
+{"numbers": [22, 40, 60], "target": 122}
+{"numbers": [3, 6, 43, 44], "target": 10}
+{"numbers": [20, 86, 48], "target": 154}
+{"numbers": [77, 80, 62], "target": 59}
+{"numbers": [24, 10, 65, 93, 41], "target": 151}
+{"numbers": [59, 89, 67, 46], "target": 261}
+{"numbers": [86, 42, 50, 38], "target": 216}
+{"numbers": [36, 35, 77, 73, 62, 57], "target": 156}
+{"numbers": [22, 70, 14], "target": 106}
+{"numbers": [60, 16, 7, 36, 63, 59], "target": 209}
+{"numbers": [54, 20, 27, 55, 75], "target": 67}
+{"numbers": [39, 73, 77, 12, 57, 25], "target": 283}
+{"numbers": [78, 23, 24, 40], "target": 71}
+{"numbers": [3, 24, 76, 16, 83], "target": 202}
+{"numbers": [18, 99, 31, 10, 58, 58], "target": 138}
+{"numbers": [85, 81, 17, 10], "target": 173}
+{"numbers": [50, 58, 1, 32], "target": 75}
+{"numbers": [86, 13, 94], "target": 193}
+{"numbers": [28, 93, 88], "target": 153}
+{"numbers": [47, 79, 72, 88, 65, 2], "target": 173}
+{"numbers": [87, 11, 82, 7], "target": 23}
+{"numbers": [20, 38, 43], "target": 25}
+{"numbers": [14, 68, 47, 60], "target": 69}
+{"numbers": [92, 91, 71, 79], "target": 33}
+{"numbers": [72, 2, 18, 13], "target": 69}
+{"numbers": [75, 24, 42, 36, 59, 95], "target": 133}
+{"numbers": [39, 54, 76, 37, 6, 51], "target": 161}
+{"numbers": [57, 81, 54, 72], "target": 150}
+{"numbers": [29, 90, 93], "target": 32}
+{"numbers": [42, 69, 14, 52], "target": 93}
+{"numbers": [93, 3, 21, 96, 42], "target": 255}
+{"numbers": [67, 45, 64, 80, 37], "target": 165}
+{"numbers": [76, 85, 78, 52], "target": 139}
+{"numbers": [7, 30, 76, 35, 58], "target": 40}
+{"numbers": [59, 24, 93], "target": 176}
+{"numbers": [14, 67, 85, 84, 22, 41], "target": 313}
+{"numbers": [71, 42, 20, 42, 31], "target": 2}
+{"numbers": [75, 73, 70, 99, 31], "target": 136}
+{"numbers": [15, 75, 80], "target": 170}
+{"numbers": [79, 53, 53, 56], "target": 129}
+{"numbers": [77, 95, 13, 24, 81], "target": 136}
+{"numbers": [15, 77, 45, 29, 8], "target": 128}
+{"numbers": [1, 40, 49, 1], "target": 89}
+{"numbers": [60, 31, 41, 74, 22, 46], "target": 110}
+{"numbers": [49, 35, 3, 41, 67, 54], "target": 63}
+{"numbers": [68, 62, 33, 83, 66], "target": 180}
+{"numbers": [60, 6, 5, 16], "target": 33}
+{"numbers": [69, 95, 44], "target": 208}
+{"numbers": [61, 52, 36, 64, 80], "target": 293}
+{"numbers": [28, 6, 36, 51], "target": 19}
+{"numbers": [88, 57, 76, 50], "target": 171}
+{"numbers": [21, 87, 31, 56], "target": 133}
+{"numbers": [89, 69, 45, 71, 49, 61], "target": 18}
+{"numbers": [23, 44, 9, 51, 46, 84], "target": 123}
+{"numbers": [91, 45, 64, 5, 17], "target": 132}
+{"numbers": [45, 64, 10, 10, 31, 93], "target": 63}
+{"numbers": [4, 87, 81], "target": 172}
+{"numbers": [28, 24, 17, 19, 55], "target": 61}
+{"numbers": [48, 67, 16, 63, 64, 64], "target": 68}
+{"numbers": [50, 91, 26, 19, 24], "target": 210}
+{"numbers": [59, 97, 82], "target": 238}
+{"numbers": [5, 78, 22, 10, 8], "target": 123}
+{"numbers": [42, 66, 37, 66, 8, 98], "target": 37}
+{"numbers": [90, 81, 28], "target": 37}
+{"numbers": [58, 94, 25, 66, 16, 39], "target": 266}
+{"numbers": [53, 48, 63, 12, 86, 61], "target": 97}
+{"numbers": [90, 44, 98], "target": 52}
+{"numbers": [10, 27, 41, 19], "target": 77}
+{"numbers": [4, 68, 59, 7, 81, 91], "target": 184}
+{"numbers": [49, 56, 6], "target": 99}
+{"numbers": [22, 97, 2, 44], "target": 73}
+{"numbers": [74, 40, 98, 13, 13], "target": 158}
+{"numbers": [85, 73, 16, 95, 96, 85], "target": 114}
+{"numbers": [4, 82, 16], "target": 102}
+{"numbers": [49, 78, 65, 7, 31], "target": 100}
+{"numbers": [95, 63, 18, 49, 38], "target": 39}
+{"numbers": [42, 8, 56, 80], "target": 170}
+{"numbers": [27, 62, 26, 11], "target": 20}
+{"numbers": [13, 67, 89], "target": 9}
+{"numbers": [69, 37, 31, 27], "target": 90}
+{"numbers": [74, 47, 97, 47, 4], "target": 121}
+{"numbers": [4, 87, 10, 63, 66], "target": 104}
+{"numbers": [20, 87, 90], "target": 23}
+{"numbers": [49, 7, 16, 7, 16], "target": 63}
+{"numbers": [1, 71, 60], "target": 132}
+{"numbers": [67, 96, 12], "target": 41}
+{"numbers": [93, 65, 67, 69, 54, 1], "target": 109}
+{"numbers": [78, 48, 61, 88, 3, 2], "target": 184}
+{"numbers": [13, 79, 37, 62, 18], "target": 109}
+{"numbers": [71, 87, 77], "target": 235}
+{"numbers": [73, 60, 62, 46, 46, 27], "target": 76}
+{"numbers": [63, 50, 97, 21], "target": 231}
+{"numbers": [66, 86, 34, 39], "target": 53}
+{"numbers": [97, 75, 81, 24, 10], "target": 125}
+{"numbers": [80, 46, 89, 44, 64, 43], "target": 274}
+{"numbers": [71, 79, 41], "target": 191}
+{"numbers": [50, 34, 89], "target": 73}
+{"numbers": [64, 19, 67, 36], "target": 14}
+{"numbers": [28, 65, 86, 26, 2, 30], "target": 65}
+{"numbers": [27, 82, 36, 91, 3], "target": 3}
+{"numbers": [86, 82, 36], "target": 204}
+{"numbers": [60, 73, 33], "target": 100}
+{"numbers": [24, 78, 11], "target": 113}
+{"numbers": [60, 52, 50], "target": 62}
+{"numbers": [2, 19, 42, 21, 34], "target": 118}
+{"numbers": [21, 9, 78, 78, 92], "target": 80}
+{"numbers": [79, 61, 54], "target": 36}
+{"numbers": [66, 92, 99, 75, 85], "target": 247}
+{"numbers": [97, 1, 49, 93], "target": 54}
+{"numbers": [58, 54, 74, 87, 72, 71], "target": 300}
+{"numbers": [28, 80, 56, 35], "target": 129}
+{"numbers": [65, 20, 86], "target": 131}
+{"numbers": [47, 36, 99, 67, 28], "target": 277}
+{"numbers": [71, 68, 36, 1, 34], "target": 138}
+{"numbers": [4, 32, 49, 19], "target": 104}
+{"numbers": [16, 26, 40], "target": 50}
+{"numbers": [68, 75, 35, 1], "target": 177}
+{"numbers": [82, 69, 85, 60, 87], "target": 81}
+{"numbers": [46, 49, 82, 10], "target": 95}
+{"numbers": [90, 77, 81, 44, 84, 86], "target": 58}
+{"numbers": [92, 25, 64], "target": 181}
+{"numbers": [58, 35, 56, 72, 74], "target": 151}
+{"numbers": [24, 39, 33], "target": 48}
+{"numbers": [1, 57, 69, 36], "target": 25}
+{"numbers": [43, 45, 62], "target": 60}
+{"numbers": [35, 84, 37], "target": 156}
+{"numbers": [99, 70, 79], "target": 248}
+{"numbers": [35, 9, 70, 66, 40, 32], "target": 120}
+{"numbers": [71, 72, 67], "target": 66}
+{"numbers": [29, 26, 10, 33, 42], "target": 2}
+{"numbers": [96, 85, 56, 76, 37, 95], "target": 83}
+{"numbers": [73, 46, 51, 85], "target": 109}
+{"numbers": [86, 73, 10], "target": 23}
+{"numbers": [52, 21, 99, 70], "target": 200}
+{"numbers": [37, 2, 97, 38, 63], "target": 157}
+{"numbers": [28, 8, 7, 45, 2], "target": 16}
+{"numbers": [85, 78, 99, 53], "target": 53}
+{"numbers": [21, 41, 26, 87], "target": 123}
+{"numbers": [74, 38, 7], "target": 119}
+{"numbers": [88, 73, 81, 66, 96, 78], "target": 134}
+{"numbers": [10, 51, 6, 10, 71, 92], "target": 208}
+{"numbers": [18, 94, 72, 80, 56], "target": 140}
+{"numbers": [31, 47, 21, 96, 48], "target": 51}
+{"numbers": [3, 3, 75, 83], "target": 164}
+{"numbers": [56, 52, 12, 68, 97, 86], "target": 235}
+{"numbers": [25, 2, 93, 76, 19, 79], "target": 86}
+{"numbers": [36, 24, 10], "target": 22}
+{"numbers": [86, 17, 1], "target": 68}
+{"numbers": [63, 18, 74], "target": 155}
+{"numbers": [25, 69, 65, 50, 1, 16], "target": 6}
+{"numbers": [46, 95, 4, 6, 38, 40], "target": 129}
+{"numbers": [48, 62, 3, 70, 67], "target": 104}
+{"numbers": [5, 15, 18, 82], "target": 74}
+{"numbers": [74, 64, 30], "target": 168}
+{"numbers": [23, 48, 89], "target": 114}
+{"numbers": [67, 1, 79, 59, 5], "target": 43}
+{"numbers": [30, 81, 58], "target": 169}
+{"numbers": [74, 68, 29, 77, 35], "target": 7}
+{"numbers": [28, 61, 9, 78, 56, 2], "target": 112}
+{"numbers": [9, 89, 44, 72, 88], "target": 36}
+{"numbers": [63, 58, 75], "target": 70}
+{"numbers": [15, 69, 13], "target": 71}
+{"numbers": [57, 87, 66, 74, 22], "target": 132}
+{"numbers": [58, 12, 96, 85, 40, 77], "target": 252}
+{"numbers": [12, 60, 43], "target": 91}
+{"numbers": [33, 41, 34, 95, 37], "target": 172}
+{"numbers": [85, 17, 10], "target": 92}
+{"numbers": [89, 4, 26, 95], "target": 206}
+{"numbers": [33, 34, 10, 22, 25, 86], "target": 98}
+{"numbers": [49, 24, 76, 78], "target": 179}
+{"numbers": [34, 72, 80], "target": 186}
+{"numbers": [2, 47, 26], "target": 75}
+{"numbers": [46, 11, 47, 35], "target": 25}
+{"numbers": [55, 97, 45], "target": 107}
+{"numbers": [40, 28, 5, 32, 51], "target": 100}
+{"numbers": [35, 99, 65, 38, 33], "target": 58}
+{"numbers": [27, 49, 65, 62], "target": 203}
+{"numbers": [64, 11, 76, 93, 10, 73], "target": 177}
+{"numbers": [7, 21, 8, 90], "target": 54}
+{"numbers": [73, 59, 2, 16], "target": 28}
+{"numbers": [69, 37, 51, 93, 4], "target": 70}
+{"numbers": [82, 92, 73, 89, 16, 36], "target": 178}
+{"numbers": [24, 97, 42, 1], "target": 80}
+{"numbers": [2, 22, 86, 80, 92, 90], "target": 188}
+{"numbers": [62, 35, 1], "target": 26}
+{"numbers": [38, 86, 21, 54, 94], "target": 293}
+{"numbers": [45, 14, 65, 17, 32], "target": 75}
+{"numbers": [46, 13, 6, 50, 31, 52], "target": 2}
+{"numbers": [32, 79, 23], "target": 88}
+{"numbers": [56, 46, 50, 25], "target": 177}
+{"numbers": [35, 91, 28, 53], "target": 31}
+{"numbers": [60, 72, 25, 65], "target": 222}
+{"numbers": [89, 59, 89], "target": 237}
+{"numbers": [35, 43, 14, 52], "target": 144}
+{"numbers": [49, 64, 18], "target": 131}
+{"numbers": [68, 87, 51, 37], "target": 243}
+{"numbers": [3, 28, 42, 29], "target": 40}
+{"numbers": [40, 58, 94, 78, 76, 39], "target": 229}
+{"numbers": [88, 17, 63, 43, 84, 25], "target": 184}
+{"numbers": [30, 70, 85], "target": 125}
+{"numbers": [92, 2, 7, 70, 16, 40], "target": 129}
+{"numbers": [25, 57, 22, 11], "target": 71}
+{"numbers": [87, 75, 17, 39, 67, 78], "target": 195}
+{"numbers": [77, 74, 84, 86, 7], "target": 26}
+{"numbers": [13, 49, 93], "target": 57}
+{"numbers": [82, 99, 77, 71], "target": 131}
+{"numbers": [84, 18, 65, 39, 18, 61], "target": 127}
+{"numbers": [7, 37, 89], "target": 59}
+{"numbers": [41, 55, 1], "target": 15}
+{"numbers": [63, 76, 57, 1], "target": 43}
+{"numbers": [13, 8, 61], "target": 66}
+{"numbers": [96, 25, 78, 60], "target": 17}
+{"numbers": [30, 35, 13], "target": 18}
+{"numbers": [76, 3, 71, 32, 32, 7], "target": 9}
+{"numbers": [50, 39, 82, 48, 40, 15], "target": 80}
+{"numbers": [6, 41, 16, 99], "target": 130}
+{"numbers": [67, 5, 83, 39, 67, 66], "target": 29}
+{"numbers": [70, 90, 80, 41], "target": 281}
+{"numbers": [57, 63, 61], "target": 59}
+{"numbers": [8, 70, 56, 17, 62, 96], "target": 117}
+{"numbers": [8, 22, 13, 89], "target": 46}
+{"numbers": [30, 92, 10, 85, 12], "target": 229}
+{"numbers": [51, 86, 32], "target": 105}
+{"numbers": [14, 8, 88, 9, 38], "target": 53}
+{"numbers": [63, 78, 42, 76, 5, 51], "target": 153}
+{"numbers": [50, 54, 58, 20], "target": 182}
+{"numbers": [75, 13, 28, 64], "target": 154}
+{"numbers": [66, 83, 59, 13, 38], "target": 141}
+{"numbers": [37, 19, 42, 88], "target": 112}
+{"numbers": [34, 18, 62], "target": 114}
+{"numbers": [21, 68, 77, 58, 28], "target": 80}
+{"numbers": [19, 11, 53, 92, 45], "target": 182}
+{"numbers": [2, 29, 15], "target": 42}
+{"numbers": [10, 86, 4, 49, 52, 63], "target": 264}
+{"numbers": [30, 51, 57, 58, 69], "target": 35}
+{"numbers": [72, 28, 14, 28, 85], "target": 199}
+{"numbers": [4, 90, 80, 53], "target": 227}
+{"numbers": [30, 25, 78, 54], "target": 31}
+{"numbers": [80, 62, 86, 69], "target": 173}
+{"numbers": [44, 21, 8, 92, 76, 7], "target": 144}
+{"numbers": [52, 57, 91, 69, 74], "target": 57}
+{"numbers": [64, 71, 54], "target": 189}
+{"numbers": [14, 6, 42], "target": 62}
+{"numbers": [78, 77, 36, 57, 96], "target": 188}
+{"numbers": [67, 3, 4, 79, 87, 62], "target": 128}
+{"numbers": [84, 82, 8, 86, 81, 30], "target": 149}
+{"numbers": [93, 64, 47, 24, 93, 15], "target": 56}
+{"numbers": [79, 27, 72, 19, 56, 65], "target": 16}
+{"numbers": [71, 70, 67], "target": 74}
+{"numbers": [52, 66, 31], "target": 87}
+{"numbers": [36, 98, 49, 33, 70], "target": 214}
+{"numbers": [50, 58, 54, 1, 25, 38], "target": 100}
+{"numbers": [61, 58, 6], "target": 113}
+{"numbers": [46, 14, 74, 99, 74], "target": 159}
+{"numbers": [82, 66, 1, 44, 97, 4], "target": 204}
+{"numbers": [18, 54, 43, 19, 11, 29], "target": 138}
+{"numbers": [32, 39, 78, 26, 16, 46], "target": 15}
+{"numbers": [47, 43, 12, 32], "target": 24}
+{"numbers": [26, 35, 15, 92, 25], "target": 111}
+{"numbers": [18, 12, 37, 61], "target": 6}
+{"numbers": [60, 86, 39], "target": 107}
+{"numbers": [13, 39, 35, 61], "target": 52}
+{"numbers": [97, 95, 55, 86, 42], "target": 9}
+{"numbers": [22, 49, 86], "target": 15}
+{"numbers": [87, 8, 44, 91, 79, 19], "target": 132}
+{"numbers": [55, 29, 1], "target": 27}
+{"numbers": [27, 79, 79, 81], "target": 212}
+{"numbers": [18, 9, 93, 16, 64], "target": 150}
+{"numbers": [5, 11, 26, 29, 84, 71], "target": 106}
+{"numbers": [11, 85, 69, 91, 58], "target": 198}
+{"numbers": [96, 59, 87, 94, 41, 4], "target": 117}
+{"numbers": [69, 92, 22, 10], "target": 55}
+{"numbers": [84, 92, 92, 49, 64, 4], "target": 249}
+{"numbers": [63, 14, 17, 35, 34, 96], "target": 225}
+{"numbers": [24, 47, 97, 42], "target": 68}
+{"numbers": [98, 74, 76], "target": 248}
+{"numbers": [40, 33, 99, 46], "target": 60}
+{"numbers": [20, 69, 36], "target": 85}
+{"numbers": [84, 25, 80, 48, 71, 74], "target": 236}
+{"numbers": [2, 73, 10], "target": 81}
+{"numbers": [43, 71, 63], "target": 177}
+{"numbers": [4, 42, 53, 58, 1], "target": 72}
+{"numbers": [7, 43, 21, 58, 70, 33], "target": 78}
+{"numbers": [20, 54, 60, 48, 33], "target": 215}
+{"numbers": [62, 48, 25], "target": 39}
+{"numbers": [33, 36, 83], "target": 14}
+{"numbers": [18, 95, 27, 5], "target": 109}
+{"numbers": [62, 22, 93, 33], "target": 144}
+{"numbers": [76, 16, 20, 59, 2, 4], "target": 145}
+{"numbers": [33, 48, 18, 88, 49, 61], "target": 231}
+{"numbers": [99, 44, 98, 39, 82], "target": 76}
+{"numbers": [62, 20, 5], "target": 47}
+{"numbers": [94, 37, 14, 32, 91, 20], "target": 260}
+{"numbers": [12, 28, 66, 13], "target": 13}
+{"numbers": [62, 71, 28], "target": 19}
+{"numbers": [49, 65, 66, 39, 93, 18], "target": 200}
+{"numbers": [26, 67, 3, 62, 51, 49], "target": 150}
+{"numbers": [95, 51, 23], "target": 67}
+{"numbers": [19, 46, 58, 62], "target": 23}
+{"numbers": [71, 9, 55, 85], "target": 220}
+{"numbers": [46, 90, 37, 22], "target": 59}
+{"numbers": [39, 19, 46, 76, 38], "target": 88}
+{"numbers": [47, 86, 40], "target": 173}
+{"numbers": [63, 36, 82, 59], "target": 114}
+{"numbers": [7, 42, 58, 24, 44], "target": 29}
+{"numbers": [56, 40, 14, 57, 89], "target": 256}
+{"numbers": [5, 61, 30], "target": 96}
+{"numbers": [97, 3, 92, 17, 44], "target": 213}
+{"numbers": [73, 59, 18], "target": 32}
+{"numbers": [19, 64, 91], "target": 8}
+{"numbers": [66, 57, 86, 20], "target": 115}
+{"numbers": [65, 35, 70, 72, 12], "target": 230}
+{"numbers": [10, 29, 26, 42], "target": 107}
+{"numbers": [18, 6, 75, 60], "target": 39}
+{"numbers": [81, 88, 96, 3, 72], "target": 142}
+{"numbers": [82, 99, 23], "target": 204}
+{"numbers": [9, 33, 24, 56], "target": 56}
+{"numbers": [2, 33, 11, 60, 56, 62], "target": 90}
+{"numbers": [2, 42, 55, 93, 85], "target": 23}
+{"numbers": [82, 54, 94, 51, 61], "target": 220}
+{"numbers": [27, 50, 92, 42], "target": 73}
+{"numbers": [8, 90, 9, 87], "target": 2}
+{"numbers": [80, 63, 98, 68, 77, 98], "target": 26}
+{"numbers": [7, 54, 51, 98, 88], "target": 20}
+{"numbers": [31, 45, 82, 16, 32, 60], "target": 82}
+{"numbers": [58, 4, 11, 46, 34], "target": 85}
+{"numbers": [98, 38, 52], "target": 188}
+{"numbers": [43, 64, 62, 14, 98], "target": 157}
+{"numbers": [15, 4, 44], "target": 63}
+{"numbers": [10, 26, 40, 60, 4, 99], "target": 131}
+{"numbers": [90, 37, 43, 95], "target": 75}
+{"numbers": [83, 46, 37], "target": 92}
+{"numbers": [90, 6, 19, 73], "target": 176}
+{"numbers": [78, 32, 93, 31, 58], "target": 166}
+{"numbers": [47, 66, 1], "target": 112}
+{"numbers": [18, 69, 85, 71, 77, 62], "target": 382}
+{"numbers": [55, 1, 42, 37, 72, 40], "target": 27}
+{"numbers": [56, 87, 15, 14, 86], "target": 200}
+{"numbers": [11, 28, 16, 91, 95], "target": 209}
+{"numbers": [35, 8, 66, 2, 37], "target": 132}
+{"numbers": [84, 76, 92, 39, 20, 16], "target": 175}
+{"numbers": [9, 90, 74, 84], "target": 239}
+{"numbers": [51, 86, 53, 51, 29, 72], "target": 198}
+{"numbers": [78, 65, 69, 96], "target": 170}
+{"numbers": [58, 30, 80], "target": 168}
+{"numbers": [95, 71, 20, 85, 92], "target": 153}
+{"numbers": [97, 69, 51], "target": 79}
+{"numbers": [82, 70, 69, 37, 31], "target": 51}
+{"numbers": [80, 25, 87, 35, 90], "target": 93}
+{"numbers": [37, 48, 96, 7, 29], "target": 159}
+{"numbers": [79, 63, 22, 56, 23, 49], "target": 90}
+{"numbers": [1, 1, 14, 82, 48, 7], "target": 139}
+{"numbers": [13, 84, 97], "target": 168}
+{"numbers": [23, 7, 5, 52], "target": 63}
+{"numbers": [52, 30, 81, 12, 22], "target": 197}
+{"numbers": [48, 99, 49, 29, 2, 19], "target": 208}
+{"numbers": [88, 89, 62, 69, 20], "target": 152}
+{"numbers": [16, 65, 73], "target": 154}
+{"numbers": [71, 64, 97], "target": 232}
+{"numbers": [54, 32, 8, 17], "target": 111}
+{"numbers": [24, 5, 9, 74, 54, 78], "target": 234}
+{"numbers": [48, 56, 60], "target": 164}
+{"numbers": [75, 64, 38], "target": 177}
+{"numbers": [67, 5, 71, 39, 68, 40], "target": 290}
+{"numbers": [87, 92, 52, 72, 98], "target": 217}
+{"numbers": [84, 15, 31, 6, 58, 78], "target": 198}
+{"numbers": [69, 49, 56, 39, 29], "target": 52}
+{"numbers": [86, 26, 45], "target": 157}
+{"numbers": [55, 23, 82, 61, 59, 97], "target": 103}
+{"numbers": [30, 69, 54, 2], "target": 151}
+{"numbers": [57, 2, 29, 80, 12], "target": 98}
+{"numbers": [19, 76, 39, 1, 7], "target": 102}
+{"numbers": [2, 90, 28, 67, 45, 94], "target": 138}
+{"numbers": [48, 41, 79, 7, 90, 20], "target": 31}
+{"numbers": [38, 82, 32], "target": 88}
+{"numbers": [73, 48, 51, 48], "target": 74}
+{"numbers": [23, 68, 88, 55, 81, 67], "target": 38}
+{"numbers": [55, 86, 83], "target": 58}
+{"numbers": [14, 41, 2, 57, 83], "target": 83}
+{"numbers": [10, 90, 64], "target": 164}
+{"numbers": [60, 41, 38, 9, 74, 42], "target": 126}
+{"numbers": [15, 36, 11, 20, 77, 74], "target": 203}
+{"numbers": [95, 43, 79, 65], "target": 92}
+{"numbers": [13, 24, 88, 43], "target": 142}
+{"numbers": [24, 41, 65, 76, 15, 76], "target": 219}
+{"numbers": [84, 80, 16, 94, 73, 40], "target": 241}
+{"numbers": [27, 66, 99, 27], "target": 87}
+{"numbers": [53, 18, 94], "target": 165}
+{"numbers": [42, 82, 34, 64, 96, 28], "target": 2}
+{"numbers": [88, 62, 1, 48, 8, 13], "target": 202}
+{"numbers": [40, 87, 76, 39], "target": 164}
+{"numbers": [35, 65, 22, 70, 92], "target": 144}
+{"numbers": [91, 81, 90, 52, 2, 14], "target": 60}
+{"numbers": [16, 66, 44, 45, 91], "target": 172}
+{"numbers": [86, 70, 8], "target": 148}
+{"numbers": [64, 59, 93, 48, 88], "target": 58}
+{"numbers": [37, 74, 18, 87], "target": 142}
+{"numbers": [46, 14, 83], "target": 143}
+{"numbers": [15, 43, 67, 15, 55, 67], "target": 98}
+{"numbers": [75, 42, 68], "target": 101}
+{"numbers": [44, 56, 84, 35, 16], "target": 235}
+{"numbers": [15, 63, 23, 15], "target": 116}
+{"numbers": [81, 10, 87, 70, 46], "target": 294}
+{"numbers": [23, 15, 15, 75], "target": 98}
+{"numbers": [16, 12, 81, 95, 85], "target": 119}
+{"numbers": [22, 7, 56, 4, 99], "target": 10}
+{"numbers": [45, 96, 94, 43, 65, 34], "target": 309}
+{"numbers": [25, 58, 55], "target": 28}
+{"numbers": [11, 69, 44, 19], "target": 17}
+{"numbers": [21, 85, 15, 60, 98, 50], "target": 179}
+{"numbers": [14, 97, 53, 96, 73, 6], "target": 181}
+{"numbers": [16, 18, 10, 82, 45, 4], "target": 99}
+{"numbers": [97, 70, 8, 64, 50], "target": 173}
+{"numbers": [49, 86, 89, 6, 59], "target": 99}
+{"numbers": [13, 5, 60, 98, 66, 25], "target": 99}
+{"numbers": [40, 39, 44, 2, 79], "target": 200}
+{"numbers": [21, 98, 61, 29, 51, 31], "target": 189}
+{"numbers": [32, 19, 99], "target": 150}
+{"numbers": [56, 89, 44], "target": 77}
+{"numbers": [40, 18, 18, 32, 68, 42], "target": 102}
+{"numbers": [39, 75, 55, 11], "target": 180}
+{"numbers": [25, 6, 95, 28, 72, 91], "target": 123}
+{"numbers": [38, 93, 45, 23], "target": 63}
+{"numbers": [78, 88, 45, 75, 7], "target": 53}
+{"numbers": [75, 99, 29, 60, 33, 90], "target": 170}
+{"numbers": [18, 13, 38, 24, 1, 71], "target": 163}
+{"numbers": [96, 2, 3, 2], "target": 95}
+{"numbers": [60, 30, 10, 42, 61], "target": 81}
+{"numbers": [71, 93, 72], "target": 92}
+{"numbers": [94, 13, 50, 30], "target": 27}
+{"numbers": [40, 21, 31, 17, 49, 91], "target": 107}
+{"numbers": [67, 49, 36, 26, 56, 6], "target": 130}
+{"numbers": [45, 24, 36], "target": 105}
+{"numbers": [78, 87, 76], "target": 89}
+{"numbers": [31, 36, 70], "target": 65}
+{"numbers": [48, 39, 15, 98, 86, 70], "target": 356}
+{"numbers": [57, 9, 34], "target": 82}
+{"numbers": [15, 62, 80, 4], "target": 131}
