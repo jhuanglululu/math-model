@@ -90,6 +90,10 @@ class TrainingVariation(BaseModel):
     clip_eps: float = 0.2  # PPO/GRPO ratio clip epsilon
     kl_beta: float = 0.0  # KL-to-reference penalty coefficient
     rollout_batch: int = 32  # puzzles per rollout batch
+    # Training-variation name whose checkpoint initializes the policy
+    # (RL runs start from an SFT checkpoint: same model variation + seed,
+    # checkpoints/<model>/<init_from>/<seed>/current.safetensors).
+    init_from: str = ""
 
 
 TRAINING_VARIATIONS: dict[str, TrainingVariation] = {
@@ -143,6 +147,79 @@ TRAINING_VARIATIONS: dict[str, TrainingVariation] = {
         eval_interval=2000,
         samples=100_000,
         env=EnvConfig(tools="verify"),
+    ),
+    # Real RL recipe, no tools.
+    "rl_base": TrainingVariation(
+        name="rl_base",
+        steps=1_000,
+        batch_size=64,
+        lr=1e-5,
+        warmup_steps=100,
+        weight_decay=0.1,
+        grad_clip=1.0,
+        eval_interval=2000,
+        samples=5_000,
+        env=EnvConfig(tools="none"),
+        group_size=8,
+        clip_eps=0.2,
+        kl_beta=0.0,
+        rollout_batch=32,
+        init_from="sft_base",
+    ),
+    # RL arm with the calculate tool enabled.
+    "rl_calc": TrainingVariation(
+        name="rl_calc",
+        steps=1_000,
+        batch_size=64,
+        lr=1e-5,
+        warmup_steps=100,
+        weight_decay=0.1,
+        grad_clip=1.0,
+        eval_interval=2000,
+        samples=5_000,
+        env=EnvConfig(tools="calculate"),
+        group_size=8,
+        clip_eps=0.2,
+        kl_beta=0.0,
+        rollout_batch=32,
+        init_from="sft_calc",
+    ),
+    # RL pipe-cleaner: run AFTER `--training smoke` (it initializes from the
+    # smoke SFT checkpoint); finishes on CPU in ~1 min with the tiny model.
+    "rl_smoke": TrainingVariation(
+        name="rl_smoke",
+        steps=3,
+        batch_size=8,
+        lr=1e-5,
+        warmup_steps=0,
+        weight_decay=0.1,
+        grad_clip=1.0,
+        eval_interval=1,
+        samples=32,
+        env=EnvConfig(tools="calculate", max_completion_len=64),
+        group_size=2,
+        clip_eps=0.2,
+        kl_beta=0.0,
+        rollout_batch=2,
+        init_from="smoke",
+    ),
+    # RL arm with the verify tool enabled.
+    "rl_verify": TrainingVariation(
+        name="rl_verify",
+        steps=1_000,
+        batch_size=64,
+        lr=1e-5,
+        warmup_steps=100,
+        weight_decay=0.1,
+        grad_clip=1.0,
+        eval_interval=2000,
+        samples=5_000,
+        env=EnvConfig(tools="verify"),
+        group_size=8,
+        clip_eps=0.2,
+        kl_beta=0.0,
+        rollout_batch=32,
+        init_from="sft_verify",
     ),
 }
 

@@ -38,10 +38,14 @@ def _assert_valid_puzzles(cfg, seeds=range(400)):
         assert acc == p.target
 
 
-def test_generator_default_single_digit_inputs_and_targets():
-    cfg = PuzzleConfig()
-    assert cfg.max_input_digits == 1 and cfg.max_target_digits == 1
-    _assert_valid_puzzles(cfg)
+def test_generator_default_config():
+    # defaults are a project knob (currently 2-digit inputs / 3-digit targets);
+    # assert validity against whatever they are, not a pinned value
+    _assert_valid_puzzles(PuzzleConfig())
+
+
+def test_generator_single_digit_config():
+    _assert_valid_puzzles(PuzzleConfig(max_input_digits=1, max_target_digits=1))
 
 
 def test_generator_two_digit_config_wider_ranges():

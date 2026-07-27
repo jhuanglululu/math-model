@@ -1,19 +1,216 @@
-"""GRPO training loop — USER-IMPLEMENTED (RL core stub).
+"""GRPO training loop.
 
-Usage (per project conventions — no other flags):
-    uv run scripts/train_rl.py --model small --training <rl-variation> --seed 0
+Usage (per project conventions — only these flags):
+    uv run scripts/train_rl.py --model small --training rl_calc --seed 0
 
-Outline (you write it; every piece it wires already exists):
-    1. Parse --model/--training/--seed; get variations; seed_everything().
-    2. get_device(); build model; load the SFT checkpoint as the starting
-       policy (and optionally a frozen copy as ref_model when kl_beta > 0).
-    3. Loop: sample puzzles (skip eval-set keys) -> rollout() ->
-       grpo_advantages() -> grpo_loss() -> backward, grad-clip, step.
-    4. RunRecord step lines with the RL fields from the design doc
-       (reward_mean, solve_rate, tool_use_rate, tool_calls_per_ep,
-       manual_steps_per_ep, format_viol_rate, neg_prefix_rate, ...).
-    5. Checkpoints with resume, keep-3-best by eval solve rate on
-       datasets/eval.jsonl (greedy decode).
+The loop, records, checkpointing, and resume are wired; the RL core of each
+step lives in ``rl_step()`` — USER-IMPLEMENTED, marked below. Everything it
+needs already exists and is verified: rollout(), grpo_advantages(),
+grpo_loss().
+
+Run order: the policy initializes from the SFT checkpoint named by the
+variation's ``init_from`` (same model + seed), so train_sft must have run
+first. Pipe-clean locally with:
+    uv run scripts/train_sft.py --model tiny --training smoke
+    uv run scripts/train_rl.py  --model tiny --training rl_smoke
 """
 
-raise NotImplementedError("RL core — user implements (see module docstring)")
+from __future__ import annotations
+
+import argparse
+import copy
+import json
+import math
+import random
+import time
+from pathlib import Path
+
+import torch
+from safetensors.torch import load_model
+
+from mathrl.checkpoint import Checkpointer, resume, run_dir
+from mathrl.device import get_device, seed_everything
+from mathrl.model import GPT, model_dtype
+from mathrl.puzzles import Puzzle, canonical_key, generate_puzzle
+from mathrl.records import RunRecord, TrainingProgress
+from mathrl.tokenizer import MathTokenizer
+from mathrl.variations import get_model_variation, get_training_variation
+
+EVAL_JSONL = Path("datasets/eval.jsonl")
+
+
+def load_eval_keys() -> set[str]:
+    """Canonical keys of the held-out eval puzzles, to exclude from training."""
+    keys: set[str] = set()
+    if not EVAL_JSONL.exists():
+        print(
+            f"WARNING: {EVAL_JSONL} not found (run from repo root?) — "
+            "RL puzzles will NOT exclude the held-out eval set"
+        )
+        return keys
+    for line in EVAL_JSONL.read_text().splitlines():
+        if line.strip():
+            rec = json.loads(line)
+            keys.add(canonical_key(Puzzle(numbers=rec["numbers"], target=rec["target"])))
+    return keys
+
+
+def sample_puzzles(n: int, rng: random.Random, cfg, exclude_keys: set[str]) -> list[Puzzle]:
+    out: list[Puzzle] = []
+    while len(out) < n:
+        p = generate_puzzle(rng, cfg)
+        if canonical_key(p) not in exclude_keys:
+            out.append(p)
+    return out
+
+
+def lr_at(step: int, base_lr: float, warmup: int, total: int) -> float:
+    """Linear warmup then cosine decay to zero (same schedule as SFT)."""
+    if warmup > 0 and step < warmup:
+        return base_lr * (step + 1) / warmup
+    progress = min(1.0, max(0.0, (step - warmup) / max(1, total - warmup)))
+    return 0.5 * base_lr * (1.0 + math.cos(math.pi * progress))
+
+
+# ========================================================================== #
+# YOUR PART — the RL core of one training step.
+# ========================================================================== #
+def rl_step(
+    model: torch.nn.Module,
+    optimizer: torch.optim.Optimizer,
+    puzzles: list[Puzzle],
+    tok: MathTokenizer,
+    tv,  # TrainingVariation: group_size, clip_eps, kl_beta, env, reward, grad_clip
+    device: torch.device,
+    ref_model: torch.nn.Module | None,
+) -> dict[str, float]:
+    """One GRPO update: rollout -> advantages -> loss -> backward -> clip -> step.
+
+    Must return a flat stats dict for the record.jsonl step line. Required
+    keys (the loop logs whatever you return, but these feed the progress
+    display and best-checkpoint metric):
+        reward_mean, reward_std, loss, grad_norm
+    plus whatever grpo_loss's stats dict gives you (entropy, kl, ...).
+    Useful extras when you get to them: solve_rate, tool_use_rate — needs
+    RolloutBatch to carry reward reasons/tool_calls (your call).
+
+    NOTE: take exactly ONE optimizer step per rollout batch here (logp_old is
+    None — reusing a batch for several steps without the PPO ratio is
+    off-policy and silently wrong).
+    """
+    raise NotImplementedError("RL core — user implements")
+
+
+# ========================================================================== #
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--model", required=True)
+    ap.add_argument("--training", required=True)
+    ap.add_argument("--seed", type=int, default=0)
+    args = ap.parse_args()
+
+    seed_everything(args.seed)
+    device = get_device()
+    dtype = model_dtype(device)
+    print(f"device: {device}, dtype: {dtype}")
+
+    model_cfg = get_model_variation(args.model)
+    tv = get_training_variation(args.training)
+    if not tv.init_from:
+        raise SystemExit(f"training variation {tv.name!r} has no init_from — not an RL recipe?")
+    tok = MathTokenizer()
+
+    # --- policy, initialized from the SFT checkpoint (same model + seed) ---
+    model = GPT(model_cfg).to(device=device, dtype=dtype)
+    sft_ckpt = run_dir(args.model, tv.init_from, args.seed) / "current.safetensors"
+    if not sft_ckpt.exists():
+        raise SystemExit(
+            f"no SFT checkpoint at {sft_ckpt} — run "
+            f"`uv run scripts/train_sft.py --model {args.model} "
+            f"--training {tv.init_from} --seed {args.seed}` first"
+        )
+    load_model(model, str(sft_ckpt))
+    print(f"policy initialized from {sft_ckpt}")
+
+    # Dropout must be OFF for RL: sampling (rollout) and scoring (grpo_loss)
+    # must see the same distribution, and `small` has dropout=0.1. eval mode
+    # does not block gradients — this is correct for the loss pass too.
+    model.eval()
+
+    # frozen reference for the optional KL penalty
+    ref_model = None
+    if tv.kl_beta > 0.0:
+        ref_model = copy.deepcopy(model)
+        ref_model.requires_grad_(False)
+        ref_model.eval()
+
+    optimizer = torch.optim.AdamW(
+        model.parameters(), lr=tv.lr, weight_decay=tv.weight_decay, betas=(0.9, 0.95)
+    )
+
+    # --- data / records / checkpoints (resume by default) ---
+    rng = random.Random(args.seed)
+    eval_keys = load_eval_keys()
+    record = RunRecord(
+        args.model,
+        args.training,
+        args.seed,
+        config={"model": model_cfg.model_dump(), "training": tv.model_dump()},
+        baseline=tv.init_from,
+    )
+    ckpt = Checkpointer(args.model, args.training, args.seed, keep_best=3, higher_is_better=True)
+    start_step = 0
+    if (ckpt.dir / "current.safetensors").exists():
+        start_step = resume(ckpt.dir, model, optimizer) + 1
+        print(f"resumed from step {start_step - 1}")
+
+    progress = TrainingProgress(args.model, args.training, tv.steps, epoch=1, initial=start_step)
+    start_time = time.time()
+    reward_window: list[float] = []  # rolling reward_mean since last checkpoint
+
+    for step in range(start_step, tv.steps):
+        lr = lr_at(step, tv.lr, tv.warmup_steps, tv.steps)
+        for g in optimizer.param_groups:
+            g["lr"] = lr
+
+        puzzles = sample_puzzles(tv.rollout_batch, rng, tv.puzzle, eval_keys)
+
+        t0 = time.time()
+        stats = rl_step(model, optimizer, puzzles, tok, tv, device, ref_model)
+        sec_per_step = time.time() - t0
+
+        reward_window.append(stats.get("reward_mean", 0.0))
+        progress.step(loss=stats.get("loss", 0.0))
+        record.log_step(
+            step,
+            lr=lr,
+            sec_per_step=round(sec_per_step, 4),
+            episodes=len(puzzles) * tv.group_size,
+            **{k: round(float(v), 5) for k, v in stats.items()},
+        )
+
+        if step % tv.eval_interval == 0 or step == tv.steps - 1:
+            window_mean = sum(reward_window) / max(1, len(reward_window))
+            reward_window.clear()
+            elapsed = time.time() - start_time
+            mm, ss = divmod(int(elapsed), 60)
+            progress.bar.write(
+                f"step {step:>5}/{tv.steps} | {mm:02d}:{ss:02d} | "
+                f"reward {stats.get('reward_mean', 0.0):+6.3f} | "
+                f"window {window_mean:+6.3f} | "
+                f"entropy {stats.get('entropy', 0.0):6.3f}"
+            )
+            record.log_eval(step, reward_window_mean=round(window_mean, 5))
+            # best-checkpoint metric: rolling reward mean (run scripts/eval.py
+            # offline for the true greedy solve_rate)
+            ckpt.save(model, optimizer, step, metric=window_mean, config={"lr": lr})
+
+    progress.close()
+    print("done. offline eval:")
+    print(f"  uv run scripts/eval.py --model {args.model} --training {args.training} --n 200")
+
+
+if __name__ == "__main__":
+    main()
