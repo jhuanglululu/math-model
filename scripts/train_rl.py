@@ -96,7 +96,7 @@ def rl_step(
     return {
         "reward_mean": float(rb.rewards.mean()),
         "reward_std": float(rb.rewards.std()),
-        "loss": float(loss),
+        "loss": float(loss.detach()),
         "grad_norm": float(grad_norm),
         "solve_rate": reason_counts.get("correct", 0) / n,
         "tool_use_rate": sum(1 for c in rb.tool_calls if c > 0) / n,
