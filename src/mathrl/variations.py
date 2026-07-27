@@ -161,7 +161,7 @@ TRAINING_VARIATIONS: dict[str, TrainingVariation] = {
         env=EnvConfig(tools="calculate", max_completion_len=64),
         group_size=2,
         clip_eps=0.2,
-        kl_beta=0.0,
+        kl_beta=0.02,  # exercises the ref-model/KL path in the smoke run
         rollout_batch=2,
         init_from="smoke",
     ),
@@ -177,7 +177,7 @@ TRAINING_VARIATIONS: dict[str, TrainingVariation] = {
         env=EnvConfig(tools="none"),
         group_size=8,
         clip_eps=0.2,
-        kl_beta=0.0,
+        kl_beta=0.02,  # KL anchor to the SFT init — the 2026-07-27 collapse is why
         rollout_batch=32,
         init_from="sft_base",
     ),
@@ -193,7 +193,7 @@ TRAINING_VARIATIONS: dict[str, TrainingVariation] = {
         env=EnvConfig(tools="calculate"),
         group_size=8,
         clip_eps=0.2,
-        kl_beta=0.0,
+        kl_beta=0.02,  # KL anchor to the SFT init — the 2026-07-27 collapse is why
         rollout_batch=32,
         init_from="sft_calc",
     ),
@@ -209,7 +209,7 @@ TRAINING_VARIATIONS: dict[str, TrainingVariation] = {
         env=EnvConfig(tools="verify"),
         group_size=8,
         clip_eps=0.2,
-        kl_beta=0.0,
+        kl_beta=0.02,  # KL anchor to the SFT init — the 2026-07-27 collapse is why
         rollout_batch=32,
         init_from="sft_verify",
     ),
