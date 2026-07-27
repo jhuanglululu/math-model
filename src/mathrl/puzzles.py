@@ -121,3 +121,38 @@ def canonical_key(puzzle: Puzzle) -> str:
     """Order-independent identity: sorted numbers + target. For eval holdout."""
     nums = ",".join(str(v) for v in sorted(puzzle.numbers))
     return f"{nums}|{puzzle.target}"
+
+
+# --------------------------------------------------------------------------- #
+# Held-out eval stream — a pure function of (seed, config), no file on disk.
+# Training excludes eval_keys(cfg); eval.py decodes eval_puzzles(cfg). Both
+# derive from EVAL_SEED, so they always agree, and the stream automatically
+# tracks PuzzleConfig changes (a config change IS a new eval set — record
+# lines carry n + config for comparability).
+# --------------------------------------------------------------------------- #
+
+EVAL_SEED = 1234
+EVAL_N = 1000
+
+
+def eval_puzzles(cfg: PuzzleConfig, n: int = EVAL_N, seed: int = EVAL_SEED) -> list[Puzzle]:
+    """First n distinct-by-canonical_key puzzles of the seeded eval stream."""
+    rng = random.Random(seed)
+    out: list[Puzzle] = []
+    seen: set[str] = set()
+    attempts = 0
+    while len(out) < n:
+        attempts += 1
+        if attempts > 200 * n:
+            raise RuntimeError(f"could not generate {n} distinct eval puzzles for {cfg}")
+        p = generate_puzzle(rng, cfg)
+        k = canonical_key(p)
+        if k not in seen:
+            seen.add(k)
+            out.append(p)
+    return out
+
+
+def eval_keys(cfg: PuzzleConfig, n: int = EVAL_N, seed: int = EVAL_SEED) -> set[str]:
+    """Canonical keys of the eval stream, for train-time exclusion."""
+    return {canonical_key(p) for p in eval_puzzles(cfg, n, seed)}

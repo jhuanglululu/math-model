@@ -19,12 +19,10 @@ from __future__ import annotations
 
 import argparse
 import copy
-import json
 import math
 import random
 import time
 from collections import Counter
-from pathlib import Path
 
 import torch
 from safetensors.torch import load_model
@@ -34,28 +32,10 @@ from mathrl.rollout import rollout
 from mathrl.checkpoint import Checkpointer, run_dir
 from mathrl.device import get_device, seed_everything
 from mathrl.model import GPT, model_dtype
-from mathrl.puzzles import Puzzle, canonical_key, generate_puzzle
+from mathrl.puzzles import Puzzle, canonical_key, eval_keys, generate_puzzle
 from mathrl.records import RunRecord, TrainingProgress
 from mathrl.tokenizer import MathTokenizer
 from mathrl.variations import get_model_variation, get_training_variation
-
-EVAL_JSONL = Path("datasets/eval.jsonl")
-
-
-def load_eval_keys() -> set[str]:
-    """Canonical keys of the held-out eval puzzles, to exclude from training."""
-    keys: set[str] = set()
-    if not EVAL_JSONL.exists():
-        print(
-            f"WARNING: {EVAL_JSONL} not found (run from repo root?) — "
-            "RL puzzles will NOT exclude the held-out eval set"
-        )
-        return keys
-    for line in EVAL_JSONL.read_text().splitlines():
-        if line.strip():
-            rec = json.loads(line)
-            keys.add(canonical_key(Puzzle(numbers=rec["numbers"], target=rec["target"])))
-    return keys
 
 
 def sample_puzzles(n: int, rng: random.Random, cfg, exclude_keys: set[str]) -> list[Puzzle]:
@@ -178,7 +158,7 @@ def main() -> None:
 
     # --- data / records / checkpoints ---
     rng = random.Random(args.seed)
-    eval_keys = load_eval_keys()
+    exclude = eval_keys(tv.puzzle)
     record = RunRecord(
         args.model,
         args.training,
@@ -197,7 +177,7 @@ def main() -> None:
         for g in optimizer.param_groups:
             g["lr"] = lr
 
-        puzzles = sample_puzzles(tv.rollout_batch, rng, tv.puzzle, eval_keys)
+        puzzles = sample_puzzles(tv.rollout_batch, rng, tv.puzzle, exclude)
 
         t0 = time.time()
         stats = rl_step(model, optimizer, puzzles, tok, tv, device, ref_model)

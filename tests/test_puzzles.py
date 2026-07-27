@@ -5,6 +5,8 @@ from mathrl.config import PuzzleConfig
 from mathrl.puzzles import (
     Puzzle,
     canonical_key,
+    eval_keys,
+    eval_puzzles,
     generate_puzzle,
     prompt_tokens,
     sample_wrong_arrangement,
@@ -119,3 +121,16 @@ def test_generation_is_deterministic_by_seed():
     p1 = generate_puzzle(random.Random(99), cfg)
     p2 = generate_puzzle(random.Random(99), cfg)
     assert (p1.numbers, p1.target, p1.solution) == (p2.numbers, p2.target, p2.solution)
+
+
+def test_eval_stream_deterministic_and_distinct():
+    cfg = PuzzleConfig()
+    a = eval_puzzles(cfg, n=50)
+    b = eval_puzzles(cfg, n=50)
+    assert [(p.numbers, p.target) for p in a] == [(p.numbers, p.target) for p in b]
+    assert len({canonical_key(p) for p in a}) == 50
+    # smaller n is a prefix of larger n (training exclusion stays a superset)
+    assert [(p.numbers, p.target) for p in eval_puzzles(cfg, n=10)] == [
+        (p.numbers, p.target) for p in a[:10]
+    ]
+    assert eval_keys(cfg, n=50) == {canonical_key(p) for p in a}

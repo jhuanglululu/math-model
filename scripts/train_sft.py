@@ -13,45 +13,21 @@ periodic held-out validation, and keep-3-best checkpointing. `--model tiny --tra
 from __future__ import annotations
 
 import argparse
-import json
 import math
 import random
 import time
-from pathlib import Path
-
 import torch
 import torch.nn.functional as F
 
 from mathrl.checkpoint import Checkpointer
 from mathrl.device import get_device, seed_everything
 from mathrl.model import GPT, model_dtype
-from mathrl.puzzles import canonical_key, generate_puzzle
+from mathrl.puzzles import canonical_key, eval_keys, generate_puzzle
 from mathrl.records import RunRecord, TrainingProgress
 from mathrl.sft_data import build_batch
 from mathrl.tokenizer import MathTokenizer
 from mathrl.traces import sft_trace
 from mathrl.variations import get_model_variation, get_training_variation
-
-EVAL_JSONL = Path("datasets/eval.jsonl")
-
-
-def load_eval_keys() -> set[str]:
-    """Canonical keys of the held-out eval puzzles, to exclude from training."""
-    keys: set[str] = set()
-    if not EVAL_JSONL.exists():
-        print(
-            f"WARNING: {EVAL_JSONL} not found (run from repo root?) — "
-            "training will NOT exclude the held-out eval puzzles"
-        )
-        return keys
-    from mathrl.puzzles import Puzzle
-
-    for line in EVAL_JSONL.read_text().splitlines():
-        if not line.strip():
-            continue
-        rec = json.loads(line)
-        keys.add(canonical_key(Puzzle(numbers=rec["numbers"], target=rec["target"])))
-    return keys
 
 
 def generate_traces(n, rng, tv, tok, exclude_keys, max_len):
@@ -121,11 +97,11 @@ def main() -> None:
 
     # --- data ---
     rng = random.Random(args.seed)
-    eval_keys = load_eval_keys()
-    print(f"generating {tv.samples} training traces (excluding {len(eval_keys)} eval keys)...")
-    train_traces = generate_traces(tv.samples, rng, tv, tok, eval_keys, max_len)
+    exclude = eval_keys(tv.puzzle)
+    print(f"generating {tv.samples} training traces (excluding {len(exclude)} eval keys)...")
+    train_traces = generate_traces(tv.samples, rng, tv, tok, exclude, max_len)
     n_val = min(128, max(8, tv.samples // 10))
-    val_traces = generate_traces(n_val, rng, tv, tok, eval_keys, max_len)
+    val_traces = generate_traces(n_val, rng, tv, tok, exclude, max_len)
     train_inputs, train_labels = build_batch(train_traces, max_len)
     val_inputs, val_labels = build_batch(val_traces, max_len)
     print(f"train examples: {train_inputs.size(0)}, val examples: {val_inputs.size(0)}")

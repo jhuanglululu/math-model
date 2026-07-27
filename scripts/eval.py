@@ -1,21 +1,27 @@
-"""Evaluate a checkpoint on the held-out puzzle set with greedy, env-in-the-loop
-decoding.
+"""Evaluate or sample a checkpoint with env-in-the-loop decoding.
+
+The held-out puzzles are generated on the fly from the seeded eval stream
+(puzzles.EVAL_SEED + the variation's PuzzleConfig) — the same stream whose
+keys training excludes, so eval stays honest with no file on disk.
 
 Usage:
-    uv run scripts/eval.py --model tiny --training smoke --seed 0 --n 50
-    uv run scripts/eval.py --model tiny --training smoke --checkpoint <path.safetensors>
+    uv run scripts/eval.py --model small --training rl_calc            # greedy, 1000 puzzles
+    uv run scripts/eval.py --model small --training rl_calc --n 200 --show-cases
+    uv run scripts/eval.py --model small --training rl_calc --sample --n 5 --show-cases
 
-`--model`/`--training` are required: the architecture and the tool arm (env
-config) cannot be inferred from a bare weights file. Without `--checkpoint`,
-the run's `current.safetensors` is used. Metrics are printed as a table and, when
-addressed by variation, an `{"type":"eval", ...}` line is appended to the run's
-record.jsonl.
+Greedy (default) is the comparable metric — record.jsonl eval lines are only
+appended for greedy runs. `--sample` decodes with top-k/top-p/repetition
+penalty instead (qualitative inspection; pair it with --show-cases).
+`--model`/`--training` are required: architecture and tool arm cannot be
+inferred from a bare weights file. Without `--checkpoint`, the run's
+current.safetensors is used.
 """
 
 from __future__ import annotations
 
 import argparse
 import json
+import time
 from collections import Counter
 from pathlib import Path
 
@@ -24,6 +30,7 @@ from safetensors.torch import load_model
 from tqdm import tqdm
 
 from mathrl.checker import CORRECT, NEG_PREFIX, reward
+from mathrl.checkpoint import run_dir
 from mathrl.device import get_device, seed_everything
 from mathrl.env import (
     DISABLED_TOOL,
@@ -37,12 +44,11 @@ from mathrl.env import (
     env_step,
 )
 from mathrl.model import GPT, model_dtype
-from mathrl.puzzles import Puzzle, prompt_tokens
+from mathrl.puzzles import EVAL_N, eval_puzzles, prompt_tokens
 from mathrl.records import record_dir
 from mathrl.tokenizer import MathTokenizer
 from mathrl.variations import get_model_variation, get_training_variation
 
-EVAL_JSONL = Path("datasets/eval.jsonl")
 NEG_INF = float("-inf")
 
 FORMAT_REASONS = frozenset(
@@ -76,30 +82,60 @@ def disabled_tool_ids(tools: str) -> list[int]:
     return calc  # verify arm disables calculate
 
 
-def mask_logits(logits: torch.Tensor, disabled: list[int]) -> torch.Tensor:
+def pick_token(
+    logits: torch.Tensor,
+    generated: list[int],
+    disabled: list[int],
+    sampling: dict | None,
+) -> int:
+    """Greedy argmax when sampling is None, else top-k/top-p/rep-pen sampling."""
     logits = logits.clone()
     logits[MathTokenizer.PAD] = NEG_INF
     logits[MathTokenizer.BOS] = NEG_INF
     for t in disabled:
         logits[t] = NEG_INF
-    return logits
+    if sampling is None:
+        return int(torch.argmax(logits).item())
+
+    if sampling["rep_pen"] != 1.0:
+        for t in set(generated):
+            if logits[t] > 0:
+                logits[t] = logits[t] / sampling["rep_pen"]
+            else:
+                logits[t] = logits[t] * sampling["rep_pen"]
+    if sampling["top_k"] > 0:
+        k = min(sampling["top_k"], logits.numel())
+        kth = torch.topk(logits, k).values[-1]
+        logits[logits < kth] = NEG_INF
+    probs = torch.softmax(logits.float(), dim=-1)
+    if sampling["top_p"] < 1.0:
+        sorted_probs, sorted_idx = torch.sort(probs, descending=True)
+        cum = torch.cumsum(sorted_probs, dim=-1)
+        drop = cum - sorted_probs > sampling["top_p"]
+        sorted_probs[drop] = 0.0
+        probs = torch.zeros_like(probs).scatter(0, sorted_idx, sorted_probs)
+    total = probs.sum()
+    if total <= 0:
+        return int(torch.argmax(logits).item())
+    return int(torch.multinomial(probs / total, 1).item())
 
 
 @torch.no_grad()
-def greedy_rollout(model, puzzle, tok, env_cfg, device, max_len):
-    """Greedy decode with env interaction. Returns (completion, reason)."""
+def episode(model, puzzle, tok, env_cfg, device, max_len, sampling=None):
+    """Env-in-the-loop decode. Returns (completion, reason, model_token_count)."""
     disabled = disabled_tool_ids(env_cfg.tools)
     prompt = prompt_tokens(puzzle, tok)
     completion: list[int] = []
+    model_tokens = 0
     reason = DONE
     hard_cap = env_cfg.max_completion_len + 8
     while True:
         context = (prompt + completion)[-max_len:]
         x = torch.tensor([context], dtype=torch.long, device=device)
         logits = model(x)[0, -1]
-        logits = mask_logits(logits, disabled)
-        nxt = int(torch.argmax(logits).item())
+        nxt = pick_token(logits, completion, disabled, sampling)
         completion.append(nxt)
+        model_tokens += 1
         action = env_step(completion, puzzle, tok, env_cfg)
         if action.kind == "inject":
             completion.extend(action.tokens)
@@ -109,7 +145,7 @@ def greedy_rollout(model, puzzle, tok, env_cfg, device, max_len):
         if len(completion) >= hard_cap:
             reason = TOO_LONG
             break
-    return completion, reason
+    return completion, reason, model_tokens
 
 
 def count_tool_calls(completion: list[int]) -> int:
@@ -125,28 +161,22 @@ def count_manual_steps(completion: list[int]) -> int:
     return sum(1 for t in reasoning if t == MathTokenizer.EQUALS)
 
 
-def load_puzzles(n: int | None) -> list[Puzzle]:
-    puzzles = []
-    for line in EVAL_JSONL.read_text().splitlines():
-        if not line.strip():
-            continue
-        rec = json.loads(line)
-        puzzles.append(Puzzle(numbers=rec["numbers"], target=rec["target"]))
-    return puzzles if n is None else puzzles[:n]
-
-
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--model", required=True)
     ap.add_argument("--training", required=True)
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--checkpoint", default=None, help="explicit weights file or run dir")
-    ap.add_argument("--n", type=int, default=None, help="number of eval puzzles (default all)")
+    ap.add_argument("--n", type=int, default=EVAL_N, help="number of eval puzzles")
     ap.add_argument(
         "--show-cases",
         action="store_true",
-        help="print each puzzle's prompt/completion/verdict (default: summary only)",
+        help="print each puzzle's completion/verdict (default: summary only)",
     )
+    ap.add_argument("--sample", action="store_true", help="sample instead of greedy decode")
+    ap.add_argument("--top-k", type=int, default=10)
+    ap.add_argument("--top-p", type=float, default=0.95)
+    ap.add_argument("--rep-pen", type=float, default=1.1)
     args = ap.parse_args()
 
     seed_everything(args.seed)
@@ -155,9 +185,9 @@ def main() -> None:
     tv = get_training_variation(args.training)
     tok = MathTokenizer()
     max_len = model_cfg.block_size
-
-    # resolve weights path
-    from mathrl.checkpoint import run_dir
+    sampling = (
+        {"top_k": args.top_k, "top_p": args.top_p, "rep_pen": args.rep_pen} if args.sample else None
+    )
 
     if args.checkpoint is not None:
         p = Path(args.checkpoint)
@@ -176,17 +206,26 @@ def main() -> None:
     if sidecar.exists():
         step = int(json.loads(sidecar.read_text()).get("step", 0))
 
-    puzzles = load_puzzles(args.n)
+    if args.n > EVAL_N:
+        print(
+            f"WARNING: --n {args.n} > {EVAL_N}; training only excluded the "
+            f"first {EVAL_N} eval puzzles — the extra ones may overlap training data"
+        )
+    puzzles = eval_puzzles(tv.puzzle, args.n)
     n = len(puzzles)
-    print(f"evaluating {n} puzzles on {weights} (arm={tv.env.tools})...")
+    mode = "sampled" if sampling else "greedy"
+    print(f"evaluating {n} puzzles ({mode}) on {weights} (arm={tv.env.tools})...")
 
     solved = fmt_viol = neg_prefix = tool_use = 0
     tool_calls_sum = manual_sum = len_sum = reward_sum = 0.0
     reason_counts: Counter[str] = Counter()
+    model_tokens = 0
+    t_start = time.time()
 
     bar = tqdm(puzzles, desc=f"eval {args.model}/{args.training}", unit="puzzle")
     for i, puzzle in enumerate(bar):
-        completion, reason = greedy_rollout(model, puzzle, tok, tv.env, device, max_len)
+        completion, reason, n_tok = episode(model, puzzle, tok, tv.env, device, max_len, sampling)
+        model_tokens += n_tok
         rb = reward(puzzle, completion, tok, tv.reward, terminated=reason)
         reason_counts[rb.reason] += 1
         if rb.reason == CORRECT:
@@ -210,6 +249,7 @@ def main() -> None:
             bar.write(f"completion: {tok.decode(completion)}")
             bar.write(f"check:      {verdict} | reward {rb.total:+.2f}")
     bar.close()
+    elapsed = time.time() - t_start
 
     metrics = {
         "solve_rate": solved / n,
@@ -222,7 +262,7 @@ def main() -> None:
         "mean_reward": reward_sum / n,
     }
 
-    print(f"\n{'metric':<22} value   (n={n})")
+    print(f"\n{'metric':<22} value   (n={n}, {mode})")
     print("-" * 34)
     for k, v in metrics.items():
         print(f"{k:<22} {v:>10.4f}")
@@ -232,15 +272,18 @@ def main() -> None:
     for r, c in reason_counts.most_common():
         print(f"{r:<22} {c:>5}  {c / n:>6.2%}")
 
-    # append eval line to the run record (addressed by variation)
+    tok_per_sec = model_tokens / elapsed if elapsed > 0 else 0.0
+    print(f"\ndecode speed: {tok_per_sec:.1f} model-tokens/sec ({model_tokens} tokens)")
+
+    # greedy runs are the comparable metric — only those land in the record
     rec_path = record_dir(args.model, args.training, args.seed) / "record.jsonl"
-    if rec_path.exists():
+    if sampling is None and rec_path.exists():
         line = {"type": "eval", "step": step, "n": n, "split": "heldout"}
         line.update({k: round(v, 5) for k, v in metrics.items()})
         line.update({f"reason_{r}": round(c / n, 5) for r, c in sorted(reason_counts.items())})
         with rec_path.open("a") as f:
             f.write(json.dumps(line) + "\n")
-        print(f"\nappended eval line to {rec_path}")
+        print(f"appended eval line to {rec_path}")
 
 
 if __name__ == "__main__":
