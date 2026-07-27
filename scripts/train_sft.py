@@ -7,8 +7,7 @@ A run is fully determined by (model, training, seed): seed everything, build the
 model from the model variation, generate the training set from the training
 variation (puzzles + sft_trace, skipping the held-out eval keys), then train
 with AdamW + warmup/cosine, grad clipping, JSONL records, a tqdm display with
-periodic held-out validation, and keep-3-best checkpointing with resume by
-default. `--model tiny --training smoke` finishes on CPU in ~2 minutes.
+periodic held-out validation, and keep-3-best checkpointing. `--model tiny --training smoke` finishes on CPU in ~2 minutes.
 """
 
 from __future__ import annotations
@@ -23,7 +22,7 @@ from pathlib import Path
 import torch
 import torch.nn.functional as F
 
-from mathrl.checkpoint import Checkpointer, resume
+from mathrl.checkpoint import Checkpointer
 from mathrl.device import get_device, seed_everything
 from mathrl.model import GPT, model_dtype
 from mathrl.puzzles import canonical_key, generate_puzzle
@@ -131,7 +130,7 @@ def main() -> None:
     val_inputs, val_labels = build_batch(val_traces, max_len)
     print(f"train examples: {train_inputs.size(0)}, val examples: {val_inputs.size(0)}")
 
-    # --- records + checkpoints (resume by default) ---
+    # --- records + checkpoints ---
     record = RunRecord(
         args.model,
         args.training,
@@ -140,20 +139,16 @@ def main() -> None:
         baseline="base",
     )
     ckpt = Checkpointer(args.model, args.training, args.seed, keep_best=3, higher_is_better=False)
-    start_step = 0
-    if (ckpt.dir / "current.safetensors").exists():
-        start_step = resume(ckpt.dir, model, optimizer) + 1
-        print(f"resumed from step {start_step - 1}")
 
     log_interval = max(1, min(50, tv.eval_interval // 2))
     tokens_per_step = tv.batch_size * max_len
-    tokens_seen = start_step * tokens_per_step
+    tokens_seen = 0
 
-    progress = TrainingProgress(args.model, args.training, tv.steps, epoch=1, initial=start_step)
+    progress = TrainingProgress(args.model, args.training, tv.steps, epoch=1)
     start_time = time.time()
     n_train = train_inputs.size(0)
 
-    for step in range(start_step, tv.steps):
+    for step in range(tv.steps):
         lr = lr_at(step, tv.lr, tv.warmup_steps, tv.steps)
         for g in optimizer.param_groups:
             g["lr"] = lr

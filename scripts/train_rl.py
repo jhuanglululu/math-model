@@ -3,7 +3,7 @@
 Usage (per project conventions — only these flags):
     uv run scripts/train_rl.py --model small --training rl_calc --seed 0
 
-The loop, records, checkpointing, and resume are wired; the RL core of each
+The loop, records, and checkpointing are wired; the RL core of each
 step lives in ``rl_step()`` — USER-IMPLEMENTED, marked below. Everything it
 needs already exists and is verified: rollout(), grpo_advantages(),
 grpo_loss().
@@ -28,7 +28,9 @@ from pathlib import Path
 import torch
 from safetensors.torch import load_model
 
-from mathrl.checkpoint import Checkpointer, resume, run_dir
+from mathrl.grpo import grpo_loss, grpo_advantages
+from mathrl.rollout import rollout
+from mathrl.checkpoint import Checkpointer, run_dir
 from mathrl.device import get_device, seed_everything
 from mathrl.model import GPT, model_dtype
 from mathrl.puzzles import Puzzle, canonical_key, generate_puzzle
@@ -98,7 +100,23 @@ def rl_step(
     None — reusing a batch for several steps without the PPO ratio is
     off-policy and silently wrong).
     """
-    raise NotImplementedError("RL core — user implements")
+
+    rb = rollout(model, puzzles, tok, tv.env, tv.reward, tv.group_size, device)
+    ad = grpo_advantages(rb.rewards, rb.group_ids)
+    loss, stats = grpo_loss(model, rb, ad, tv.clip_eps, tv.kl_beta, ref_model)
+
+    optimizer.zero_grad(set_to_none=True)
+    loss.backward()
+    grad_norm = torch.nn.utils.clip_grad_norm_(model.parameters(), tv.grad_clip)
+    optimizer.step()
+
+    return {
+        "reward_mean": float(rb.rewards.mean()),
+        "reward_std": float(rb.rewards.std()),
+        "loss": float(loss),
+        "grad_norm": float(grad_norm),
+        **stats,
+    }
 
 
 # ========================================================================== #
@@ -150,7 +168,7 @@ def main() -> None:
         model.parameters(), lr=tv.lr, weight_decay=tv.weight_decay, betas=(0.9, 0.95)
     )
 
-    # --- data / records / checkpoints (resume by default) ---
+    # --- data / records / checkpoints ---
     rng = random.Random(args.seed)
     eval_keys = load_eval_keys()
     record = RunRecord(
@@ -161,16 +179,12 @@ def main() -> None:
         baseline=tv.init_from,
     )
     ckpt = Checkpointer(args.model, args.training, args.seed, keep_best=3, higher_is_better=True)
-    start_step = 0
-    if (ckpt.dir / "current.safetensors").exists():
-        start_step = resume(ckpt.dir, model, optimizer) + 1
-        print(f"resumed from step {start_step - 1}")
 
-    progress = TrainingProgress(args.model, args.training, tv.steps, epoch=1, initial=start_step)
+    progress = TrainingProgress(args.model, args.training, tv.steps, epoch=1)
     start_time = time.time()
     reward_window: list[float] = []  # rolling reward_mean since last checkpoint
 
-    for step in range(start_step, tv.steps):
+    for step in range(tv.steps):
         lr = lr_at(step, tv.lr, tv.warmup_steps, tv.steps)
         for g in optimizer.param_groups:
             g["lr"] = lr

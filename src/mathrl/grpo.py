@@ -22,7 +22,11 @@ def grpo_advantages(
     zero advantages (no signal — correct, don't "fix" it). Return a detached
     tensor: no gradient may flow through the baseline.
     """
-    raise NotImplementedError("RL core — user implements")
+    N = group_ids.max() + 1
+    g = rewards.view(N, -1)
+
+    stds = g.std(dim=-1, unbiased=False, keepdim=True) + eps
+    return ((g - g.mean(dim=-1, keepdim=True)) / stds).view(-1)
 
 
 def grpo_loss(
@@ -50,4 +54,38 @@ def grpo_loss(
     Returns (loss, stats) — stats at least: ratio_mean, clip_frac, kl,
     entropy (for the record.jsonl step line).
     """
-    raise NotImplementedError("RL core — user implements")
+
+    tokens = batch.tokens  # (R, T)
+    logits = model(tokens)[:, :-1]  # (R, T-1, V)
+    targets = tokens[:, 1:]
+    mask = batch.action_mask[:, 1:].float()
+
+    logprobs = torch.log_softmax(logits, dim=-1)
+    logp = logprobs.gather(-1, targets.unsqueeze(-1)).squeeze(-1)  # (R, T-1)
+
+    A = advantages.detach().unsqueeze(-1)  # (R, 1)
+    denom = mask.sum(-1).clamp_min(1.0)
+    loss = -(((logp * A) * mask).sum(-1) / denom).mean()
+
+    kl_val = 0.0
+    if kl_beta > 0.0 and ref_model is not None:
+        with torch.no_grad():
+            ref_logp = (
+                torch.log_softmax(ref_model(tokens)[:, :-1], dim=-1)
+                .gather(-1, targets.unsqueeze(-1))
+                .squeeze(-1)
+            )
+        d = ref_logp - logp
+        kl = (((d.exp() - d - 1.0) * mask).sum(-1) / denom).mean()
+        loss = loss + kl_beta * kl
+        kl_val = kl.item()
+
+    with torch.no_grad():
+        ent = -(logprobs.exp() * logprobs).sum(-1)
+        stats = {
+            "ratio_mean": 1.0,
+            "clip_frac": 0.0,
+            "kl": kl_val,
+            "entropy": ((ent * mask).sum() / mask.sum().clamp_min(1.0)).item(),
+        }
+    return loss, stats
