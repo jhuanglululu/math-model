@@ -23,6 +23,7 @@ import json
 import math
 import random
 import time
+from collections import Counter
 from pathlib import Path
 
 import torch
@@ -110,11 +111,18 @@ def rl_step(
     grad_norm = torch.nn.utils.clip_grad_norm_(model.parameters(), tv.grad_clip)
     optimizer.step()
 
+    n = len(rb.reasons)
+    reason_counts = Counter(rb.reasons)
     return {
         "reward_mean": float(rb.rewards.mean()),
         "reward_std": float(rb.rewards.std()),
         "loss": float(loss),
         "grad_norm": float(grad_norm),
+        "solve_rate": reason_counts.get("correct", 0) / n,
+        "tool_use_rate": sum(1 for c in rb.tool_calls if c > 0) / n,
+        "tool_calls_per_ep": sum(rb.tool_calls) / n,
+        # flat per-reason fractions, e.g. reason_correct, reason_too_long ...
+        **{f"reason_{r}": c / n for r, c in sorted(reason_counts.items())},
         **stats,
     }
 
@@ -214,6 +222,7 @@ def main() -> None:
                 f"step {step:>5}/{tv.steps} | {mm:02d}:{ss:02d} | "
                 f"reward {stats.get('reward_mean', 0.0):+6.3f} | "
                 f"window {window_mean:+6.3f} | "
+                f"solve {stats.get('solve_rate', 0.0):6.2%} | "
                 f"entropy {stats.get('entropy', 0.0):6.3f}"
             )
             record.log_eval(step, reward_window_mean=round(window_mean, 5))

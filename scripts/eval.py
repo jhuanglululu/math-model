@@ -16,10 +16,12 @@ from __future__ import annotations
 
 import argparse
 import json
+from collections import Counter
 from pathlib import Path
 
 import torch
 from safetensors.torch import load_model
+from tqdm import tqdm
 
 from mathrl.checker import CORRECT, NEG_PREFIX, reward
 from mathrl.device import get_device, seed_everything
@@ -140,6 +142,11 @@ def main() -> None:
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--checkpoint", default=None, help="explicit weights file or run dir")
     ap.add_argument("--n", type=int, default=None, help="number of eval puzzles (default all)")
+    ap.add_argument(
+        "--show-cases",
+        action="store_true",
+        help="print each puzzle's prompt/completion/verdict (default: summary only)",
+    )
     args = ap.parse_args()
 
     seed_everything(args.seed)
@@ -175,10 +182,13 @@ def main() -> None:
 
     solved = fmt_viol = neg_prefix = tool_use = 0
     tool_calls_sum = manual_sum = len_sum = reward_sum = 0.0
+    reason_counts: Counter[str] = Counter()
 
-    for puzzle in puzzles:
+    bar = tqdm(puzzles, desc=f"eval {args.model}/{args.training}", unit="puzzle")
+    for i, puzzle in enumerate(bar):
         completion, reason = greedy_rollout(model, puzzle, tok, tv.env, device, max_len)
         rb = reward(puzzle, completion, tok, tv.reward, terminated=reason)
+        reason_counts[rb.reason] += 1
         if rb.reason == CORRECT:
             solved += 1
         if rb.reason in FORMAT_REASONS:
@@ -192,6 +202,14 @@ def main() -> None:
         manual_sum += count_manual_steps(completion)
         len_sum += len(completion)
         reward_sum += rb.total
+        bar.set_postfix(solve=f"{solved / (i + 1):.2%}")
+
+        if args.show_cases:
+            verdict = "CORRECT" if rb.reason == CORRECT else f"WRONG ({rb.reason})"
+            bar.write(f"=== puzzle {i + 1}: numbers={puzzle.numbers} target={puzzle.target}")
+            bar.write(f"completion: {tok.decode(completion)}")
+            bar.write(f"check:      {verdict} | reward {rb.total:+.2f}")
+    bar.close()
 
     metrics = {
         "solve_rate": solved / n,
@@ -204,16 +222,22 @@ def main() -> None:
         "mean_reward": reward_sum / n,
     }
 
-    print(f"\n{'metric':<22} value")
+    print(f"\n{'metric':<22} value   (n={n})")
     print("-" * 34)
     for k, v in metrics.items():
         print(f"{k:<22} {v:>10.4f}")
+
+    print(f"\n{'reason':<22} count   frac")
+    print("-" * 40)
+    for r, c in reason_counts.most_common():
+        print(f"{r:<22} {c:>5}  {c / n:>6.2%}")
 
     # append eval line to the run record (addressed by variation)
     rec_path = record_dir(args.model, args.training, args.seed) / "record.jsonl"
     if rec_path.exists():
         line = {"type": "eval", "step": step, "n": n, "split": "heldout"}
         line.update({k: round(v, 5) for k, v in metrics.items()})
+        line.update({f"reason_{r}": round(c / n, 5) for r, c in sorted(reason_counts.items())})
         with rec_path.open("a") as f:
             f.write(json.dumps(line) + "\n")
         print(f"\nappended eval line to {rec_path}")

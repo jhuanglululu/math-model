@@ -40,6 +40,10 @@ class RolloutBatch:
     group_ids:   (B*G,) long — row i belongs to group group_ids[i]; all
                  completions of one puzzle share an id (for the group
                  baseline).
+    reasons:     list[str], len B*G — RewardBreakdown.reason per row
+                 ("correct", "wrong_value", env termination reasons, ...);
+                 for solve_rate and the reason distribution in records.
+    tool_calls:  list[int], len B*G — completed tool blocks per row.
     logp_old:    (B*G, T) float or None — chosen-token log-probs under the
                  sampling policy, detached. Only needed if you take more than
                  one gradient step per rollout batch (the PPO ratio); with
@@ -51,6 +55,8 @@ class RolloutBatch:
     action_mask: torch.Tensor
     rewards: torch.Tensor
     group_ids: torch.Tensor
+    reasons: list[str]
+    tool_calls: list[int]
     logp_old: torch.Tensor | None = None
 
 
@@ -148,9 +154,8 @@ def rollout(
                 still_alive.append(i)
         alive = still_alive
 
-    rewards = [
-        reward(row_puzzle[i], completions[i], tok, reward_cfg, reasons[i]).total
-        for i in range(n_rows)
+    breakdowns = [
+        reward(row_puzzle[i], completions[i], tok, reward_cfg, reasons[i]) for i in range(n_rows)
     ]
 
     max_len = max(len(r) for r in rows)
@@ -165,9 +170,11 @@ def rollout(
     return RolloutBatch(
         tokens=torch.tensor(rows, dtype=torch.long, device=device),
         action_mask=torch.tensor(masks, dtype=torch.bool, device=device),
-        rewards=torch.tensor(rewards, dtype=torch.float, device=device),
+        rewards=torch.tensor([b.total for b in breakdowns], dtype=torch.float, device=device),
         group_ids=torch.arange(len(puzzles), dtype=torch.long, device=device).repeat_interleave(
             group_size
         ),
+        reasons=[b.reason for b in breakdowns],
+        tool_calls=[b.tool_calls for b in breakdowns],
         logp_old=None,
     )
